@@ -194,10 +194,11 @@ SWIFT_CLASS("_TtC12PocketVision22RegisterViewController")
 
 SWIFT_CLASS("_TtC12PocketVision27ResetPasswordViewController")
 @interface ResetPasswordViewController : UIViewController
-@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailaddress;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailAddress;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-- (IBAction)resetpasswordAction:(id _Nonnull)sender;
+- (IBAction)resetPasswordAction:(id _Nonnull)sender;
+- (IBAction)canelReset:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

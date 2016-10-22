@@ -6,26 +6,26 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision22RegisterViewController", ""]
 provides-dynamic-lookup:
-- "didReceiveMemoryWarning"
-- "firstnameTextField"
-- "passwordTextField"
-- "cancelAction"
+- "viewDidLoad"
 - "emailTextField"
 - "createaccountAction"
-- "viewDidLoad"
+- "firstnameTextField"
+- "didReceiveMemoryWarning"
+- "passwordTextField"
+- "cancelAction"
 depends-top-level:
-- !private "FIRAuth"
+- !private "UIAlertController"
 - !private "StringLiteralType"
-- "UITextField"
-- "AnyObject"
-- "BooleanLiteralType"
-- "UIViewController"
-- !private "&&"
 - "RegisterViewController"
 - !private "UIAlertAction"
+- !private "FIRAuth"
+- "BooleanLiteralType"
 - !private "!="
+- "UITextField"
+- "AnyObject"
+- "UIViewController"
 - !private "=="
-- !private "UIAlertController"
+- !private "&&"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "UIAlertAction"]
