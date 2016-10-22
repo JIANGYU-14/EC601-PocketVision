@@ -3,9 +3,12 @@ import Firebase
 
 class RegisterViewController: UIViewController {
 
+    // MARK: Properties
+    
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +19,9 @@ class RegisterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Actions
+    
     @IBAction func createaccountAction(_ sender: AnyObject) {
         let firstname = self.firstnameTextField.text
         let email = self.emailTextField.text
@@ -26,8 +32,8 @@ class RegisterViewController: UIViewController {
             FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                 if error == nil
                 {
-                    let congrats = UIAlertController(title: "Congratulation!", message: "You already successfully registered!", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "ok", style: .cancel, handler: {
+                    let congrats = UIAlertController(title: "Congratulations!", message: "You have successfully registered!", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Ok", style: .cancel, handler: {
                     action in
                         self.dismiss(animated: true, completion: nil)
                     })
@@ -37,7 +43,7 @@ class RegisterViewController: UIViewController {
                 else
                 {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
                 }

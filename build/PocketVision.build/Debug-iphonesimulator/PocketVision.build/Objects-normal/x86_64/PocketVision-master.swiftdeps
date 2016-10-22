@@ -1,10 +1,10 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
 options: "fef10c648851ddf19c7b9be5be8f13fa"
-build_time: [530473788, 570618000]
+build_time: [530474032, 945833000]
 inputs:
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/RegisterViewController.swift": [530472171, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/LoginViewController.swift": [530472171, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/AppDelegate.swift": [530472171, 0]
-  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/ResetPasswordViewController.swift": [530473785, 0]
+  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/ResetPasswordViewController.swift": [530473840, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/MapViewController.swift": [530472171, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HomePageController.swift": [530472345, 0]
