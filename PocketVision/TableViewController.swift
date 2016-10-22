@@ -29,12 +29,17 @@ class TableViewController: UIViewController {
     }
     @IBAction func logoutAction(_ sender: AnyObject) {
         try! FIRAuth.auth()?.signOut()
-        let alertController = UIAlertController(title: "Logout", message: "Are you sure logout current account?", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "Yes", style: .cancel, handler: {
+        var alertController = UIAlertController(title: "Logout", message: "Are you sure logout current account?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {
             action in
             self.dismiss(animated: true, completion: nil)
         })
-        alertController.addAction(defaultAction)
+        alertController.addAction(yesAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
         self.present(alertController, animated: true, completion: nil)
     }
     

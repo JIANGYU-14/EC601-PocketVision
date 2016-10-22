@@ -48,6 +48,14 @@
                                     <segue destination="iZA-V5-6Zu" kind="presentation" identifier="createAccount" id="GCx-1S-HWc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gN-IM-iOT">
+                                <frame key="frameInset" minX="126" minY="355" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Forget Password?"/>
+                                <connections>
+                                    <segue destination="rQF-VC-xMR" kind="show" id="inV-aO-DP6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -245,6 +253,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcW-wc-l7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="841.52923538230891"/>
+        </scene>
+        <!--Reset Password View Controller-->
+        <scene sceneID="6A0-wo-nh4">
+            <objects>
+                <viewController id="rQF-VC-xMR" customClass="ResetPasswordViewController" customModule="PocketVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c7d-BF-RcA"/>
+                        <viewControllerLayoutGuide type="bottom" id="l5a-6P-lqR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5mI-6k-1go">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TQc-u8-6ck">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jM-rm-Nff">
+                                <state key="normal" title="Send Reset Password Link"/>
+                                <connections>
+                                    <action selector="resetpasswordAction:" destination="rQF-VC-xMR" eventType="touchUpInside" id="8dY-y3-n11"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7jM-rm-Nff" firstAttribute="top" secondItem="TQc-u8-6ck" secondAttribute="bottom" constant="58" id="1Mw-oy-NaJ"/>
+                            <constraint firstItem="TQc-u8-6ck" firstAttribute="leading" secondItem="5mI-6k-1go" secondAttribute="leadingMargin" id="22g-Jm-d9L"/>
+                            <constraint firstItem="TQc-u8-6ck" firstAttribute="centerX" secondItem="7jM-rm-Nff" secondAttribute="centerX" id="MWG-4g-SEq"/>
+                            <constraint firstItem="TQc-u8-6ck" firstAttribute="trailing" secondItem="5mI-6k-1go" secondAttribute="trailingMargin" id="ace-LZ-ZRk"/>
+                            <constraint firstItem="TQc-u8-6ck" firstAttribute="top" secondItem="c7d-BF-RcA" secondAttribute="bottom" constant="125" id="cMZ-Ha-igC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailaddress" destination="TQc-u8-6ck" id="Qy5-Us-yIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uqQ-m4-cqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="-606.74662668665667"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yVm-Cb-6W4">
