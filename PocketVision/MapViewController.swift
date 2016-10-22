@@ -1,11 +1,3 @@
-//
-//  MapViewController.swift
-//  PocketVision
-//
-//  Created by JIANGYU  😈 on 2016/10/21.
-//
-//
-
 import UIKit
 import MapKit
 import CoreLocation

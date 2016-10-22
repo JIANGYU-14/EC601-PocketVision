@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/Pods_PocketVision.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-PocketVision-umbrella.h",
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Target Support Files/Pods-PocketVision/Pods-PocketVision-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_PocketVision-Swift.h",
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/Pods_PocketVision.framework/Headers/Pods_PocketVision-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/Pods_PocketVision.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Pods.build/Debug-iphonesimulator/Pods-PocketVision.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
