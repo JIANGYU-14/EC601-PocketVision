@@ -6,29 +6,29 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision18HomePageController", ""]
 provides-dynamic-lookup:
-- "userTypeLabel"
-- "didReceiveMemoryWarning"
 - "logoutAction"
-- "viewDidAppear"
-- "nameLabel"
+- "didReceiveMemoryWarning"
 - "viewDidLoad"
+- "nameLabel"
+- "viewDidAppear"
+- "userTypeLabel"
 depends-top-level:
-- !private "print"
-- !private "String"
 - !private "UIAlertController"
+- !private "FIRDatabase"
 - "HomePageController"
 - "AnyObject"
+- !private "String"
+- "UIViewController"
 - !private "AssignmentPrecedence"
-- !private "FIRDatabase"
 - !private "CastingPrecedence"
-- !private "FIRAuth"
 - !private "UIAlertAction"
 - "StringLiteralType"
-- "UILabel"
 - !private "NSDictionary"
-- !private "BooleanLiteralType"
+- !private "FIRAuth"
 - "Bool"
-- "UIViewController"
+- !private "BooleanLiteralType"
+- "UILabel"
+- !private "print"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]

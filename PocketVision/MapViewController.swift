@@ -1,40 +1,101 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-class MapViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
-
-    @IBOutlet weak var currentlocation: MKMapView!
+    // MARK: Properties
+    
+    @IBOutlet weak var currentLocation: MKMapView!
     
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-        self.currentlocation.showsUserLocation = true
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                print("No access")
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                
+                self.locationManager.delegate = self
+                
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                
+                self.locationManager.requestWhenInUseAuthorization()
+                
+                self.locationManager.startUpdatingLocation()
+                
+                self.currentLocation.showsUserLocation = true
+                
+                // Create database reference
+                
+                let ref = FIRDatabase.database().reference()
+                
+                let userID = FIRAuth.auth()?.currentUser?.uid
+                
+                // Store location in database
+                
+                let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
+                                "longitude" : self.locationManager.location!.coordinate.longitude]
+                
+                ref.child("users").child(userID!).child("location").setValue(location)
+                
+                // Retrieve location from database
+                
+                ref.child("users").child(userID!).child("location").observe(.value, with: { (snapshot) in
+                    // Get user value
+                    let value = snapshot.value as? NSDictionary
+                    let latitude = value?["latitude"] as! Double
+                    let longitude = value?["longitude"] as! Double
+                    
+                    // Plot locaiton on map
+                    
+                    let location = CLLocationCoordinate2DMake(latitude, longitude)
+                    
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = location
+                    annotation.title = "Test location"
+                    
+                    self.currentLocation.addAnnotation(annotation)
+                    
+                    
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
+                
+                
+            }
+        } else {
+            print("Location services are not enabled")
+        }
+        
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         let location = locations.last
         
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
-        
-        self.currentlocation.setRegion(region, animated: true)
+        self.currentLocation.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Errors: " + error.localizedDescription)
     }
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {

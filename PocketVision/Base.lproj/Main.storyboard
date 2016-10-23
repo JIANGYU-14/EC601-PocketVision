@@ -187,7 +187,7 @@
                                 <frame key="frameInset" minX="16" minY="217" width="343" height="30"/>
                                 <state key="normal" title="Display my location on a map!"/>
                                 <connections>
-                                    <segue destination="qW2-CB-3Zy" kind="presentation" identifier="mapView" id="23m-7c-kUQ"/>
+                                    <segue destination="qW2-CB-3Zy" kind="presentation" id="ICv-5d-gBA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*name*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqn-s3-yYo">
@@ -255,8 +255,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="currentlocation" destination="OrU-mI-hJy" id="Rqb-3U-fRv"/>
-                        <outlet property="map" destination="OrU-mI-hJy" id="a8z-HI-E7d"/>
+                        <outlet property="currentLocation" destination="OrU-mI-hJy" id="6t0-O8-LcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcW-wc-l7C" userLabel="First Responder" sceneMemberID="firstResponder"/>

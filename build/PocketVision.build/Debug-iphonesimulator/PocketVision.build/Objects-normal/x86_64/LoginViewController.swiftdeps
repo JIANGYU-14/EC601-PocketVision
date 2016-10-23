@@ -9,20 +9,20 @@ provides-dynamic-lookup:
 - "emailTextField"
 - "didReceiveMemoryWarning"
 - "loginAction"
-- "passwordTextField"
 - "viewDidLoad"
+- "passwordTextField"
 depends-top-level:
-- "LoginViewController"
-- !private "StringLiteralType"
+- "AnyObject"
 - !private "BooleanLiteralType"
 - !private "print"
-- "UITextField"
 - !private "FIRAuth"
-- "AnyObject"
 - !private "||"
+- "UITextField"
+- !private "StringLiteralType"
+- "LoginViewController"
+- !private "UIAlertController"
 - !private "UIAlertAction"
 - "UIViewController"
-- !private "UIAlertController"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "UIAlertAction"]

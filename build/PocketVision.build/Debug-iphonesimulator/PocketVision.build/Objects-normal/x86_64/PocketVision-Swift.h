@@ -168,11 +168,12 @@ SWIFT_CLASS("_TtC12PocketVision19LoginViewController")
 
 SWIFT_CLASS("_TtC12PocketVision17MapViewController")
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
-@property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified currentlocation;
+@property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified currentLocation;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (IBAction)cancelAction:(UIBarButtonItem * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
