@@ -41,8 +41,6 @@ class LoginViewController: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
                 if let error = error {
                     
-                    print(error.localizedDescription)
-                    
                     let alertFail = UIAlertController(title: "Alert", message:
                         error.localizedDescription, preferredStyle: .alert)
                     
@@ -57,16 +55,13 @@ class LoginViewController: UIViewController {
                     self.present(alertFail, animated: true, completion: nil)
                     
                     return
+                    
                 } else {
-                
-                print("User logged in")
                 
                 self.dismiss(animated: true, completion: nil)
                 }
                 
             }
-            
-            
             
         }
         

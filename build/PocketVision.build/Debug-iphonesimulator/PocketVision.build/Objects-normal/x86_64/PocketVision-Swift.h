@@ -177,16 +177,18 @@ SWIFT_CLASS("_TtC12PocketVision17MapViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UISegmentedControl;
 
 SWIFT_CLASS("_TtC12PocketVision22RegisterViewController")
 @interface RegisterViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified firstnameTextField;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailTextField;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordTextField;
+@property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified segmentControl;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)createaccountAction:(id _Nonnull)sender;
-- (IBAction)cancelAction:(id _Nonnull)sender;
+- (IBAction)cancelRegistration:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

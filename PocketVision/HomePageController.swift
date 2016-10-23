@@ -26,7 +26,6 @@ class HomePageController: UIViewController {
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
-                print("User signed in")
                 
                 /*
                 // Retrieve from database
@@ -52,7 +51,6 @@ class HomePageController: UIViewController {
                 
             } else {
                 // No user is signed in.
-                print("User not signed in")
                 
                 self.performSegue(withIdentifier: "loginView", sender: self)
                 

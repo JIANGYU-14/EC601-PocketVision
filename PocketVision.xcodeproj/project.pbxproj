@@ -15,7 +15,6 @@
 		93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE40111DB9C3490061A53E /* LoginViewController.swift */; };
 		93EE40151DB9C3490061A53E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40131DB9C3490061A53E /* Main.storyboard */; };
 		93EE40171DB9C3490061A53E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40161DB9C3490061A53E /* Assets.xcassets */; };
-		93EE401A1DB9C3490061A53E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40181DB9C3490061A53E /* LaunchScreen.storyboard */; };
 		93EE40221DB9C3DD0061A53E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */; };
 		B9C86F016C604827842ED85C /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		93EE40111DB9C3490061A53E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93EE40141DB9C3490061A53E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93EE40161DB9C3490061A53E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		93EE40191DB9C3490061A53E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93EE401B1DB9C3490061A53E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +86,6 @@
 				9346F98A1DBA676F003D94BA /* MapViewController.swift */,
 				93EE40131DB9C3490061A53E /* Main.storyboard */,
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
-				93EE40181DB9C3490061A53E /* LaunchScreen.storyboard */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
 			);
@@ -165,7 +162,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93EE401A1DB9C3490061A53E /* LaunchScreen.storyboard in Resources */,
 				93EE40221DB9C3DD0061A53E /* GoogleService-Info.plist in Resources */,
 				93EE40171DB9C3490061A53E /* Assets.xcassets in Resources */,
 				93EE40151DB9C3490061A53E /* Main.storyboard in Resources */,
@@ -245,14 +241,6 @@
 				93EE40141DB9C3490061A53E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		93EE40181DB9C3490061A53E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93EE40191DB9C3490061A53E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

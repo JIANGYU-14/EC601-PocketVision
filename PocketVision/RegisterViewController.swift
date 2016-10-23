@@ -8,6 +8,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,35 @@ class RegisterViewController: UIViewController {
             FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                 if error == nil
                 {
-                    let congrats = UIAlertController(title: "Congratulations!", message: "You have successfully registered!", preferredStyle: .alert)
+                    
+                    // Create database reference
+                    
+                    let ref = FIRDatabase.database().reference()
+                    
+                    // Store first name in database
+                    
+                    let firstname : [String : String] = ["firstname" : self.firstnameTextField.text!]
+                    
+                    ref.child("users").child(user!.uid).setValue(firstname)
+                    
+                    // Store user type in database
+                    
+                    switch self.segmentControl.selectedSegmentIndex
+                    {
+                    case 0:
+                        ref.child("users").child(user!.uid).child("user_type").setValue("Blind")
+                    case 1:
+                        ref.child("users").child(user!.uid).child("user_type").setValue("Sighted")
+                    default: 
+                        break; 
+                    }
+                    
+                    // Sign out and navigate to login page
+                    
+                    try! FIRAuth.auth()!.signOut()
+                    
+                    
+                    let congrats = UIAlertController(title: "Congratulations!", message: "You have successfully signed up!", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Ok", style: .cancel, handler: {
                     action in
                         self.dismiss(animated: true, completion: nil)
@@ -51,16 +80,18 @@ class RegisterViewController: UIViewController {
         }
         else
         {
-            let alert = UIAlertController(title: "Error", message: "Please Enter All Required Info", preferredStyle: .alert)
-            let action = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            let alert = UIAlertController(title: "Error", message: "Please enter all required info", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
     }
-    @IBAction func cancelAction(_ sender: AnyObject) {
+    
+    
+    @IBAction func cancelRegistration(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
 
     /*
     // MARK: - Navigation
