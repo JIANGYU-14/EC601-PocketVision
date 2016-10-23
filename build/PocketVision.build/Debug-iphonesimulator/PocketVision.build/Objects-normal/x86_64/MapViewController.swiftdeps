@@ -6,27 +6,27 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision17MapViewController", ""]
 provides-dynamic-lookup:
-- "currentlocation"
 - "viewDidLoad"
-- "didReceiveMemoryWarning"
+- "locationManager"
+- "locationManager"
 - "cancelAction"
-- "locationManager"
-- "locationManager"
+- "didReceiveMemoryWarning"
+- "currentlocation"
 depends-top-level:
-- !private "kCLLocationAccuracyBest"
-- "MKMapView"
-- "CLLocationManagerDelegate"
 - "MKMapViewDelegate"
-- !private "BooleanLiteralType"
-- !private "CLLocationCoordinate2D"
-- "CLLocationManager"
+- "CLLocationManagerDelegate"
 - "UIBarButtonItem"
-- !private "MKCoordinateRegion"
-- !private "MKCoordinateSpan"
+- "CLLocationManager"
 - "CLLocation"
 - "AssignmentPrecedence"
-- "UIViewController"
 - "MapViewController"
+- !private "CLLocationCoordinate2D"
+- "MKMapView"
+- !private "kCLLocationAccuracyBest"
+- !private "MKCoordinateSpan"
+- !private "BooleanLiteralType"
+- "UIViewController"
+- !private "MKCoordinateRegion"
 depends-member:
 - !private ["Ps9AnyObject", "CLLocationCoordinate2D"]
 - ["Ps9AnyObject", "CLLocationManager"]

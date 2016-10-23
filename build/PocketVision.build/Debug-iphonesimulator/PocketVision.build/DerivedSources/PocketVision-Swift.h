@@ -139,6 +139,7 @@ SWIFT_CLASS("_TtC12PocketVision11AppDelegate")
 SWIFT_CLASS("_TtC12PocketVision18HomePageController")
 @interface HomePageController : UIViewController
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userTypeLabel;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidAppear:(BOOL)animated;

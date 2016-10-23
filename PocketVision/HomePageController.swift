@@ -6,6 +6,7 @@ class HomePageController: UIViewController {
     // MARK: Properties
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userTypeLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -26,28 +27,29 @@ class HomePageController: UIViewController {
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
-                
-                /*
+
                 // Retrieve from database
                 
                 let ref = FIRDatabase.database().reference()
                 
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
-                ref.child("users").child(userID!).observeEventType(.Value, withBlock: { (snapshot) in
+                ref.child("users").child(userID!).observe(.value, with: { (snapshot) in
                     // Get user value
                     let value = snapshot.value as? NSDictionary
                     let firstname = value?["firstname"] as? String
+                    let userType = value?["user_type"] as? String
                     
-                    // Replace default label with user's first name
+                    // Replace default labels
                     
-                    self.displayName.text = firstname
+                    self.nameLabel.text = firstname
+                    self.userTypeLabel.text = userType
  
                     
                 }) { (error) in
                     print(error.localizedDescription)
                 }
-            */
+
                 
             } else {
                 // No user is signed in.

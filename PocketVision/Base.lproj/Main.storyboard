@@ -112,8 +112,6 @@
                                     <segment title="Blind"/>
                                     <segment title="Sighted"/>
                                 </segments>
-                                <connections>
-                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwo-Cr-rAD">
                                 <state key="normal" title="Create Account"/>
@@ -178,19 +176,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tZ-LB-5KE">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tZ-LB-5KE">
+                                <frame key="frameInset" minX="16" minY="582" width="343" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutAction:" destination="zgk-QG-szc" eventType="touchUpInside" id="mZL-p2-9t2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1z-Bj-F5c">
-                                <state key="normal" title="Where I am"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1z-Bj-F5c">
+                                <frame key="frameInset" minX="16" minY="217" width="343" height="30"/>
+                                <state key="normal" title="Display my location on a map!"/>
                                 <connections>
-                                    <segue destination="qW2-CB-3Zy" kind="presentation" id="23m-7c-kUQ"/>
+                                    <segue destination="qW2-CB-3Zy" kind="presentation" identifier="mapView" id="23m-7c-kUQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqn-s3-yYo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*name*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqn-s3-yYo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*user type*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gG-Rs-jDG">
+                                <frame key="frameInset" minX="16" minY="158" width="343" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -210,14 +217,15 @@
                     <navigationItem key="navigationItem" title="Welcome" id="XFP-2C-TPG"/>
                     <connections>
                         <outlet property="nameLabel" destination="Oqn-s3-yYo" id="1py-Gf-Id7"/>
+                        <outlet property="userTypeLabel" destination="9gG-Rs-jDG" id="X2K-tA-XZW"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="loginView" id="ghv-oX-chH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77P-gO-ROf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1534" y="95"/>
+            <point key="canvasLocation" x="-1535.2" y="94.902548725637189"/>
         </scene>
-        <!--There You Are-->
+        <!--You are here-->
         <scene sceneID="xkJ-hH-2nD">
             <objects>
                 <viewController id="B6s-3q-6QM" customClass="MapViewController" customModule="PocketVision" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,8 +247,8 @@
                             <constraint firstItem="OrU-mI-hJy" firstAttribute="top" secondItem="XvJ-N0-wZz" secondAttribute="bottom" id="n5j-hq-jIZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="There You Are" id="2S1-Px-sCu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uaT-Ov-Ble">
+                    <navigationItem key="navigationItem" title="You are here" id="2S1-Px-sCu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="uaT-Ov-Ble">
                             <connections>
                                 <action selector="cancelAction:" destination="B6s-3q-6QM" id="lZT-eW-fqe"/>
                             </connections>
