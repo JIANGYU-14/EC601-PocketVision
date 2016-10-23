@@ -33,7 +33,6 @@ class RegisterViewController: UIViewController {
             FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                 if error == nil
                 {
-                    
                     // Create database reference
                     
                     let ref = FIRDatabase.database().reference()
@@ -59,7 +58,6 @@ class RegisterViewController: UIViewController {
                     // Sign out and navigate to login page
                     
                     try! FIRAuth.auth()!.signOut()
-                    
                     
                     let congrats = UIAlertController(title: "Congratulations!", message: "You have successfully signed up!", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Ok", style: .cancel, handler: {
