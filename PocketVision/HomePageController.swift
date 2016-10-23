@@ -12,7 +12,7 @@ class HomePageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.perform(Selector:"navigatetobelongedpage", with: nil, afterDelay: 5.0)
-        var timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: Selector("navigatetobelongedpage"), userInfo: nil, repeats: false)
+        var timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: Selector("navigatetobelongedpage"), userInfo: nil, repeats: false)
     }
     
     override func didReceiveMemoryWarning() {
