@@ -8,15 +8,19 @@
 
 import UIKit
 import Firebase
+import MapKit
 
-class SightedViewController: UIViewController {
+class SightedViewController: UIViewController, CLLocationManagerDelegate{
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userTypeLabel: UILabel!
+    
+    let requestlocation = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.requestlocation.requestWhenInUseAuthorization()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +57,7 @@ class SightedViewController: UIViewController {
     */
     @IBAction func logoutAction(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Logout", message: "You sure to logout current account?", preferredStyle: .alert)
+        
         // Logout current account
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:
             {
@@ -61,12 +66,14 @@ class SightedViewController: UIViewController {
                 self.performSegue(withIdentifier: "logoutAccount", sender: self)
                 print("User did logout")
         }))
+        
         // Cancel action
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:
             {
                 action in
                 print("User didnt logout")
         }))
+        
         self.present(alert, animated: true, completion: nil)
     }
 

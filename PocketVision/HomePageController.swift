@@ -41,7 +41,7 @@ class HomePageController: UIViewController {
                     if userType == "Blind"
                     {
                         self.performSegue(withIdentifier: "blindpage", sender: self)
-                        print("Navigate to blind page!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                        print("Navigate to blind page")
                     }
                     else
                     {
@@ -50,6 +50,7 @@ class HomePageController: UIViewController {
                     }
                 }) { (error) in
                     print(error.localizedDescription)
+                    print("Check Internet Connection!!!")
                 }
             } else {
                 

@@ -74,11 +74,13 @@
                     <connections>
                         <outlet property="emailTextField" destination="WT5-tg-sUh" id="3RE-eZ-TNa"/>
                         <outlet property="passwordTextField" destination="pV0-cn-ig2" id="I5t-yX-4zJ"/>
+                        <segue destination="fyv-ha-821" kind="presentation" identifier="logintosighted" id="yax-ds-CZf"/>
+                        <segue destination="qjr-zK-Db2" kind="presentation" identifier="logintoblind" id="QuD-Ds-JLK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="95"/>
+            <point key="canvasLocation" x="98" y="206"/>
         </scene>
         <!--Registration-->
         <scene sceneID="YnV-Ol-bWF">
@@ -162,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yz7-go-6Sz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.5999999999999" y="94.902548725637189"/>
+            <point key="canvasLocation" x="2328.8000000000002" y="94.902548725637189"/>
         </scene>
         <!--Blind View Controller-->
         <scene sceneID="MFW-B3-Xtn">
@@ -295,9 +297,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJ2-SH-MMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="-634"/>
+            <point key="canvasLocation" x="-759" y="-699"/>
         </scene>
-        <!--Welcome-->
+        <!--Home Page Controller-->
         <scene sceneID="L6J-BR-k99">
             <objects>
                 <viewController id="zgk-QG-szc" customClass="HomePageController" customModule="PocketVision" customModuleProvider="target" sceneMemberID="viewController">
@@ -316,7 +318,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="XFP-2C-TPG"/>
+                    <navigationItem key="navigationItem" id="XFP-2C-TPG"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="loginView" id="ghv-oX-chH"/>
                         <segue destination="qjr-zK-Db2" kind="presentation" identifier="blindpage" id="ZwH-iF-M3m"/>
@@ -325,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77P-gO-ROf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1535.2" y="94.902548725637189"/>
+            <point key="canvasLocation" x="-1044" y="134.48275862068968"/>
         </scene>
         <!--You are here-->
         <scene sceneID="xkJ-hH-2nD">
@@ -446,7 +448,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9v-47-Qt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="95"/>
+            <point key="canvasLocation" x="1296.8" y="94.902548725637189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ebf-Q6-F1T">
@@ -471,7 +473,9 @@
         <image name="LaunchImage" width="621" height="1104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mXh-WP-Utz"/>
-        <segue reference="3Vg-H5-7CV"/>
+        <segue reference="x7v-6m-LAh"/>
+        <segue reference="QuD-Ds-JLK"/>
+        <segue reference="lln-nb-6HQ"/>
+        <segue reference="yax-ds-CZf"/>
     </inferredMetricsTieBreakers>
 </document>
