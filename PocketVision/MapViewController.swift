@@ -48,15 +48,40 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
-                // Store location in database
+                // Check BlindUser or SightedUser
                 
-                let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
-                                "longitude" : self.locationManager.location!.coordinate.longitude]
-                
-                ref.child("users").child(userID!).child("location").setValue(location)
+                ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
+                    
+                    // Get user value
+                    let value = snapshot.value as? NSDictionary
+                    let userType = value?["user_type"] as? String
+                    
+                    // Get user type
+                    if userType == "Blind"
+                    {
+                        // Store location for BlindUser in database
+                        
+                        let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
+                                        "longitude" : self.locationManager.location!.coordinate.longitude]
+                        
+                        ref.child("BlindUser").child(userID!).child("location").setValue(location)
+                    }
+                    else
+                    {
+                        // Store location for SightedUser in database
+                        
+                        let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
+                                        "longitude" : self.locationManager.location!.coordinate.longitude]
+                        
+                        ref.child("SightedUser").child(userID!).child("location").setValue(location)
+                    }
+                }) { (error) in
+                    print(error.localizedDescription)
+                    print("Check Internet Connection!!!")
+                }
                 
                 // Retrieve location from database
-                
+    /*
                 ref.child("users").child(userID!).child("location").observe(.value, with: { (snapshot) in
                     // Get user value
                     let value = snapshot.value as? NSDictionary
@@ -77,7 +102,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 }) { (error) in
                     print(error.localizedDescription)
                 }
-                
+                */
                 
             }
         } else {

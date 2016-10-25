@@ -41,16 +41,24 @@ class RegisterViewController: UIViewController {
                     
                     let firstname : [String : String] = ["firstname" : self.firstnameTextField.text!]
                     
-                    ref.child("users").child(user!.uid).setValue(firstname)
+                    switch self.segmentControl.selectedSegmentIndex
+                    {
+                    case 0:
+                        ref.child("BlindUser").child(user!.uid).setValue(firstname)
+                    case 1:
+                        ref.child("SightedUser").child(user!.uid).setValue(firstname)
+                    default:
+                        break;
+                    }
                     
                     // Store user type in database
                     
                     switch self.segmentControl.selectedSegmentIndex
                     {
                     case 0:
-                        ref.child("users").child(user!.uid).child("user_type").setValue("Blind")
+                        ref.child("BlindUser").child(user!.uid).child("user_type").setValue("Blind")
                     case 1:
-                        ref.child("users").child(user!.uid).child("user_type").setValue("Sighted")
+                        ref.child("SightedUser").child(user!.uid).child("user_type").setValue("Sighted")
                     default: 
                         break; 
                     }

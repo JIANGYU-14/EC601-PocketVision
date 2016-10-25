@@ -8,15 +8,20 @@
 
 import UIKit
 import Firebase
+import MapKit
 
-class BlindViewController: UIViewController {
+class BlindViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userTypeLabel: UILabel!
+    
+    let requestlocation = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Ask user for location service on this page
+        self.requestlocation.requestWhenInUseAuthorization()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +32,7 @@ class BlindViewController: UIViewController {
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
-        ref.child("users").child(userID!).observe(.value, with: { (snapshot) in
+        ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
             
             // Get user value
             let value = snapshot.value as? NSDictionary

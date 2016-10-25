@@ -19,7 +19,8 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Ask user for location service on this page
         self.requestlocation.requestWhenInUseAuthorization()
     }
 
@@ -31,7 +32,7 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
-        ref.child("users").child(userID!).observe(.value, with: { (snapshot) in
+        ref.child("SightedUser").child(userID!).observe(.value, with: { (snapshot) in
             
             // Get user value
             let value = snapshot.value as? NSDictionary

@@ -32,7 +32,7 @@ class HomePageController: UIViewController {
                 
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
-                ref.child("users").child(userID!).observe(.value, with: { (snapshot) in
+                ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
                     // Get user value
                     let value = snapshot.value as? NSDictionary
                     let userType = value?["user_type"] as? String
