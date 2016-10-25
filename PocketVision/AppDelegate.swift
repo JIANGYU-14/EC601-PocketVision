@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  PocketVision
-//
-//  Created by JIANGYU  😈 on 2016/10/20.
-//
-//
-
 import UIKit
 import Firebase
 
