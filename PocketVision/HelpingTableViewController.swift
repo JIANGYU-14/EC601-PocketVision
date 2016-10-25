@@ -30,6 +30,10 @@ class HelpingTableViewController: UITableViewController {
             // Get user value
             let value = snapshot.value as? NSDictionary
             let firstname = value?["firstname"] as? String
+            let blindlatitude = value?["latitude"] as! Double
+            let blindlongitude = value?["longitude"] as! Double
+
+            
             
             // Insert user value into structure
             self.users.insert(userlocation(firstname: firstname) , at: 0)
@@ -68,6 +72,8 @@ class HelpingTableViewController: UITableViewController {
         label.text = users[indexPath.row].firstname
         
         return cell!
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     
