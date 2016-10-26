@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
         
         self.navigationItem .setHidesBackButton(true, animated: false)
         
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +59,32 @@ class LoginViewController: UIViewController {
                     
                 } else {
                 
-                self.dismiss(animated: true, completion: nil)
+                    // Retrieve from database
+                    let ref = FIRDatabase.database().reference()
+                    
+                    let userID = FIRAuth.auth()?.currentUser?.uid
+                    
+                    ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
+                        // Get user value
+                        let value = snapshot.value as? NSDictionary
+                        let userType = value?["user_type"] as? String
+                        
+                        //Navigate to corresponds page, i.e. Blind Page or Sighted Page
+                        if userType == "Blind"
+                        {
+                            self.performSegue(withIdentifier: "logintoblind", sender: self)
+                            print("Navigate to blind page")
+                        }
+                        else
+                        {
+                            self.performSegue(withIdentifier: "logintosighted", sender: self)
+                            print("Navigate to sighted page")
+                        }
+                    }) { (error) in
+                        print(error.localizedDescription)
+                        print("Check Internet Connection!!!")
+                    }
+
                 }
                 
             }

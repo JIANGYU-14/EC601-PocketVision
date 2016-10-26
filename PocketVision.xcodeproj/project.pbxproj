@@ -11,11 +11,15 @@
 		9346F9891DBA638D003D94BA /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346F9881DBA638D003D94BA /* HomePageController.swift */; };
 		9346F98B1DBA676F003D94BA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346F98A1DBA676F003D94BA /* MapViewController.swift */; };
 		937249401DBBA1A700A6DA71 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */; };
+		9398DB181DBD6246005D3734 /* BlindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DB171DBD6246005D3734 /* BlindViewController.swift */; };
+		9398DB1A1DBD625A005D3734 /* SightedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DB191DBD625A005D3734 /* SightedViewController.swift */; };
 		93EE40101DB9C3490061A53E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE400F1DB9C3490061A53E /* AppDelegate.swift */; };
 		93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE40111DB9C3490061A53E /* LoginViewController.swift */; };
 		93EE40151DB9C3490061A53E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40131DB9C3490061A53E /* Main.storyboard */; };
 		93EE40171DB9C3490061A53E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40161DB9C3490061A53E /* Assets.xcassets */; };
 		93EE40221DB9C3DD0061A53E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */; };
+		93FA0E5E1DBEE04600ADD2FC /* HelpingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */; };
+		93FA0E621DBFE1C100ADD2FC /* findblindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E611DBFE1C100ADD2FC /* findblindViewController.swift */; };
 		B9C86F016C604827842ED85C /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,8 @@
 		9346F9881DBA638D003D94BA /* HomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		9346F98A1DBA676F003D94BA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		9398DB171DBD6246005D3734 /* BlindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindViewController.swift; sourceTree = "<group>"; };
+		9398DB191DBD625A005D3734 /* SightedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SightedViewController.swift; sourceTree = "<group>"; };
 		93EE400C1DB9C3490061A53E /* PocketVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EE400F1DB9C3490061A53E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93EE40111DB9C3490061A53E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 		93EE40161DB9C3490061A53E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93EE401B1DB9C3490061A53E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpingTableViewController.swift; sourceTree = "<group>"; };
+		93FA0E611DBFE1C100ADD2FC /* findblindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findblindViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +93,13 @@
 				9346F9881DBA638D003D94BA /* HomePageController.swift */,
 				9346F98A1DBA676F003D94BA /* MapViewController.swift */,
 				93EE40131DB9C3490061A53E /* Main.storyboard */,
+				93FA0E611DBFE1C100ADD2FC /* findblindViewController.swift */,
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
+				9398DB171DBD6246005D3734 /* BlindViewController.swift */,
+				9398DB191DBD625A005D3734 /* SightedViewController.swift */,
+				93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */,
 			);
 			path = PocketVision;
 			sourceTree = "<group>";
@@ -224,10 +236,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9346F9871DB9CBC7003D94BA /* RegisterViewController.swift in Sources */,
+				93FA0E621DBFE1C100ADD2FC /* findblindViewController.swift in Sources */,
 				93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */,
 				93EE40101DB9C3490061A53E /* AppDelegate.swift in Sources */,
 				937249401DBBA1A700A6DA71 /* ResetPasswordViewController.swift in Sources */,
 				9346F98B1DBA676F003D94BA /* MapViewController.swift in Sources */,
+				93FA0E5E1DBEE04600ADD2FC /* HelpingTableViewController.swift in Sources */,
+				9398DB1A1DBD625A005D3734 /* SightedViewController.swift in Sources */,
+				9398DB181DBD6246005D3734 /* BlindViewController.swift in Sources */,
 				9346F9891DBA638D003D94BA /* HomePageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,23 +1,25 @@
+//
+//  findblindViewController.swift
+//  PocketVision
+//
+//  Created by JIANGYU  😈 on 2016/10/25.
+//
+//
+
 import UIKit
 import MapKit
-import CoreLocation
 import Firebase
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
-    // MARK: Properties
+class findblindViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
     
-    @IBOutlet weak var currentLocation: MKMapView!
+    @IBOutlet weak var currentlocation: MKMapView!
     
     let locationManager = CLLocationManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if CLLocationManager.locationServicesEnabled() {
-            
-            // Triggering Request for Location Services
-            //self.locationManager.requestWhenInUseAuthorization()
             
             switch(CLLocationManager.authorizationStatus()) {
             case .notDetermined:
@@ -40,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 self.locationManager.startUpdatingLocation()
                 
-                self.currentLocation.showsUserLocation = true
+                self.currentlocation.showsUserLocation = true
                 
                 // Create database reference
                 
@@ -81,39 +83,41 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 }
                 
                 // Retrieve location from database
-    /*
-                ref.child("users").child(userID!).child("location").observe(.value, with: { (snapshot) in
-                    // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    let latitude = value?["latitude"] as! Double
-                    let longitude = value?["longitude"] as! Double
-                    
-                    // Plot locaiton on map
-                    
-                    let location = CLLocationCoordinate2DMake(latitude, longitude)
-                    
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = location
-                    annotation.title = "Test location"
-                    
-                    self.currentLocation.addAnnotation(annotation)
-                    
-                    
-                }) { (error) in
-                    print(error.localizedDescription)
-                }
-                */
+                /*
+                 ref.child("users").child(userID!).child("location").observe(.value, with: { (snapshot) in
+                 // Get user value
+                 let value = snapshot.value as? NSDictionary
+                 let latitude = value?["latitude"] as! Double
+                 let longitude = value?["longitude"] as! Double
+                 
+                 // Plot locaiton on map
+                 
+                 let location = CLLocationCoordinate2DMake(latitude, longitude)
+                 
+                 let annotation = MKPointAnnotation()
+                 annotation.coordinate = location
+                 annotation.title = "Test location"
+                 
+                 self.currentLocation.addAnnotation(annotation)
+                 
+                 
+                 }) { (error) in
+                 print(error.localizedDescription)
+                 }
+                 */
                 
             }
         } else {
             print("Location services are not enabled")
             
-                    // Prompt user to turn location service
-                    /*let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)*/
+            // Prompt user to turn location service
+            /*let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+             self.present(alert, animated: true, completion: nil)*/
         }
+
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -127,7 +131,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
-        self.currentLocation.setRegion(region, animated: true)
+        self.currentlocation.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
         
@@ -137,20 +141,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         print("Errors: " + error.localizedDescription)
     }
     
-    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func cancelAction(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

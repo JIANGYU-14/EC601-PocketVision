@@ -11,79 +11,52 @@ class HomePageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.perform(Selector:"navigatetobelongedpage", with: nil, afterDelay: 5.0)
+        var timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: Selector("navigatetobelongedpage"), userInfo: nil, repeats: false)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
+    func navigatetobelongedpage(){
         // Check if user has already signed in
-        
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if let user = user {
-                // User is signed in.
-
-                // Retrieve from database
                 
+                // User is signed in.
+                print("User already Logged in")
+                
+                // Retrieve from database
                 let ref = FIRDatabase.database().reference()
                 
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
-                ref.child("users").child(userID!).observe(.value, with: { (snapshot) in
+                ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
                     // Get user value
                     let value = snapshot.value as? NSDictionary
-                    let firstname = value?["firstname"] as? String
                     let userType = value?["user_type"] as? String
                     
-                    // Replace default labels
-                    
-                    self.nameLabel.text = firstname
-                    self.userTypeLabel.text = userType
- 
-                    
+                    //Navigate to corresponds page, i.e. Blind Page or Sighted Page
+                    if userType == "Blind"
+                    {
+                        self.performSegue(withIdentifier: "blindpage", sender: self)
+                        print("Navigate to blind page")
+                    }
+                    else
+                    {
+                        self.performSegue(withIdentifier: "sightedpage", sender: self)
+                        print("Navigate to sighted page")
+                    }
                 }) { (error) in
                     print(error.localizedDescription)
+                    print("Check Internet Connection!!!")
                 }
-
-                
             } else {
+                
                 // No user is signed in.
-                
                 self.performSegue(withIdentifier: "loginView", sender: self)
-                
             }
         }
-        
-        
-        
     }
-    
-    
-    // MARK: Actions
-    
-    @IBAction func logoutAction(_ sender: AnyObject) {
-        
-        let logOutAlert = UIAlertController(title: "Logout", message: "Are you sure you want to log out?", preferredStyle: .alert)
-        
-        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {
-            action in
-            try! FIRAuth.auth()?.signOut()
-        })
-        logOutAlert.addAction(yesAction)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
-            action in self.dismiss(animated: true, completion: nil)})
-        logOutAlert.addAction(cancelAction)
-        
-        self.present(logOutAlert, animated: true, completion: nil)
-        
-    }
-    
-    
-
 }
