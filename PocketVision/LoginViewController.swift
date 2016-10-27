@@ -45,11 +45,7 @@ class LoginViewController: UIViewController {
                     let alertFail = UIAlertController(title: "Alert", message:
                         error.localizedDescription, preferredStyle: .alert)
                     
-                    let okAction = UIAlertAction(title: "Ok", style: .default) {
-                        
-                        (Action) in print("Ok button tapped")
-                        
-                    }
+                    let okAction = UIAlertAction(title: "Ok", style: .default)
                     
                     alertFail.addAction(okAction)
                     
@@ -69,20 +65,20 @@ class LoginViewController: UIViewController {
                         let value = snapshot.value as? NSDictionary
                         let userType = value?["user_type"] as? String
                         
-                        //Navigate to corresponds page, i.e. Blind Page or Sighted Page
+                        //Navigate to appropriate page depending on user type (Blind or Sighted)
                         if userType == "Blind"
                         {
-                            self.performSegue(withIdentifier: "logintoblind", sender: self)
-                            print("Navigate to blind page")
+                            self.performSegue(withIdentifier: "loginToBlind", sender: self)
+                            print("Navigated to blind user page")
                         }
                         else
                         {
-                            self.performSegue(withIdentifier: "logintosighted", sender: self)
-                            print("Navigate to sighted page")
+                            self.performSegue(withIdentifier: "loginToSighted", sender: self)
+                            print("Navigated to sighted user page")
                         }
                     }) { (error) in
                         print(error.localizedDescription)
-                        print("Check Internet Connection!!!")
+                        print("Check Internet connection!!!")
                     }
 
                 }

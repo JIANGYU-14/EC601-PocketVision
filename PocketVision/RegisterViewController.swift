@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func createaccountAction(_ sender: AnyObject) {
+    @IBAction func createAccountAction(_ sender: AnyObject) {
         let firstname = self.firstnameTextField.text
         let email = self.emailTextField.text
         let password = self.passwordTextField.text
@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
                     
                     let ref = FIRDatabase.database().reference()
                     
-                    // Store first name in database
+                    // Store first name and user type in database
                     
                     let firstname : [String : String] = ["firstname" : self.firstnameTextField.text!]
                     
@@ -45,22 +45,12 @@ class RegisterViewController: UIViewController {
                     {
                     case 0:
                         ref.child("BlindUser").child(user!.uid).setValue(firstname)
-                    case 1:
-                        ref.child("SightedUser").child(user!.uid).setValue(firstname)
-                    default:
-                        break;
-                    }
-                    
-                    // Store user type in database
-                    
-                    switch self.segmentControl.selectedSegmentIndex
-                    {
-                    case 0:
                         ref.child("BlindUser").child(user!.uid).child("user_type").setValue("Blind")
                     case 1:
-                        ref.child("SightedUser").child(user!.uid).child("user_type").setValue("Sighted")
-                    default: 
-                        break; 
+                        ref.child("SightedUser").child(user!.uid).setValue(firstname)
+                        ref.child("SightedUser").child(user!.uid).child("user_type").setValue("Sigted")
+                    default:
+                        break;
                     }
                     
                     // Sign out and navigate to login page
@@ -69,7 +59,7 @@ class RegisterViewController: UIViewController {
                     
                     let congrats = UIAlertController(title: "Congratulations!", message: "You have successfully signed up!", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Ok", style: .cancel, handler: {
-                    action in
+                        action in
                         self.dismiss(animated: true, completion: nil)
                     })
                     congrats.addAction(action)
@@ -92,21 +82,10 @@ class RegisterViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
+
     
     @IBAction func cancelRegistration(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

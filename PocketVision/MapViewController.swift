@@ -16,21 +16,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         if CLLocationManager.locationServicesEnabled() {
             
-            // Triggering Request for Location Services
-            //self.locationManager.requestWhenInUseAuthorization()
-            
             switch(CLLocationManager.authorizationStatus()) {
             case .notDetermined:
                 print("No access")
             case .denied:
-                print("User turned off the location service for PocketVision")
-                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on the location service for Pocket Vision", preferredStyle: .alert)
+                print("Location services turned off for PocketVision")
+                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on location services in order to use PocketVision", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             case .restricted:
-                print("")
+                print("No access")
             case .authorizedAlways, .authorizedWhenInUse:
-                print("Access")
+                print("Access granted")
                 
                 self.locationManager.delegate = self
                 
@@ -77,7 +74,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     }
                 }) { (error) in
                     print(error.localizedDescription)
-                    print("Check Internet Connection!!!")
+                    print("Check Internet connection!!!")
                 }
                 
                 // Retrieve location from database

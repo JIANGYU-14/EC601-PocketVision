@@ -1,11 +1,3 @@
-//
-//  SightedViewController.swift
-//  PocketVision
-//
-//  Created by JIANGYU  😈 on 2016/10/23.
-//
-//
-
 import UIKit
 import Firebase
 import MapKit
@@ -28,7 +20,9 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
+        
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid

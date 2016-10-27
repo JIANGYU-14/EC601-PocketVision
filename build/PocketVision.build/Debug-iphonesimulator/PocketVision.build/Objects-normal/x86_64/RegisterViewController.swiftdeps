@@ -6,32 +6,32 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision22RegisterViewController", ""]
 provides-dynamic-lookup:
+- "emailTextField"
+- "didReceiveMemoryWarning"
 - "segmentControl"
 - "firstnameTextField"
-- "passwordTextField"
-- "cancelRegistration"
-- "didReceiveMemoryWarning"
+- "createAccountAction"
 - "viewDidLoad"
-- "createaccountAction"
-- "emailTextField"
+- "cancelRegistration"
+- "passwordTextField"
 depends-top-level:
-- !private "=="
-- !private "~="
-- "UISegmentedControl"
-- "UIViewController"
-- !private "String"
 - !private "UIAlertAction"
-- "AnyObject"
-- "RegisterViewController"
-- !private "StringLiteralType"
 - !private "FIRAuth"
-- !private "&&"
-- !private "UIAlertController"
-- "BooleanLiteralType"
+- "UISegmentedControl"
+- "RegisterViewController"
 - !private "FIRDatabase"
-- "Dictionary"
-- !private "!="
 - "UITextField"
+- !private "~="
+- !private "=="
+- !private "UIAlertController"
+- !private "String"
+- !private "&&"
+- !private "StringLiteralType"
+- !private "!="
+- "BooleanLiteralType"
+- "Dictionary"
+- "UIViewController"
+- "AnyObject"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
@@ -41,8 +41,8 @@ depends-member:
 - !private ["Ps9AnyObject", "auth"]
 - ["Ps9AnyObject", "cancelRegistration"]
 - !private ["Ps9AnyObject", "child"]
+- ["Ps9AnyObject", "createAccountAction"]
 - !private ["Ps9AnyObject", "createUser"]
-- ["Ps9AnyObject", "createaccountAction"]
 - !private ["Ps9AnyObject", "database"]
 - ["Ps9AnyObject", "didReceiveMemoryWarning"]
 - !private ["Ps9AnyObject", "dismiss"]
@@ -76,8 +76,8 @@ depends-member:
 - !private ["Ps7CVarArg", "auth"]
 - ["Ps7CVarArg", "cancelRegistration"]
 - !private ["Ps7CVarArg", "child"]
+- ["Ps7CVarArg", "createAccountAction"]
 - !private ["Ps7CVarArg", "createUser"]
-- ["Ps7CVarArg", "createaccountAction"]
 - !private ["Ps7CVarArg", "database"]
 - ["Ps7CVarArg", "didReceiveMemoryWarning"]
 - !private ["Ps7CVarArg", "dismiss"]
@@ -112,8 +112,8 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "auth"]
 - ["Ps28CustomDebugStringConvertible", "cancelRegistration"]
 - !private ["Ps28CustomDebugStringConvertible", "child"]
+- ["Ps28CustomDebugStringConvertible", "createAccountAction"]
 - !private ["Ps28CustomDebugStringConvertible", "createUser"]
-- ["Ps28CustomDebugStringConvertible", "createaccountAction"]
 - !private ["Ps28CustomDebugStringConvertible", "database"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
 - !private ["Ps28CustomDebugStringConvertible", "dismiss"]
@@ -151,8 +151,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "auth"]
 - ["Ps23CustomStringConvertible", "cancelRegistration"]
 - !private ["Ps23CustomStringConvertible", "child"]
+- ["Ps23CustomStringConvertible", "createAccountAction"]
 - !private ["Ps23CustomStringConvertible", "createUser"]
-- ["Ps23CustomStringConvertible", "createaccountAction"]
 - !private ["Ps23CustomStringConvertible", "database"]
 - ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
 - !private ["Ps23CustomStringConvertible", "dismiss"]
@@ -185,8 +185,8 @@ depends-member:
 - !private ["Ps9Equatable", "cancel"]
 - ["Ps9Equatable", "cancelRegistration"]
 - !private ["Ps9Equatable", "child"]
+- ["Ps9Equatable", "createAccountAction"]
 - !private ["Ps9Equatable", "createUser"]
-- ["Ps9Equatable", "createaccountAction"]
 - !private ["Ps9Equatable", "database"]
 - ["Ps9Equatable", "didReceiveMemoryWarning"]
 - !private ["Ps9Equatable", "dismiss"]
@@ -241,8 +241,8 @@ depends-member:
 - !private ["Ps8Hashable", "cancel"]
 - ["Ps8Hashable", "cancelRegistration"]
 - !private ["Ps8Hashable", "child"]
+- ["Ps8Hashable", "createAccountAction"]
 - !private ["Ps8Hashable", "createUser"]
-- ["Ps8Hashable", "createaccountAction"]
 - !private ["Ps8Hashable", "database"]
 - ["Ps8Hashable", "didReceiveMemoryWarning"]
 - !private ["Ps8Hashable", "dismiss"]
@@ -280,7 +280,7 @@ depends-member:
 - !private ["PSo8NSCoding", "UIAlertController"]
 - !private ["PSo8NSCoding", "addAction"]
 - ["PSo8NSCoding", "cancelRegistration"]
-- ["PSo8NSCoding", "createaccountAction"]
+- ["PSo8NSCoding", "createAccountAction"]
 - ["PSo8NSCoding", "didReceiveMemoryWarning"]
 - !private ["PSo8NSCoding", "dismiss"]
 - ["PSo8NSCoding", "emailTextField"]
@@ -300,7 +300,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertController"]
 - !private ["PSo26NSExtensionRequestHandling", "addAction"]
 - ["PSo26NSExtensionRequestHandling", "cancelRegistration"]
-- ["PSo26NSExtensionRequestHandling", "createaccountAction"]
+- ["PSo26NSExtensionRequestHandling", "createAccountAction"]
 - ["PSo26NSExtensionRequestHandling", "didReceiveMemoryWarning"]
 - !private ["PSo26NSExtensionRequestHandling", "dismiss"]
 - ["PSo26NSExtensionRequestHandling", "emailTextField"]
@@ -324,8 +324,8 @@ depends-member:
 - !private ["CSo8NSObject", "auth"]
 - ["CSo8NSObject", "cancelRegistration"]
 - !private ["CSo8NSObject", "child"]
+- ["CSo8NSObject", "createAccountAction"]
 - !private ["CSo8NSObject", "createUser"]
-- ["CSo8NSObject", "createaccountAction"]
 - !private ["CSo8NSObject", "database"]
 - ["CSo8NSObject", "didReceiveMemoryWarning"]
 - !private ["CSo8NSObject", "dismiss"]
@@ -350,8 +350,8 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "auth"]
 - ["PSo16NSObjectProtocol", "cancelRegistration"]
 - !private ["PSo16NSObjectProtocol", "child"]
+- ["PSo16NSObjectProtocol", "createAccountAction"]
 - !private ["PSo16NSObjectProtocol", "createUser"]
-- ["PSo16NSObjectProtocol", "createaccountAction"]
 - !private ["PSo16NSObjectProtocol", "database"]
 - ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
 - !private ["PSo16NSObjectProtocol", "dismiss"]
@@ -384,7 +384,7 @@ depends-member:
 - ["C12PocketVision22RegisterViewController", "UISegmentedControl"]
 - ["C12PocketVision22RegisterViewController", "UITextField"]
 - ["C12PocketVision22RegisterViewController", "cancelRegistration"]
-- ["C12PocketVision22RegisterViewController", "createaccountAction"]
+- ["C12PocketVision22RegisterViewController", "createAccountAction"]
 - ["C12PocketVision22RegisterViewController", "deinit"]
 - ["C12PocketVision22RegisterViewController", "didReceiveMemoryWarning"]
 - !private ["C12PocketVision22RegisterViewController", "dismiss"]
@@ -423,7 +423,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
 - ["PSo21UIAppearanceContainer", "cancelRegistration"]
-- ["PSo21UIAppearanceContainer", "createaccountAction"]
+- ["PSo21UIAppearanceContainer", "createAccountAction"]
 - ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
 - !private ["PSo21UIAppearanceContainer", "dismiss"]
 - ["PSo21UIAppearanceContainer", "emailTextField"]
@@ -442,7 +442,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "UIAlertController"]
 - !private ["PSo18UIContentContainer", "addAction"]
 - ["PSo18UIContentContainer", "cancelRegistration"]
-- ["PSo18UIContentContainer", "createaccountAction"]
+- ["PSo18UIContentContainer", "createAccountAction"]
 - ["PSo18UIContentContainer", "didReceiveMemoryWarning"]
 - !private ["PSo18UIContentContainer", "dismiss"]
 - ["PSo18UIContentContainer", "emailTextField"]
@@ -466,7 +466,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
 - ["PSo18UIFocusEnvironment", "cancelRegistration"]
-- ["PSo18UIFocusEnvironment", "createaccountAction"]
+- ["PSo18UIFocusEnvironment", "createAccountAction"]
 - ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
 - !private ["PSo18UIFocusEnvironment", "dismiss"]
 - ["PSo18UIFocusEnvironment", "emailTextField"]
@@ -492,7 +492,7 @@ depends-member:
 - ["CSo11UIResponder", "UITextField"]
 - !private ["CSo11UIResponder", "addAction"]
 - ["CSo11UIResponder", "cancelRegistration"]
-- ["CSo11UIResponder", "createaccountAction"]
+- ["CSo11UIResponder", "createAccountAction"]
 - ["CSo11UIResponder", "didReceiveMemoryWarning"]
 - !private ["CSo11UIResponder", "dismiss"]
 - ["CSo11UIResponder", "emailTextField"]
@@ -510,7 +510,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertController"]
 - !private ["PSo30UIResponderStandardEditActions", "addAction"]
 - ["PSo30UIResponderStandardEditActions", "cancelRegistration"]
-- ["PSo30UIResponderStandardEditActions", "createaccountAction"]
+- ["PSo30UIResponderStandardEditActions", "createAccountAction"]
 - ["PSo30UIResponderStandardEditActions", "didReceiveMemoryWarning"]
 - !private ["PSo30UIResponderStandardEditActions", "dismiss"]
 - ["PSo30UIResponderStandardEditActions", "emailTextField"]
@@ -530,7 +530,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "UIAlertController"]
 - !private ["PSo16UIStateRestoring", "addAction"]
 - ["PSo16UIStateRestoring", "cancelRegistration"]
-- ["PSo16UIStateRestoring", "createaccountAction"]
+- ["PSo16UIStateRestoring", "createAccountAction"]
 - ["PSo16UIStateRestoring", "didReceiveMemoryWarning"]
 - !private ["PSo16UIStateRestoring", "dismiss"]
 - ["PSo16UIStateRestoring", "emailTextField"]
@@ -550,7 +550,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UIAlertController"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
 - ["PSo18UITraitEnvironment", "cancelRegistration"]
-- ["PSo18UITraitEnvironment", "createaccountAction"]
+- ["PSo18UITraitEnvironment", "createAccountAction"]
 - ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
 - !private ["PSo18UITraitEnvironment", "dismiss"]
 - ["PSo18UITraitEnvironment", "emailTextField"]
@@ -575,7 +575,7 @@ depends-member:
 - ["CSo16UIViewController", "UITextField"]
 - !private ["CSo16UIViewController", "addAction"]
 - ["CSo16UIViewController", "cancelRegistration"]
-- ["CSo16UIViewController", "createaccountAction"]
+- ["CSo16UIViewController", "createAccountAction"]
 - ["CSo16UIViewController", "deinit"]
 - ["CSo16UIViewController", "didReceiveMemoryWarning"]
 - !private ["CSo16UIViewController", "dismiss"]
@@ -608,8 +608,8 @@ depends-member:
 - !private ["Ps9_Hashable", "cancel"]
 - ["Ps9_Hashable", "cancelRegistration"]
 - !private ["Ps9_Hashable", "child"]
+- ["Ps9_Hashable", "createAccountAction"]
 - !private ["Ps9_Hashable", "createUser"]
-- ["Ps9_Hashable", "createaccountAction"]
 - !private ["Ps9_Hashable", "database"]
 - ["Ps9_Hashable", "didReceiveMemoryWarning"]
 - !private ["Ps9_Hashable", "dismiss"]
@@ -795,4 +795,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "b92af2004c9a321d3489deaf7c278d5b"
+interface-hash: "10b224e53414c34ba42d62c03c0b3499"

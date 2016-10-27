@@ -1,23 +1,25 @@
-//
-//  findblindViewController.swift
-//  PocketVision
-//
-//  Created by JIANGYU  😈 on 2016/10/25.
-//
-//
-
 import UIKit
 import MapKit
 import Firebase
 
-class findblindViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
+class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    // MARK: Properties
     
     @IBOutlet weak var currentlocation: MKMapView!
     
+    var person: Request!
+
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let person = person {
+            print(person.requester)
+        }
+        
+        
 
         if CLLocationManager.locationServicesEnabled() {
             
@@ -25,14 +27,14 @@ class findblindViewController: UIViewController, MKMapViewDelegate, CLLocationMa
             case .notDetermined:
                 print("No access")
             case .denied:
-                print("User turned off the location service for PocketVision")
-                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on the location service for Pocket Vision", preferredStyle: .alert)
+                print("User turned off the location services for PocketVision")
+                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on location services in order to use Pocket Vision", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             case .restricted:
-                print("")
+                print("No access")
             case .authorizedAlways, .authorizedWhenInUse:
-                print("Access")
+                print("Access granted")
                 
                 self.locationManager.delegate = self
                 
@@ -50,33 +52,20 @@ class findblindViewController: UIViewController, MKMapViewDelegate, CLLocationMa
                 
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
-                // Check BlindUser or SightedUser
+                // The user must be Sighted
                 
-                ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
+                ref.child("SightedUser").child(userID!).observe(.value, with: { (snapshot) in
                     
                     // Get user value
                     let value = snapshot.value as? NSDictionary
-                    let userType = value?["user_type"] as? String
+
+                    // Store location for SightedUser in database
+                        
+                    let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
+                                    "longitude" : self.locationManager.location!.coordinate.longitude]
+                        
+                    ref.child("SightedUser").child(userID!).child("location").setValue(location)
                     
-                    // Get user type
-                    if userType == "Blind"
-                    {
-                        // Store location for BlindUser in database
-                        
-                        let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
-                                        "longitude" : self.locationManager.location!.coordinate.longitude]
-                        
-                        ref.child("BlindUser").child(userID!).child("location").setValue(location)
-                    }
-                    else
-                    {
-                        // Store location for SightedUser in database
-                        
-                        let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
-                                        "longitude" : self.locationManager.location!.coordinate.longitude]
-                        
-                        ref.child("SightedUser").child(userID!).child("location").setValue(location)
-                    }
                 }) { (error) in
                     print(error.localizedDescription)
                     print("Check Internet Connection!!!")
