@@ -77,29 +77,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     print("Check Internet connection!!!")
                 }
                 
-                // Retrieve location from database
-    /*
-                ref.child("users").child(userID!).child("location").observe(.value, with: { (snapshot) in
-                    // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    let latitude = value?["latitude"] as! Double
-                    let longitude = value?["longitude"] as! Double
-                    
-                    // Plot locaiton on map
-                    
-                    let location = CLLocationCoordinate2DMake(latitude, longitude)
-                    
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = location
-                    annotation.title = "Test location"
-                    
-                    self.currentLocation.addAnnotation(annotation)
-                    
-                    
-                }) { (error) in
-                    print(error.localizedDescription)
-                }
-                */
                 
             }
         } else {

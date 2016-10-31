@@ -6,22 +6,22 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision18LoadPageController", ""]
 provides-dynamic-lookup:
-- "viewDidLoad"
 - "navigateToBelongedPage"
 - "didReceiveMemoryWarning"
+- "viewDidLoad"
 depends-top-level:
-- !private "String"
-- !private "Timer"
-- !private "FIRDatabase"
-- "UIViewController"
-- !private "=="
-- !private "CastingPrecedence"
-- !private "FIRAuth"
-- "StringLiteralType"
-- !private "NSDictionary"
 - !private "print"
-- !private "BooleanLiteralType"
+- !private "FIRDatabase"
+- !private "String"
+- !private "CastingPrecedence"
+- !private "=="
 - "LoadPageController"
+- "StringLiteralType"
+- "UIViewController"
+- !private "Timer"
+- !private "BooleanLiteralType"
+- !private "FIRAuth"
+- !private "NSDictionary"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]

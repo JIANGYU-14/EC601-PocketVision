@@ -10,10 +10,10 @@ provides-dynamic-lookup:
 - "setSelected"
 - "requesterName"
 depends-top-level:
-- "UITableViewCell"
-- "RequestTableViewCell"
-- "Bool"
 - "UILabel"
+- "UITableViewCell"
+- "Bool"
+- "RequestTableViewCell"
 depends-member:
 - ["Ps9AnyObject", "awakeFromNib"]
 - !private ["Ps9AnyObject", "init"]
