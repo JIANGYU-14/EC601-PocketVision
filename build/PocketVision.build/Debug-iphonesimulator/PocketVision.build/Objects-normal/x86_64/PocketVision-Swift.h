@@ -111,8 +111,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
-@import MapKit;
 @import CoreLocation;
+@import Foundation;
+@import MapKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -132,18 +133,47 @@ SWIFT_CLASS("_TtC12PocketVision11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class CLLocationManager;
 @class UILabel;
 @class NSBundle;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC12PocketVision18HomePageController")
-@interface HomePageController : UIViewController
+SWIFT_CLASS("_TtC12PocketVision19BlindViewController")
+@interface BlindViewController : UIViewController <CLLocationManagerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userTypeLabel;
+@property (nonatomic, readonly, strong) CLLocationManager * _Nonnull requestlocation;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidAppear:(BOOL)animated;
 - (IBAction)logoutAction:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class UITableViewCell;
+@class UIStoryboardSegue;
+
+SWIFT_CLASS("_TtC12PocketVision26HelpingTableViewController")
+@interface HelpingTableViewController : UITableViewController
+- (void)viewDidLoad;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (IBAction)cancelAction:(id _Nonnull)sender;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12PocketVision18LoadPageController")
+@interface LoadPageController : UIViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)navigateToBelongedPage;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -161,7 +191,6 @@ SWIFT_CLASS("_TtC12PocketVision19LoginViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class CLLocationManager;
 @class CLLocation;
 @class UIBarButtonItem;
 @class MKMapView;
@@ -189,9 +218,19 @@ SWIFT_CLASS("_TtC12PocketVision22RegisterViewController")
 @property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified segmentControl;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-- (IBAction)createaccountAction:(id _Nonnull)sender;
+- (IBAction)createAccountAction:(id _Nonnull)sender;
 - (IBAction)cancelRegistration:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12PocketVision20RequestTableViewCell")
+@interface RequestTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified requesterName;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -203,6 +242,34 @@ SWIFT_CLASS("_TtC12PocketVision27ResetPasswordViewController")
 - (void)didReceiveMemoryWarning;
 - (IBAction)resetPasswordAction:(id _Nonnull)sender;
 - (IBAction)canelReset:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12PocketVision21SightedViewController")
+@interface SightedViewController : UIViewController <CLLocationManagerDelegate>
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userTypeLabel;
+@property (nonatomic, readonly, strong) CLLocationManager * _Nonnull requestlocation;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)viewDidAppear:(BOOL)animated;
+- (IBAction)logoutAction:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12PocketVision25locateBlindViewController")
+@interface locateBlindViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified currentLocation;
+@property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+- (IBAction)cancelAction:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
