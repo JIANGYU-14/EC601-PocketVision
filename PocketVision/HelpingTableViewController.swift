@@ -1,18 +1,6 @@
 import UIKit
 import Firebase
 
-// Create data structure
-/*
-struct blindFirstnames {
-    let firstname: String!
-}
-
-struct blindLocation {
-    let latitude: Double!
-    let longitude: Double!
-}
- */
-
 class HelpingTableViewController: UITableViewController {
     
     // List cells in table section
@@ -22,9 +10,6 @@ class HelpingTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
         
         // Retrieve from database
         
@@ -36,14 +21,16 @@ class HelpingTableViewController: UITableViewController {
             // Get user value
             let value = snapshot.value as? NSDictionary
             let firstname = value?["firstname"] as? String
-
-            /*
-            // Insert user value into data structure
-            self.requests.insert(blindFirstnames(firstname: firstname), at: 0)
-            self.tableView.reloadData()
-            */
+            let location = value?["location"] as? NSDictionary
+            let latitude = location?["latitude"] as? Double
+            let longitude = location?["longitude"] as? Double
             
-            self.requests.insert(Request(requester: firstname!)!, at: 0)
+            // Do not load data into cell if location does not exist
+            if location != nil {
+                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
+                self.tableView.reloadData()
+                
+            }
             
             
         })
@@ -51,27 +38,6 @@ class HelpingTableViewController: UITableViewController {
             (error) in
             print(error.localizedDescription)
         }
-        
-        /*
-        // Retrieve from database for location
-        
-        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
-            snapshot in
-            
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            let location = value?["location"] as? [Double:Double]
-            
-            // Insert user value into data structure
-            self.requestLocation.insert(blindLocation(latitude: location![0], longitude: location![1]), at: 0)
-            })
-        {
-            (error) in
-            print(error.localizedDescription)
-        }
- 
- */
-
  
     }
  
@@ -100,19 +66,6 @@ class HelpingTableViewController: UITableViewController {
         return requests.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Load data into cell
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-
-        let label = cell?.viewWithTag(1) as! UILabel
-        label.text = requests[indexPath.row].firstname
-        
-        
-        return cell!
-    }
- */
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -182,8 +135,10 @@ class HelpingTableViewController: UITableViewController {
             // Get the cell that generated this segue.
             if let selectedRequestCell = sender as? RequestTableViewCell {
                 let indexPath = tableView.indexPath(for: selectedRequestCell)!
+                
                 let selectedPerson = requests[indexPath.row]
                 locateBlindVC.person = selectedPerson
+
             }
 
     }

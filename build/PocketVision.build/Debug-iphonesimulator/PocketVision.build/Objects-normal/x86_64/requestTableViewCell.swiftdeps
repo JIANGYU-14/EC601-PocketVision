@@ -7,12 +7,12 @@ provides-member:
 - ["C12PocketVision20RequestTableViewCell", ""]
 provides-dynamic-lookup:
 - "awakeFromNib"
-- "requesterName"
 - "setSelected"
+- "requesterName"
 depends-top-level:
 - "UITableViewCell"
-- "Bool"
 - "RequestTableViewCell"
+- "Bool"
 - "UILabel"
 depends-member:
 - ["Ps9AnyObject", "awakeFromNib"]

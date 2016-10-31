@@ -6,7 +6,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
     
     // MARK: Properties
     
-    @IBOutlet weak var currentlocation: MKMapView!
+    @IBOutlet weak var currentLocation: MKMapView!
     
     var person: Request!
 
@@ -15,10 +15,11 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let person = person {
-            print(person.requester)
-        }
         
+        var needHelp = person.requester
+        var helpLatitude = person.latitude
+        var helpLongitude = person.longitude
+
         
 
         if CLLocationManager.locationServicesEnabled() {
@@ -44,7 +45,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 
                 self.locationManager.startUpdatingLocation()
                 
-                self.currentlocation.showsUserLocation = true
+                self.currentLocation.showsUserLocation = true
                 
                 // Create database reference
                 
@@ -71,31 +72,23 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                     print("Check Internet Connection!!!")
                 }
                 
-                // Retrieve location from database
-                /*
-                 ref.child("users").child(userID!).child("location").observe(.value, with: { (snapshot) in
-                 // Get user value
-                 let value = snapshot.value as? NSDictionary
-                 let latitude = value?["latitude"] as! Double
-                 let longitude = value?["longitude"] as! Double
+
                  
-                 // Plot locaiton on map
+                 // Plot blind user locaiton on map
                  
-                 let location = CLLocationCoordinate2DMake(latitude, longitude)
+                 let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
                  
                  let annotation = MKPointAnnotation()
                  annotation.coordinate = location
-                 annotation.title = "Test location"
+                 annotation.title = needHelp
                  
                  self.currentLocation.addAnnotation(annotation)
                  
                  
-                 }) { (error) in
-                 print(error.localizedDescription)
                  }
-                 */
+            
                 
-            }
+            
         } else {
             print("Location services are not enabled")
             
@@ -120,7 +113,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
-        self.currentlocation.setRegion(region, animated: true)
+        self.currentLocation.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
         

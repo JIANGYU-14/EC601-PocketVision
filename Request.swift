@@ -13,16 +13,21 @@ class Request {
     // MARK: Properties
     
     var requester: String
+    var latitude: Double
+    var longitude: Double
     
     // MARK: Initialization
     
-    init?(requester: String) {
+    init?(requester: String, latitude: Double, longitude: Double) {
         // Initialize stored properties.
         self.requester = requester
+        self.latitude = latitude
+        self.longitude = longitude
         
-        // Initialization should fail if there is no name or if the rating is negative.
+        // Initialization should fail if there is no name
         if requester.isEmpty {
             return nil
         }
 }
+    
 }

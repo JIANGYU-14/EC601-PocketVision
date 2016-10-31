@@ -7,11 +7,14 @@ provides-member:
 - ["C12PocketVision7Request", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "Request"
 - "String"
 - "AssignmentPrecedence"
-- "Request"
+- "Double"
 depends-member:
 - !private ["Ps9AnyObject", "isEmpty"]
+- !private ["Ps9AnyObject", "latitude"]
+- !private ["Ps9AnyObject", "longitude"]
 - !private ["Ps9AnyObject", "requester"]
 - ["Ps9AnyObject", ""]
 - !private ["Sb", "_getBuiltinLogicValue"]
@@ -25,6 +28,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "isEmpty"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "isEmpty"]
+- ["Sd", "deinit"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "isEmpty"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
@@ -44,9 +48,12 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "isEmpty"]
 - !private ["PSo14NSSecureCoding", "isEmpty"]
 - !private ["CSo8NSString", "isEmpty"]
+- ["C12PocketVision7Request", "Double"]
 - ["C12PocketVision7Request", "String"]
 - ["C12PocketVision7Request", "deinit"]
 - ["C12PocketVision7Request", "init"]
+- ["C12PocketVision7Request", "latitude"]
+- ["C12PocketVision7Request", "longitude"]
 - ["C12PocketVision7Request", "requester"]
 - ["SS", "deinit"]
 - !private ["SS", "isEmpty"]
@@ -71,6 +78,7 @@ depends-nominal:
 - !private "Ps29CustomPlaygroundQuickLookable"
 - !private "Ps17CustomReflectable"
 - !private "Ps23CustomStringConvertible"
+- "Sd"
 - !private "Ps9Equatable"
 - !private "Ps27ExpressibleByBooleanLiteral"
 - !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
@@ -155,4 +163,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "d2b77d158dd52d4f2ac2475f653ae19e"
+interface-hash: "db17d63f0d6a627ed805091319248137"

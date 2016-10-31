@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PocketVision/HelpingTableViewController.swift"
-            timestampString = "499297475.656951"
+            timestampString = "499630487.875943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "4"
+            endingLineNumber = "4"
             landmarkName = "HelpingTableViewController"
             landmarkType = "3">
             <Locations>
@@ -166,27 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PocketVision/HelpingTableViewController.swift"
-            timestampString = "499301388.160591"
+            timestampString = "499630487.875943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PocketVision/HelpingTableViewController.swift"
-            timestampString = "499301388.160591"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
             <Locations>

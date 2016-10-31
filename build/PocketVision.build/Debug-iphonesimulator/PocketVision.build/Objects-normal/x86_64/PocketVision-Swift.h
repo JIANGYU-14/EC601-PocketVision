@@ -263,7 +263,7 @@ SWIFT_CLASS("_TtC12PocketVision21SightedViewController")
 
 SWIFT_CLASS("_TtC12PocketVision25locateBlindViewController")
 @interface locateBlindViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
-@property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified currentlocation;
+@property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified currentLocation;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
