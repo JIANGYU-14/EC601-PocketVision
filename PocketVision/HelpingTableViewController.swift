@@ -1,15 +1,41 @@
 import UIKit
+import CoreLocation
 import Firebase
 
-class HelpingTableViewController: UITableViewController {
+class HelpingTableViewController: UITableViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
     
     // List cells in table section
     var requests = [Request]()
-    
-    // var requestLocation = [blindLocation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined:
+                print("No access")
+            case .denied:
+                print("Location services turned off for PocketVision")
+                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on location services in order to use PocketVision", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            case .restricted:
+                print("No access")
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access granted")
+                
+                self.locationManager.delegate = self
+                
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                
+                self.locationManager.requestWhenInUseAuthorization()
+                
+                self.locationManager.startUpdatingLocation()
+            }
+        }
         
         // Retrieve from database
         
@@ -78,6 +104,13 @@ class HelpingTableViewController: UITableViewController {
         let request = requests[indexPath.row]
         
         cell.requesterName.text = request.requester
+        
+        let coordinateSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+        let coordinateBlind = CLLocation(latitude: request.latitude, longitude: request.longitude)
+        
+        let distanceInMeters = coordinateBlind.distance(from: coordinateSighted)
+        
+        cell.distanceAway.text = String(distanceInMeters) + " m"
         
         return cell
     }

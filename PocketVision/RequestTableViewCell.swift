@@ -13,6 +13,7 @@ class RequestTableViewCell: UITableViewCell {
     // MARK: Properties
 
     @IBOutlet weak var requesterName: UILabel!
+    @IBOutlet weak var distanceAway: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

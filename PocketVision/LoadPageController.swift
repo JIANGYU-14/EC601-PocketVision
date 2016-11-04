@@ -16,6 +16,12 @@ class LoadPageController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+    func navToLogin(){
+        self.performSegue(withIdentifier: "loginView", sender: self)
+    }
+ */
+    
     func navigateToBelongedPage(){
         
         // Check if user has already signed in

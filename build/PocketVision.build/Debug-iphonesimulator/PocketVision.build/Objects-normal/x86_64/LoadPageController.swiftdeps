@@ -10,18 +10,18 @@ provides-dynamic-lookup:
 - "didReceiveMemoryWarning"
 - "viewDidLoad"
 depends-top-level:
-- !private "print"
-- !private "FIRDatabase"
+- "StringLiteralType"
+- !private "NSDictionary"
 - !private "String"
+- !private "Timer"
+- !private "FIRAuth"
+- !private "BooleanLiteralType"
+- !private "FIRDatabase"
+- "UIViewController"
 - !private "CastingPrecedence"
 - !private "=="
+- !private "print"
 - "LoadPageController"
-- "StringLiteralType"
-- "UIViewController"
-- !private "Timer"
-- !private "BooleanLiteralType"
-- !private "FIRAuth"
-- !private "NSDictionary"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]

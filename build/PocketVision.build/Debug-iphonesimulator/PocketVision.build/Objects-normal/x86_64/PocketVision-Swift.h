@@ -156,7 +156,8 @@ SWIFT_CLASS("_TtC12PocketVision19BlindViewController")
 @class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC12PocketVision26HelpingTableViewController")
-@interface HelpingTableViewController : UITableViewController
+@interface HelpingTableViewController : UITableViewController <CLLocationManagerDelegate>
+@property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 - (void)viewDidLoad;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
@@ -228,6 +229,7 @@ SWIFT_CLASS("_TtC12PocketVision22RegisterViewController")
 SWIFT_CLASS("_TtC12PocketVision20RequestTableViewCell")
 @interface RequestTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified requesterName;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified distanceAway;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
