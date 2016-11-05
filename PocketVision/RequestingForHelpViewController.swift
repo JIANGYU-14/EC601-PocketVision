@@ -2,34 +2,21 @@ import UIKit
 import MapKit
 import Firebase
 
-class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    // MARK: Properties
-    
-    @IBOutlet weak var currentLocation: MKMapView!
-    
-    var person: Request!
-
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        var needHelp = person.requester
-        var helpLatitude = person.latitude
-        var helpLongitude = person.longitude
-
-        
-
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
             case .notDetermined:
                 print("No access")
             case .denied:
-                print("User turned off the location services for PocketVision")
-                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on location services in order to use Pocket Vision", preferredStyle: .alert)
+                print("Location services turned off for PocketVision")
+                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on location services in order to use PocketVision", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             case .restricted:
@@ -45,7 +32,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 
                 self.locationManager.startUpdatingLocation()
                 
-                self.currentLocation.showsUserLocation = true
+                // self.currentLocation.showsUserLocation = true
                 
                 // Create database reference
                 
@@ -53,42 +40,40 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
-                // The user must be Sighted
+                // Check BlindUser or SightedUser
                 
-                ref.child("SightedUser").child(userID!).observe(.value, with: { (snapshot) in
+                ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
                     
                     // Get user value
                     let value = snapshot.value as? NSDictionary
-
-                    // Store location for SightedUser in database
-                        
-                    let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
-                                    "longitude" : self.locationManager.location!.coordinate.longitude]
-                        
-                    ref.child("SightedUser").child(userID!).child("location").setValue(location)
+                    let userType = value?["user_type"] as? String
                     
+                    // Get user type
+                    if userType == "Blind"
+                    {
+                        // Store location for BlindUser in database
+                        
+                        let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
+                                        "longitude" : self.locationManager.location!.coordinate.longitude]
+                        
+                        ref.child("BlindUser").child(userID!).child("location").setValue(location)
+                    }
+                    else
+                    {
+                        // Store location for SightedUser in database
+                        
+                        let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
+                                        "longitude" : self.locationManager.location!.coordinate.longitude]
+                        
+                        ref.child("SightedUser").child(userID!).child("location").setValue(location)
+                    }
                 }) { (error) in
                     print(error.localizedDescription)
-                    print("Check Internet Connection!!!")
+                    print("Check Internet connection!!!")
                 }
                 
-
-                 
-                 // Plot blind user locaiton on map
-                 
-                 let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
-                 
-                 let annotation = MKPointAnnotation()
-                 annotation.coordinate = location
-                 annotation.title = needHelp
-                 
-                 self.currentLocation.addAnnotation(annotation)
-                 
-                 
-                 }
-            
                 
-            
+            }
         } else {
             print("Location services are not enabled")
             
@@ -98,11 +83,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
              self.present(alert, animated: true, completion: nil)
         }
 
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -113,7 +94,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
-        self.currentLocation.setRegion(region, animated: true)
+        // self.currentLocation.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
         
@@ -121,6 +102,11 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Errors: " + error.localizedDescription)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func cancelAction(_ sender: AnyObject) {

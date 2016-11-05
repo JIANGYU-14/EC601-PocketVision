@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zgk-QG-szc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zgk-QG-szc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -201,11 +201,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beq-g4-xIY">
-                                <frame key="frameInset" minX="88" minY="312" width="198" height="30"/>
+                                <frame key="frameInset" minX="139" minY="312" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Display My Current Location!"/>
+                                <state key="normal" title="Request Help!"/>
                                 <connections>
-                                    <segue destination="XJc-Cb-3hB" kind="presentation" id="x7v-6m-LAh"/>
+                                    <segue destination="Hic-3l-oTV" kind="presentation" id="E75-Xe-Rk3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -230,7 +230,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfG-wz-vDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1148" y="-1234"/>
+            <point key="canvasLocation" x="-1138" y="-1441"/>
+        </scene>
+        <!--Requesting For Help View Controller-->
+        <scene sceneID="iVw-AS-LgX">
+            <objects>
+                <viewController id="muh-Yv-KLB" customClass="RequestingForHelpViewController" customModule="PocketVision" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RPR-EL-T7t"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Oa-xf-c1L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E0L-My-iNR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requesting sent out, Please waiting for help!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMv-yL-96A">
+                                <frame key="frameInset" minX="17" minY="323" width="340" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xjD-Dl-POZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="jgH-NS-Gaa">
+                            <connections>
+                                <action selector="cancelAction:" destination="muh-Yv-KLB" id="dld-Og-2kD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P5P-C9-yHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="-1442"/>
         </scene>
         <!--Sighted View Controller-->
         <scene sceneID="cM9-Cj-j56">
@@ -375,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcW-wc-l7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1382" y="-1184"/>
+            <point key="canvasLocation" x="3260" y="-1185.1574212893554"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="6A0-wo-nh4">
@@ -477,7 +511,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHA-I8-Nyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="-1184"/>
+            <point key="canvasLocation" x="2479.1999999999998" y="-1185.1574212893554"/>
         </scene>
         <!--People Who Need Help-->
         <scene sceneID="zIe-IM-3Fx">
@@ -600,14 +634,31 @@
             </objects>
             <point key="canvasLocation" x="2228" y="-484"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B2l-RT-mfj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hic-3l-oTV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R5v-5T-2JK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="muh-Yv-KLB" kind="relationship" relationship="rootViewController" id="x9h-DH-7sx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lf3-5L-l19" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81" y="-1442"/>
+        </scene>
     </scenes>
     <resources>
         <image name="LaunchImage" width="621" height="1104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QuD-Ds-JLK"/>
-        <segue reference="lln-nb-6HQ"/>
         <segue reference="yax-ds-CZf"/>
-        <segue reference="3Vg-H5-7CV"/>
+        <segue reference="lln-nb-6HQ"/>
+        <segue reference="QuD-Ds-JLK"/>
     </inferredMetricsTieBreakers>
 </document>
