@@ -8,26 +8,28 @@ provides-member:
 provides-dynamic-lookup:
 - "emailTextField"
 - "didReceiveMemoryWarning"
+- "loginAction"
 - "passwordTextField"
 - "viewDidLoad"
-- "loginAction"
+- "viewDidAppear"
 depends-top-level:
-- !private "StringLiteralType"
-- "UITextField"
-- !private "||"
-- !private "FIRDatabase"
-- "LoginViewController"
-- !private "String"
-- !private "BooleanLiteralType"
-- "UIViewController"
-- !private "NSDictionary"
-- !private "FIRAuth"
-- !private "=="
-- !private "CastingPrecedence"
-- "AnyObject"
-- !private "UIAlertController"
-- !private "print"
 - !private "UIAlertAction"
+- !private "StringLiteralType"
+- !private "String"
+- "UITextField"
+- !private "FIRDatabase"
+- !private "FIRAuth"
+- !private "BooleanLiteralType"
+- !private "print"
+- !private "||"
+- "LoginViewController"
+- "UIViewController"
+- !private "=="
+- "Bool"
+- !private "UIAlertController"
+- !private "CastingPrecedence"
+- !private "NSDictionary"
+- "AnyObject"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
@@ -56,6 +58,7 @@ depends-member:
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "uid"]
 - !private ["Ps9AnyObject", "value"]
+- ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", ""]
 - !private ["Sb", "_getBuiltinLogicValue"]
@@ -88,6 +91,7 @@ depends-member:
 - !private ["Ps7CVarArg", "text"]
 - !private ["Ps7CVarArg", "uid"]
 - !private ["Ps7CVarArg", "value"]
+- ["Ps7CVarArg", "viewDidAppear"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
 - !private ["Ps10Comparable", "init"]
@@ -120,6 +124,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "uid"]
 - !private ["Ps28CustomDebugStringConvertible", "value"]
+- ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
@@ -158,6 +163,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "uid"]
 - !private ["Ps23CustomStringConvertible", "value"]
+- ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Ps9Equatable", "FIRAuth"]
@@ -190,6 +196,7 @@ depends-member:
 - !private ["Ps9Equatable", "text"]
 - !private ["Ps9Equatable", "uid"]
 - !private ["Ps9Equatable", "value"]
+- ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", ""]
 - !private ["Ps5Error", "deinit"]
@@ -254,10 +261,12 @@ depends-member:
 - !private ["Ps8Hashable", "text"]
 - !private ["Ps8Hashable", "uid"]
 - !private ["Ps8Hashable", "value"]
+- ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
 - ["SQ", "deinit"]
 - ["C12PocketVision19LoginViewController", "AnyObject"]
+- ["C12PocketVision19LoginViewController", "Bool"]
 - !private ["C12PocketVision19LoginViewController", "FIRAuth"]
 - !private ["C12PocketVision19LoginViewController", "FIRDatabase"]
 - !private ["C12PocketVision19LoginViewController", "NSDictionary"]
@@ -275,6 +284,7 @@ depends-member:
 - !private ["C12PocketVision19LoginViewController", "performSegue"]
 - !private ["C12PocketVision19LoginViewController", "present"]
 - !private ["C12PocketVision19LoginViewController", "print"]
+- ["C12PocketVision19LoginViewController", "viewDidAppear"]
 - ["C12PocketVision19LoginViewController", "viewDidLoad"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps25LosslessStringConvertible", "init"]
@@ -300,6 +310,7 @@ depends-member:
 - !private ["PSo8NSCoding", "setHidesBackButton"]
 - !private ["PSo8NSCoding", "subscript"]
 - !private ["PSo8NSCoding", "text"]
+- ["PSo8NSCoding", "viewDidAppear"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "deinit"]
@@ -322,6 +333,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "performSegue"]
 - !private ["PSo26NSExtensionRequestHandling", "present"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
+- ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "subscript"]
@@ -329,6 +341,7 @@ depends-member:
 - !private ["PSo16NSMutableCopying", "isEmpty"]
 - !private ["PSo16NSMutableCopying", "subscript"]
 - ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "FIRAuth"]
 - !private ["CSo8NSObject", "FIRDatabase"]
 - !private ["CSo8NSObject", "NSDictionary"]
@@ -359,6 +372,7 @@ depends-member:
 - !private ["CSo8NSObject", "text"]
 - !private ["CSo8NSObject", "uid"]
 - !private ["CSo8NSObject", "value"]
+- ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "FIRAuth"]
 - !private ["PSo16NSObjectProtocol", "FIRDatabase"]
@@ -387,6 +401,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "uid"]
 - !private ["PSo16NSObjectProtocol", "value"]
+- ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "init"]
@@ -433,6 +448,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "present"]
 - !private ["PSo21UIAppearanceContainer", "print"]
 - !private ["PSo21UIAppearanceContainer", "text"]
+- ["PSo21UIAppearanceContainer", "viewDidAppear"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", ""]
 - !private ["PSo18UIContentContainer", "FIRAuth"]
@@ -449,6 +465,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "performSegue"]
 - !private ["PSo18UIContentContainer", "present"]
 - !private ["PSo18UIContentContainer", "print"]
+- ["PSo18UIContentContainer", "viewDidAppear"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
@@ -470,6 +487,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "present"]
 - !private ["PSo18UIFocusEnvironment", "print"]
 - !private ["PSo18UIFocusEnvironment", "text"]
+- ["PSo18UIFocusEnvironment", "viewDidAppear"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo11UIFocusItem", "text"]
@@ -477,6 +495,7 @@ depends-member:
 - ["CSo16UINavigationItem", "deinit"]
 - !private ["CSo16UINavigationItem", "setHidesBackButton"]
 - ["CSo11UIResponder", "AnyObject"]
+- ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "FIRAuth"]
 - !private ["CSo11UIResponder", "FIRDatabase"]
 - !private ["CSo11UIResponder", "NSDictionary"]
@@ -495,6 +514,7 @@ depends-member:
 - !private ["CSo11UIResponder", "present"]
 - !private ["CSo11UIResponder", "print"]
 - !private ["CSo11UIResponder", "text"]
+- ["CSo11UIResponder", "viewDidAppear"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - !private ["PSo30UIResponderStandardEditActions", "FIRAuth"]
 - !private ["PSo30UIResponderStandardEditActions", "FIRDatabase"]
@@ -511,6 +531,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "present"]
 - !private ["PSo30UIResponderStandardEditActions", "print"]
 - !private ["PSo30UIResponderStandardEditActions", "text"]
+- ["PSo30UIResponderStandardEditActions", "viewDidAppear"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", ""]
 - !private ["PSo16UIStateRestoring", "FIRAuth"]
@@ -527,6 +548,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "performSegue"]
 - !private ["PSo16UIStateRestoring", "present"]
 - !private ["PSo16UIStateRestoring", "print"]
+- ["PSo16UIStateRestoring", "viewDidAppear"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
 - !private ["CSo11UITextField", "text"]
@@ -547,10 +569,12 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "present"]
 - !private ["PSo18UITraitEnvironment", "print"]
 - !private ["PSo18UITraitEnvironment", "text"]
+- ["PSo18UITraitEnvironment", "viewDidAppear"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", ""]
 - !private ["CSo6UIView", "text"]
 - ["CSo16UIViewController", "AnyObject"]
+- ["CSo16UIViewController", "Bool"]
 - !private ["CSo16UIViewController", "FIRAuth"]
 - !private ["CSo16UIViewController", "FIRDatabase"]
 - !private ["CSo16UIViewController", "NSDictionary"]
@@ -569,6 +593,7 @@ depends-member:
 - !private ["CSo16UIViewController", "performSegue"]
 - !private ["CSo16UIViewController", "present"]
 - !private ["CSo16UIViewController", "print"]
+- ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
 - !private ["Su", "deinit"]
@@ -614,6 +639,7 @@ depends-member:
 - !private ["Ps9_Hashable", "text"]
 - !private ["Ps9_Hashable", "uid"]
 - !private ["Ps9_Hashable", "value"]
+- ["Ps9_Hashable", "viewDidAppear"]
 - ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", ""]
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
@@ -761,4 +787,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "ede4b54703ac19dad740b8a4e7923dd5"
+interface-hash: "0902c8145c626d94dc699ebc2fcf3780"

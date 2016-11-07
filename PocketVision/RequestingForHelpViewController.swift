@@ -8,7 +8,9 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -57,6 +59,7 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
                                         "longitude" : self.locationManager.location!.coordinate.longitude]
                         
                         ref.child("BlindUser").child(userID!).child("location").setValue(location)
+                        
                     }
                     else
                     {
@@ -77,12 +80,14 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
         } else {
             print("Location services are not enabled")
             
-            // Prompt user to turn location service
-            let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-             self.present(alert, animated: true, completion: nil)
+            // Prompt user to turn on location services
+            let alert = UIAlertController(title: "Location services disabled", message: "To enable location services: Settings -> Privacy -> Location Services", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
 
     }
     
@@ -109,8 +114,20 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelAction(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func cancelRequest(_ sender: AnyObject) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        // Retrieve from database
+        let ref = FIRDatabase.database().reference()
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("BlindUser").child(userID!).child("request").setValue("Inactive")
+
+        
+        
     }
+
+
 
 }

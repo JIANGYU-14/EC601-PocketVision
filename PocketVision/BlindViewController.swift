@@ -14,17 +14,11 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
         
         // Ask user for location service on this page
         self.requestlocation.requestWhenInUseAuthorization()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    override func viewDidAppear(_ animated: Bool) {
         
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
+        
         ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
             
             // Get user value
@@ -39,6 +33,11 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
             print(error.localizedDescription)
         }
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     /*
     // MARK: - Navigation
@@ -49,6 +48,16 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func requestHelp(_ sender: AnyObject) {
+        
+        let ref = FIRDatabase.database().reference()
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("BlindUser").child(userID!).child("request").setValue("Active")
+    }
+    
     
     @IBAction func logoutAction(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Logout", message: "You sure to logout current account?", preferredStyle: .alert)

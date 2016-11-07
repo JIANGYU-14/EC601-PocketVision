@@ -14,6 +14,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -82,12 +85,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         } else {
             print("Location services are not enabled")
             
-                    // Prompt user to turn location service
-                    /*let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)*/
+            // Prompt user to turn location service
+            /*let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+             self.present(alert, animated: true, completion: nil)*/
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

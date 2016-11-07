@@ -1,15 +1,23 @@
 import UIKit
+import CoreLocation
 import Firebase
 
-class HelpingTableViewController: UITableViewController {
+class HelpingTableViewController: UITableViewController, CLLocationManagerDelegate {
+    
+    let locationManager = CLLocationManager()
     
     // List cells in table section
     var requests = [Request]()
-    
-    // var requestLocation = [blindLocation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        requests = [Request]()
         
         // Retrieve from database
         
@@ -33,16 +41,13 @@ class HelpingTableViewController: UITableViewController {
             }
             
             
-        })
+            })
         {
             (error) in
             print(error.localizedDescription)
         }
- 
     }
- 
- 
-        
+    
     /*
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -78,6 +83,13 @@ class HelpingTableViewController: UITableViewController {
         let request = requests[indexPath.row]
         
         cell.requesterName.text = request.requester
+        
+        let coordinateSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+        let coordinateBlind = CLLocation(latitude: request.latitude, longitude: request.longitude)
+        
+        let distanceInMeters = coordinateBlind.distance(from: coordinateSighted)
+        
+        cell.distanceAway.text = String(format: "%.2f", (distanceInMeters/1000)) + " km"
         
         return cell
     }
@@ -144,6 +156,40 @@ class HelpingTableViewController: UITableViewController {
     }
     }
 
+    @IBAction func refresh(_ sender: AnyObject) {
+        
+        requests = [Request]()
+        
+        // Retrieve from database
+        
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
+            snapshot in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let firstname = value?["firstname"] as? String
+            let location = value?["location"] as? NSDictionary
+            let latitude = location?["latitude"] as? Double
+            let longitude = location?["longitude"] as? Double
+            
+            // Do not load data into cell if location does not exist
+            if location != nil {
+                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
+                self.tableView.reloadData()
+                
+            }
+            
+            
+            })
+        {
+            (error) in
+            print(error.localizedDescription)
+        }
+
+    }
+    
     
     @IBAction func cancelAction(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
