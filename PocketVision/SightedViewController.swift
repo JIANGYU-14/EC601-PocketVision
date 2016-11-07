@@ -14,14 +14,6 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
         
         // Ask user for location service on this page
         self.requestlocation.requestWhenInUseAuthorization()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
@@ -42,6 +34,11 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
         }) { (error) in
             print(error.localizedDescription)
         }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     /*

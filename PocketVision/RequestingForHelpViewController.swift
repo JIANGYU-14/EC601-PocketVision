@@ -78,8 +78,8 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
         } else {
             print("Location services are not enabled")
             
-            // Prompt user to turn location service
-            let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: .alert)
+            // Prompt user to turn on location services
+            let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", preferredStyle: .alert)
              alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
              self.present(alert, animated: true, completion: nil)
         }
