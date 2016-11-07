@@ -16,30 +16,6 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if CLLocationManager.locationServicesEnabled() {
-            
-            switch(CLLocationManager.authorizationStatus()) {
-            case .notDetermined:
-                print("No access")
-            case .denied:
-                print("Location services turned off for PocketVision")
-                let alert = UIAlertController(title: "Location services disabled", message: "Please turn on location services in order to use PocketVision", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            case .restricted:
-                print("No access")
-            case .authorizedAlways, .authorizedWhenInUse:
-                print("Access granted")
-                
-                self.locationManager.delegate = self
-                
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                
-                self.locationManager.requestWhenInUseAuthorization()
-                
-                self.locationManager.startUpdatingLocation()
-            }
-        }
         
         requests = [Request]()
         
@@ -180,6 +156,40 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     }
     }
 
+    @IBAction func refresh(_ sender: AnyObject) {
+        
+        requests = [Request]()
+        
+        // Retrieve from database
+        
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
+            snapshot in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let firstname = value?["firstname"] as? String
+            let location = value?["location"] as? NSDictionary
+            let latitude = location?["latitude"] as? Double
+            let longitude = location?["longitude"] as? Double
+            
+            // Do not load data into cell if location does not exist
+            if location != nil {
+                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
+                self.tableView.reloadData()
+                
+            }
+            
+            
+            })
+        {
+            (error) in
+            print(error.localizedDescription)
+        }
+
+    }
+    
     
     @IBAction func cancelAction(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)

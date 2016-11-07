@@ -573,6 +573,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="People Who Need Help" id="ryd-SN-nG1">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="refresh" id="2vx-LJ-Pcj">
+                            <connections>
+                                <action selector="refresh:" destination="qcV-Dy-MzL" id="Fil-IF-VuD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Xjc-9J-HRx">
                             <connections>
                                 <action selector="cancelAction:" destination="qcV-Dy-MzL" id="UHK-DK-lpa"/>

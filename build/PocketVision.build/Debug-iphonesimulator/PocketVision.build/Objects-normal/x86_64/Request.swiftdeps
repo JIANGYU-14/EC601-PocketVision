@@ -7,9 +7,9 @@ provides-member:
 - ["C12PocketVision7Request", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "AssignmentPrecedence"
 - "Double"
 - "Request"
-- "AssignmentPrecedence"
 - "String"
 depends-member:
 - !private ["Ps9AnyObject", "isEmpty"]
