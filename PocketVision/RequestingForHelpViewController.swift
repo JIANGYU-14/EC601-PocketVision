@@ -57,6 +57,7 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
                                         "longitude" : self.locationManager.location!.coordinate.longitude]
                         
                         ref.child("BlindUser").child(userID!).child("location").setValue(location)
+                        ref.child("BlindUser").child(userID!).child("request").setValue("Active")
                     }
                     else
                     {
@@ -109,8 +110,14 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelAction(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func cancelRequest(_ sender: AnyObject) {
+
+        self.dismiss(animated: true, completion: nil)
+        
     }
+
+    
+
+
 
 }

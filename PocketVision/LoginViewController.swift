@@ -13,7 +13,12 @@ class LoginViewController: UIViewController {
         
         self.navigationItem .setHidesBackButton(true, animated: false)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
+        self.navigationItem .setHidesBackButton(true, animated: false)
+
     }
 
     override func didReceiveMemoryWarning() {

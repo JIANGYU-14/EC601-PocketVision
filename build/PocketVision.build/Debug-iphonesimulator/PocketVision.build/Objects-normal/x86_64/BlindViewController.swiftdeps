@@ -6,32 +6,32 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision19BlindViewController", ""]
 provides-dynamic-lookup:
-- "nameLabel"
-- "requestlocation"
-- "didReceiveMemoryWarning"
-- "viewDidLoad"
 - "userTypeLabel"
+- "viewDidLoad"
 - "logoutAction"
+- "nameLabel"
 - "viewDidAppear"
+- "didReceiveMemoryWarning"
+- "requestlocation"
 depends-top-level:
-- !private "FIRDatabase"
-- "AnyObject"
-- !private "StringLiteralType"
-- "CLLocationManagerDelegate"
-- "BlindViewController"
-- !private "BooleanLiteralType"
 - !private "String"
-- "CLLocationManager"
-- !private "NSDictionary"
-- !private "print"
-- "UIViewController"
+- !private "StringLiteralType"
 - !private "UIAlertAction"
-- "Bool"
+- "UIViewController"
+- !private "FIRDatabase"
+- !private "BooleanLiteralType"
+- "CLLocationManagerDelegate"
+- "AnyObject"
+- "UILabel"
 - !private "FIRAuth"
+- !private "NSDictionary"
+- "CLLocationManager"
 - !private "AssignmentPrecedence"
 - !private "CastingPrecedence"
+- "BlindViewController"
+- "Bool"
+- !private "print"
 - !private "UIAlertController"
-- "UILabel"
 depends-member:
 - ["Ps9AnyObject", "CLLocationManager"]
 - !private ["Ps9AnyObject", "FIRAuth"]
@@ -58,6 +58,7 @@ depends-member:
 - !private ["Ps9AnyObject", "reference"]
 - !private ["Ps9AnyObject", "requestWhenInUseAuthorization"]
 - ["Ps9AnyObject", "requestlocation"]
+- !private ["Ps9AnyObject", "setValue"]
 - !private ["Ps9AnyObject", "signOut"]
 - !private ["Ps9AnyObject", "subscript"]
 - !private ["Ps9AnyObject", "text"]
@@ -139,6 +140,7 @@ depends-member:
 - !private ["Ps7CVarArg", "reference"]
 - !private ["Ps7CVarArg", "requestWhenInUseAuthorization"]
 - ["Ps7CVarArg", "requestlocation"]
+- !private ["Ps7CVarArg", "setValue"]
 - !private ["Ps7CVarArg", "signOut"]
 - !private ["Ps7CVarArg", "subscript"]
 - !private ["Ps7CVarArg", "text"]
@@ -174,6 +176,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "reference"]
 - !private ["Ps28CustomDebugStringConvertible", "requestWhenInUseAuthorization"]
 - ["Ps28CustomDebugStringConvertible", "requestlocation"]
+- !private ["Ps28CustomDebugStringConvertible", "setValue"]
 - !private ["Ps28CustomDebugStringConvertible", "signOut"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
@@ -211,6 +214,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "reference"]
 - !private ["Ps23CustomStringConvertible", "requestWhenInUseAuthorization"]
 - ["Ps23CustomStringConvertible", "requestlocation"]
+- !private ["Ps23CustomStringConvertible", "setValue"]
 - !private ["Ps23CustomStringConvertible", "signOut"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "text"]
@@ -248,6 +252,7 @@ depends-member:
 - !private ["Ps9Equatable", "reference"]
 - !private ["Ps9Equatable", "requestWhenInUseAuthorization"]
 - ["Ps9Equatable", "requestlocation"]
+- !private ["Ps9Equatable", "setValue"]
 - !private ["Ps9Equatable", "signOut"]
 - !private ["Ps9Equatable", "subscript"]
 - !private ["Ps9Equatable", "text"]
@@ -277,9 +282,11 @@ depends-member:
 - !private ["CSo11FIRDatabase", "reference"]
 - !private ["CSo16FIRDatabaseQuery", "child"]
 - !private ["CSo16FIRDatabaseQuery", "observe"]
+- !private ["CSo16FIRDatabaseQuery", "setValue"]
 - !private ["CSo20FIRDatabaseReference", "child"]
 - ["CSo20FIRDatabaseReference", "deinit"]
 - !private ["CSo20FIRDatabaseReference", "observe"]
+- !private ["CSo20FIRDatabaseReference", "setValue"]
 - ["CSo7FIRUser", "deinit"]
 - !private ["CSo7FIRUser", "uid"]
 - !private ["PSo11FIRUserInfo", "uid"]
@@ -311,6 +318,7 @@ depends-member:
 - !private ["Ps8Hashable", "reference"]
 - !private ["Ps8Hashable", "requestWhenInUseAuthorization"]
 - ["Ps8Hashable", "requestlocation"]
+- !private ["Ps8Hashable", "setValue"]
 - !private ["Ps8Hashable", "signOut"]
 - !private ["Ps8Hashable", "subscript"]
 - !private ["Ps8Hashable", "text"]
@@ -408,6 +416,7 @@ depends-member:
 - !private ["CSo8NSObject", "reference"]
 - !private ["CSo8NSObject", "requestWhenInUseAuthorization"]
 - ["CSo8NSObject", "requestlocation"]
+- !private ["CSo8NSObject", "setValue"]
 - !private ["CSo8NSObject", "signOut"]
 - !private ["CSo8NSObject", "subscript"]
 - !private ["CSo8NSObject", "text"]
@@ -441,6 +450,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "reference"]
 - !private ["PSo16NSObjectProtocol", "requestWhenInUseAuthorization"]
 - ["PSo16NSObjectProtocol", "requestlocation"]
+- !private ["PSo16NSObjectProtocol", "setValue"]
 - !private ["PSo16NSObjectProtocol", "signOut"]
 - !private ["PSo16NSObjectProtocol", "subscript"]
 - !private ["PSo16NSObjectProtocol", "text"]
@@ -707,6 +717,7 @@ depends-member:
 - !private ["Ps9_Hashable", "reference"]
 - !private ["Ps9_Hashable", "requestWhenInUseAuthorization"]
 - ["Ps9_Hashable", "requestlocation"]
+- !private ["Ps9_Hashable", "setValue"]
 - !private ["Ps9_Hashable", "signOut"]
 - !private ["Ps9_Hashable", "subscript"]
 - !private ["Ps9_Hashable", "text"]

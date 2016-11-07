@@ -25,6 +25,9 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("BlindUser").child(userID!).child("request").setValue("Inactive")
+        
         ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
             
             // Get user value

@@ -99,6 +99,7 @@
 				9346F9861DB9CBC7003D94BA /* RegisterViewController.swift */,
 				9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */,
 				9398DB171DBD6246005D3734 /* BlindViewController.swift */,
+				93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */,
 				9398DB191DBD625A005D3734 /* SightedViewController.swift */,
 				9346F98A1DBA676F003D94BA /* MapViewController.swift */,
 				3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */,
@@ -108,7 +109,6 @@
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
-				93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */,
 			);
 			path = PocketVision;
 			sourceTree = "<group>";
