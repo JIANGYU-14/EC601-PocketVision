@@ -6,46 +6,45 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision26HelpingTableViewController", ""]
 provides-dynamic-lookup:
-- "locationManager"
-- "viewDidLoad"
-- "cancelAction"
-- "viewDidAppear"
-- "numberOfSections"
 - "prepare"
+- "numberOfSections"
+- "cancelAction"
 - "tableView"
 - "tableView"
+- "viewDidLoad"
+- "locationManager"
 depends-top-level:
-- !private "Double"
+- "UIStoryboardSegue"
+- "CLLocationManager"
 - !private "StringLiteralType"
 - "HelpingTableViewController"
-- !private "!="
-- !private "kCLLocationAccuracyBest"
-- !private "locateBlindViewController"
 - !private "RequestTableViewCell"
+- !private "FIRDatabase"
+- "UITableView"
 - "Request"
-- !private "UINavigationController"
-- "UIStoryboardSegue"
-- "CLLocationManagerDelegate"
-- "Bool"
+- !private "NSDictionary"
+- "UITableViewController"
 - !private "BooleanLiteralType"
+- "UITableViewCell"
+- !private "String"
 - !private "UIAlertController"
+- !private "UIAlertAction"
+- !private "kCLLocationAccuracyBest"
+- !private "+"
+- !private "Double"
+- !private "locateBlindViewController"
+- !private "!="
+- "Int"
+- !private "CLLocation"
+- !private "UINavigationController"
+- "IndexPath"
+- "AssignmentPrecedence"
 - "AnyObject"
 - !private "print"
-- !private "UIAlertAction"
-- "UITableViewController"
-- !private "FIRDatabase"
-- "UITableViewCell"
-- !private "+"
-- !private "=="
-- "AssignmentPrecedence"
-- "Int"
-- "CLLocationManager"
 - "CastingPrecedence"
-- !private "CLLocation"
-- !private "NSDictionary"
-- "IndexPath"
-- !private "String"
-- "UITableView"
+- !private "=="
+- "CLLocationManagerDelegate"
+- !private "/"
 depends-member:
 - !private ["Ps9AnyObject", "CLLocation"]
 - ["Ps9AnyObject", "CLLocationManager"]
@@ -98,7 +97,6 @@ depends-member:
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "topViewController"]
 - !private ["Ps9AnyObject", "value"]
-- ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", ""]
 - !private ["Sa", "Index"]
@@ -249,7 +247,6 @@ depends-member:
 - !private ["Ps7CVarArg", "text"]
 - !private ["Ps7CVarArg", "topViewController"]
 - !private ["Ps7CVarArg", "value"]
-- ["Ps7CVarArg", "viewDidAppear"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
 - !private ["Ps10Collection", "Index"]
@@ -325,7 +322,6 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "topViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "value"]
-- ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "IntegerLiteralType"]
@@ -408,7 +404,6 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "topViewController"]
 - !private ["Ps23CustomStringConvertible", "value"]
-- ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Vs27DefaultBidirectionalIndices", "Index"]
@@ -483,7 +478,6 @@ depends-member:
 - !private ["Ps9Equatable", "text"]
 - !private ["Ps9Equatable", "topViewController"]
 - !private ["Ps9Equatable", "value"]
-- ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", ""]
 - !private ["Ps5Error", "deinit"]
@@ -583,11 +577,9 @@ depends-member:
 - !private ["Ps8Hashable", "text"]
 - !private ["Ps8Hashable", "topViewController"]
 - !private ["Ps8Hashable", "value"]
-- ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
 - ["C12PocketVision26HelpingTableViewController", "AnyObject"]
-- ["C12PocketVision26HelpingTableViewController", "Bool"]
 - !private ["C12PocketVision26HelpingTableViewController", "CLLocation"]
 - ["C12PocketVision26HelpingTableViewController", "CLLocationManager"]
 - !private ["C12PocketVision26HelpingTableViewController", "Double"]
@@ -620,7 +612,6 @@ depends-member:
 - !private ["C12PocketVision26HelpingTableViewController", "print"]
 - ["C12PocketVision26HelpingTableViewController", "requests"]
 - ["C12PocketVision26HelpingTableViewController", "tableView"]
-- ["C12PocketVision26HelpingTableViewController", "viewDidAppear"]
 - ["C12PocketVision26HelpingTableViewController", "viewDidLoad"]
 - ["V10Foundation9IndexPath", "deinit"]
 - !private ["V10Foundation9IndexPath", "row"]
@@ -719,7 +710,6 @@ depends-member:
 - ["PSo8NSCoding", "tableView"]
 - !private ["PSo8NSCoding", "text"]
 - !private ["PSo8NSCoding", "topViewController"]
-- ["PSo8NSCoding", "viewDidAppear"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "coordinate"]
@@ -753,14 +743,12 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "requests"]
 - ["PSo26NSExtensionRequestHandling", "tableView"]
 - !private ["PSo26NSExtensionRequestHandling", "topViewController"]
-- ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "subscript"]
 - ["CSo8NSObject", "AnyObject"]
-- ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "CLLocation"]
 - ["CSo8NSObject", "CLLocationManager"]
 - !private ["CSo8NSObject", "Double"]
@@ -819,7 +807,6 @@ depends-member:
 - !private ["CSo8NSObject", "text"]
 - !private ["CSo8NSObject", "topViewController"]
 - !private ["CSo8NSObject", "value"]
-- ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "CLLocation"]
 - ["PSo16NSObjectProtocol", "CLLocationManager"]
@@ -869,7 +856,6 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "topViewController"]
 - !private ["PSo16NSObjectProtocol", "value"]
-- ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "coordinate"]
@@ -1022,7 +1008,6 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "tableView"]
 - !private ["PSo21UIAppearanceContainer", "text"]
 - !private ["PSo21UIAppearanceContainer", "topViewController"]
-- ["PSo21UIAppearanceContainer", "viewDidAppear"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", ""]
 - !private ["PSo18UIContentContainer", "CLLocation"]
@@ -1049,7 +1034,6 @@ depends-member:
 - ["PSo18UIContentContainer", "requests"]
 - ["PSo18UIContentContainer", "tableView"]
 - !private ["PSo18UIContentContainer", "topViewController"]
-- ["PSo18UIContentContainer", "viewDidAppear"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
@@ -1095,7 +1079,6 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "tableView"]
 - !private ["PSo18UIFocusEnvironment", "text"]
 - !private ["PSo18UIFocusEnvironment", "topViewController"]
-- ["PSo18UIFocusEnvironment", "viewDidAppear"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo11UIFocusItem", "dequeueReusableCell"]
@@ -1110,7 +1093,6 @@ depends-member:
 - ["CSo22UINavigationController", "deinit"]
 - !private ["CSo22UINavigationController", "topViewController"]
 - ["CSo11UIResponder", "AnyObject"]
-- ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "CLLocation"]
 - ["CSo11UIResponder", "CLLocationManager"]
 - !private ["CSo11UIResponder", "Double"]
@@ -1151,7 +1133,6 @@ depends-member:
 - ["CSo11UIResponder", "tableView"]
 - !private ["CSo11UIResponder", "text"]
 - !private ["CSo11UIResponder", "topViewController"]
-- ["CSo11UIResponder", "viewDidAppear"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - !private ["PSo30UIResponderStandardEditActions", "CLLocation"]
 - ["PSo30UIResponderStandardEditActions", "CLLocationManager"]
@@ -1183,7 +1164,6 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "tableView"]
 - !private ["PSo30UIResponderStandardEditActions", "text"]
 - !private ["PSo30UIResponderStandardEditActions", "topViewController"]
-- ["PSo30UIResponderStandardEditActions", "viewDidAppear"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", ""]
 - !private ["CSo12UIScrollView", "dequeueReusableCell"]
@@ -1210,7 +1190,6 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "print"]
 - ["PSo20UIScrollViewDelegate", "requests"]
 - ["PSo20UIScrollViewDelegate", "tableView"]
-- ["PSo20UIScrollViewDelegate", "viewDidAppear"]
 - ["PSo20UIScrollViewDelegate", "viewDidLoad"]
 - ["PSo20UIScrollViewDelegate", ""]
 - !private ["PSo16UIStateRestoring", "CLLocation"]
@@ -1237,7 +1216,6 @@ depends-member:
 - ["PSo16UIStateRestoring", "requests"]
 - ["PSo16UIStateRestoring", "tableView"]
 - !private ["PSo16UIStateRestoring", "topViewController"]
-- ["PSo16UIStateRestoring", "viewDidAppear"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
 - ["CSo17UIStoryboardSegue", "deinit"]
@@ -1251,7 +1229,6 @@ depends-member:
 - !private ["CSo15UITableViewCell", "distanceAway"]
 - !private ["CSo15UITableViewCell", "requesterName"]
 - ["CSo21UITableViewController", "AnyObject"]
-- ["CSo21UITableViewController", "Bool"]
 - !private ["CSo21UITableViewController", "CLLocation"]
 - ["CSo21UITableViewController", "CLLocationManager"]
 - !private ["CSo21UITableViewController", "Double"]
@@ -1284,7 +1261,6 @@ depends-member:
 - !private ["CSo21UITableViewController", "print"]
 - ["CSo21UITableViewController", "requests"]
 - ["CSo21UITableViewController", "tableView"]
-- ["CSo21UITableViewController", "viewDidAppear"]
 - ["CSo21UITableViewController", "viewDidLoad"]
 - ["CSo21UITableViewController", ""]
 - !private ["PSo21UITableViewDataSource", "CLLocation"]
@@ -1308,7 +1284,6 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "print"]
 - ["PSo21UITableViewDataSource", "requests"]
 - ["PSo21UITableViewDataSource", "tableView"]
-- ["PSo21UITableViewDataSource", "viewDidAppear"]
 - ["PSo21UITableViewDataSource", "viewDidLoad"]
 - ["PSo21UITableViewDataSource", ""]
 - !private ["PSo19UITableViewDelegate", "CLLocation"]
@@ -1332,7 +1307,6 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "print"]
 - ["PSo19UITableViewDelegate", "requests"]
 - ["PSo19UITableViewDelegate", "tableView"]
-- ["PSo19UITableViewDelegate", "viewDidAppear"]
 - ["PSo19UITableViewDelegate", "viewDidLoad"]
 - ["PSo19UITableViewDelegate", ""]
 - ["OSC16UITableViewStyle", "deinit"]
@@ -1366,7 +1340,6 @@ depends-member:
 - ["PSo18UITraitEnvironment", "tableView"]
 - !private ["PSo18UITraitEnvironment", "text"]
 - !private ["PSo18UITraitEnvironment", "topViewController"]
-- ["PSo18UITraitEnvironment", "viewDidAppear"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", ""]
 - !private ["CSo6UIView", "dequeueReusableCell"]
@@ -1376,7 +1349,6 @@ depends-member:
 - !private ["CSo6UIView", "requesterName"]
 - !private ["CSo6UIView", "text"]
 - ["CSo16UIViewController", "AnyObject"]
-- ["CSo16UIViewController", "Bool"]
 - !private ["CSo16UIViewController", "CLLocation"]
 - ["CSo16UIViewController", "CLLocationManager"]
 - !private ["CSo16UIViewController", "Double"]
@@ -1412,7 +1384,6 @@ depends-member:
 - ["CSo16UIViewController", "requests"]
 - ["CSo16UIViewController", "tableView"]
 - !private ["CSo16UIViewController", "topViewController"]
-- ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["Su", "deinit"]
 - !private ["Ps14_ArrayProtocol", "Index"]
@@ -1509,7 +1480,6 @@ depends-member:
 - !private ["Ps9_Hashable", "text"]
 - !private ["Ps9_Hashable", "topViewController"]
 - !private ["Ps9_Hashable", "value"]
-- ["Ps9_Hashable", "viewDidAppear"]
 - ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", ""]
 - !private ["Ps14_Incrementable", "IntegerLiteralType"]
@@ -1735,4 +1705,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "78027b4a06ef92e7c18eac9e827a503b"
+interface-hash: "618fa3155fa6cdcb99eca3e8330fda14"

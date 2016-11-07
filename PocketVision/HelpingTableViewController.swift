@@ -12,9 +12,6 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
  
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -68,8 +65,6 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             print(error.localizedDescription)
         }
     }
- 
- 
         
     /*
     override func didReceiveMemoryWarning() {
@@ -112,7 +107,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
         
         let distanceInMeters = coordinateBlind.distance(from: coordinateSighted)
         
-        cell.distanceAway.text = String(distanceInMeters) + " m"
+        cell.distanceAway.text = String(format: "%.2f", (distanceInMeters/1000)) + " km"
         
         return cell
     }

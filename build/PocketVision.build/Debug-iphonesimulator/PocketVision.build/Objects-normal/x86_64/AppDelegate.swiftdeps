@@ -6,23 +6,23 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationDidEnterBackground"
-- "applicationWillEnterForeground"
 - "applicationDidBecomeActive"
 - "application"
+- "applicationWillEnterForeground"
+- "applicationDidEnterBackground"
 - "applicationWillResignActive"
 - "applicationWillTerminate"
 - "window"
 depends-top-level:
-- "AppDelegate"
-- !private "FIRApp"
-- "UIApplicationLaunchOptionsKey"
-- "UIWindow"
 - "Bool"
-- "UIResponder"
 - !private "BooleanLiteralType"
-- "UIApplicationDelegate"
 - "UIApplication"
+- !private "FIRApp"
+- "AppDelegate"
+- "UIApplicationLaunchOptionsKey"
+- "UIResponder"
+- "UIApplicationDelegate"
+- "UIWindow"
 depends-member:
 - !private ["Ps9AnyObject", "FIRApp"]
 - ["Ps9AnyObject", "application"]
