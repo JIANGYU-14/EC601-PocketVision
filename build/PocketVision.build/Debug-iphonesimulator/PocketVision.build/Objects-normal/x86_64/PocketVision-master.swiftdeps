@@ -1,17 +1,17 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
-options: "7b9575d6bd832950cf3fa2b8595eed7f"
-build_time: [531804414, 378051000]
+options: "5fbadac178abec889baa352b84aa2be4"
+build_time: [531806258, 589292000]
 inputs:
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/RegisterViewController.swift": [531800444, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/Request.swift": [531250755, 0]
-  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/locateBlindViewController.swift": [531804126, 0]
+  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/locateBlindViewController.swift": [531804743, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/LoginViewController.swift": [531802102, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/RequestingForHelpViewController.swift": [531804063, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/AppDelegate.swift": [530846445, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/ResetPasswordViewController.swift": [530491751, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/RequestTableViewCell.swift": [531791558, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/MapViewController.swift": [531804107, 0]
-  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpingTableViewController.swift": [531804407, 0]
+  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpingTableViewController.swift": [531806255, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/SightedViewController.swift": [531803142, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/BlindViewController.swift": [531803781, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/LoadPageController.swift": [531800527, 0]

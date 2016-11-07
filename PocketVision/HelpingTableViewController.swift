@@ -12,6 +12,10 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
  
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -36,6 +40,8 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
                 self.locationManager.startUpdatingLocation()
             }
         }
+        
+        requests = [Request]()
         
         // Retrieve from database
         
@@ -65,7 +71,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             print(error.localizedDescription)
         }
     }
-        
+    
     /*
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
