@@ -11,7 +11,10 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -59,12 +62,11 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             }
             
             
-        })
+            })
         {
             (error) in
             print(error.localizedDescription)
         }
- 
     }
  
  

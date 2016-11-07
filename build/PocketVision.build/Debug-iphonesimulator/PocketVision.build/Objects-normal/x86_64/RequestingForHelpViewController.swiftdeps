@@ -6,39 +6,42 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision31RequestingForHelpViewController", ""]
 provides-dynamic-lookup:
-- "cancelRequest"
 - "viewDidLoad"
 - "locationManager"
 - "locationManager"
 - "locationManager"
+- "viewDidDisappear"
+- "viewDidAppear"
 - "didReceiveMemoryWarning"
+- "cancelRequest"
 depends-top-level:
-- "UIViewController"
-- !private "FIRDatabase"
-- !private "CastingPrecedence"
-- "AssignmentPrecedence"
-- !private "=="
-- !private "UIAlertController"
-- "CLLocationManager"
-- !private "print"
-- !private "NSDictionary"
-- "Dictionary"
 - !private "String"
-- !private "MKCoordinateRegion"
-- "CLLocation"
+- "Dictionary"
+- !private "NSDictionary"
+- "UIViewController"
 - !private "StringLiteralType"
-- !private "MKCoordinateSpan"
-- !private "UIAlertAction"
-- !private "BooleanLiteralType"
 - !private "+"
-- "CLLocationManagerDelegate"
-- "AnyObject"
-- !private "FIRAuth"
-- "MKMapViewDelegate"
-- "RequestingForHelpViewController"
+- !private "print"
 - !private "kCLLocationAccuracyBest"
-- !private "CLLocationCoordinate2D"
+- "CLLocation"
+- "MKMapViewDelegate"
+- !private "UIAlertAction"
+- "AnyObject"
+- "CLLocationManagerDelegate"
+- !private "BooleanLiteralType"
 - "Error"
+- !private "FIRAuth"
+- !private "CLLocationCoordinate2D"
+- !private "MKCoordinateRegion"
+- "CLLocationManager"
+- !private "UIAlertController"
+- !private "FIRDatabase"
+- !private "=="
+- "AssignmentPrecedence"
+- !private "CastingPrecedence"
+- "RequestingForHelpViewController"
+- !private "MKCoordinateSpan"
+- "Bool"
 depends-member:
 - !private ["Ps9AnyObject", "CLLocationCoordinate2D"]
 - ["Ps9AnyObject", "CLLocationManager"]
@@ -87,6 +90,8 @@ depends-member:
 - !private ["Ps9AnyObject", "subscript"]
 - !private ["Ps9AnyObject", "uid"]
 - !private ["Ps9AnyObject", "value"]
+- ["Ps9AnyObject", "viewDidAppear"]
+- ["Ps9AnyObject", "viewDidDisappear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", ""]
 - !private ["Sa", "Iterator"]
@@ -200,6 +205,8 @@ depends-member:
 - !private ["Ps7CVarArg", "subscript"]
 - !private ["Ps7CVarArg", "uid"]
 - !private ["Ps7CVarArg", "value"]
+- ["Ps7CVarArg", "viewDidAppear"]
+- ["Ps7CVarArg", "viewDidDisappear"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
 - !private ["Ps10Collection", "Iterator"]
@@ -260,6 +267,8 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "uid"]
 - !private ["Ps28CustomDebugStringConvertible", "value"]
+- ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
+- ["Ps28CustomDebugStringConvertible", "viewDidDisappear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
@@ -325,6 +334,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "uid"]
 - !private ["Ps23CustomStringConvertible", "value"]
+- ["Ps23CustomStringConvertible", "viewDidAppear"]
+- ["Ps23CustomStringConvertible", "viewDidDisappear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Vs10Dictionary", "Key"]
@@ -386,6 +397,8 @@ depends-member:
 - !private ["Ps9Equatable", "subscript"]
 - !private ["Ps9Equatable", "uid"]
 - !private ["Ps9Equatable", "value"]
+- ["Ps9Equatable", "viewDidAppear"]
+- ["Ps9Equatable", "viewDidDisappear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", ""]
 - ["Ps5Error", "deinit"]
@@ -476,6 +489,8 @@ depends-member:
 - !private ["Ps8Hashable", "subscript"]
 - !private ["Ps8Hashable", "uid"]
 - !private ["Ps8Hashable", "value"]
+- ["Ps8Hashable", "viewDidAppear"]
+- ["Ps8Hashable", "viewDidDisappear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
 - !private ["Ps9Indexable", "Iterator"]
@@ -559,6 +574,8 @@ depends-member:
 - !private ["PSo8NSCoding", "present"]
 - !private ["PSo8NSCoding", "print"]
 - !private ["PSo8NSCoding", "subscript"]
+- ["PSo8NSCoding", "viewDidAppear"]
+- ["PSo8NSCoding", "viewDidDisappear"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "coordinate"]
@@ -595,12 +612,15 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "mapViewWillStartRenderingMap"]
 - !private ["PSo26NSExtensionRequestHandling", "present"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
+- ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
+- ["PSo26NSExtensionRequestHandling", "viewDidDisappear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "subscript"]
 - ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
 - ["CSo8NSObject", "CLLocation"]
 - !private ["CSo8NSObject", "CLLocationCoordinate2D"]
 - ["CSo8NSObject", "CLLocationManager"]
@@ -652,6 +672,8 @@ depends-member:
 - !private ["CSo8NSObject", "subscript"]
 - !private ["CSo8NSObject", "uid"]
 - !private ["CSo8NSObject", "value"]
+- ["CSo8NSObject", "viewDidAppear"]
+- ["CSo8NSObject", "viewDidDisappear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "CLLocationCoordinate2D"]
 - ["PSo16NSObjectProtocol", "CLLocationManager"]
@@ -700,6 +722,8 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "subscript"]
 - !private ["PSo16NSObjectProtocol", "uid"]
 - !private ["PSo16NSObjectProtocol", "value"]
+- ["PSo16NSObjectProtocol", "viewDidAppear"]
+- ["PSo16NSObjectProtocol", "viewDidDisappear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "coordinate"]
@@ -728,6 +752,7 @@ depends-member:
 - ["Ps16RawRepresentable", "restricted"]
 - !private ["Ps16RawRepresentable", "value"]
 - ["C12PocketVision31RequestingForHelpViewController", "AnyObject"]
+- ["C12PocketVision31RequestingForHelpViewController", "Bool"]
 - ["C12PocketVision31RequestingForHelpViewController", "CLLocation"]
 - !private ["C12PocketVision31RequestingForHelpViewController", "CLLocationCoordinate2D"]
 - ["C12PocketVision31RequestingForHelpViewController", "CLLocationManager"]
@@ -760,6 +785,8 @@ depends-member:
 - ["C12PocketVision31RequestingForHelpViewController", "mapViewWillStartRenderingMap"]
 - !private ["C12PocketVision31RequestingForHelpViewController", "present"]
 - !private ["C12PocketVision31RequestingForHelpViewController", "print"]
+- ["C12PocketVision31RequestingForHelpViewController", "viewDidAppear"]
+- ["C12PocketVision31RequestingForHelpViewController", "viewDidDisappear"]
 - ["C12PocketVision31RequestingForHelpViewController", "viewDidLoad"]
 - !private ["Ps8Sequence", "Element"]
 - !private ["Ps8Sequence", "Iterator"]
@@ -809,6 +836,8 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "mapViewWillStartRenderingMap"]
 - !private ["PSo21UIAppearanceContainer", "present"]
 - !private ["PSo21UIAppearanceContainer", "print"]
+- ["PSo21UIAppearanceContainer", "viewDidAppear"]
+- ["PSo21UIAppearanceContainer", "viewDidDisappear"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", ""]
 - !private ["PSo18UIContentContainer", "CLLocationCoordinate2D"]
@@ -839,6 +868,8 @@ depends-member:
 - ["PSo18UIContentContainer", "mapViewWillStartRenderingMap"]
 - !private ["PSo18UIContentContainer", "present"]
 - !private ["PSo18UIContentContainer", "print"]
+- ["PSo18UIContentContainer", "viewDidAppear"]
+- ["PSo18UIContentContainer", "viewDidDisappear"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo18UIFocusEnvironment", "CLLocationCoordinate2D"]
@@ -869,9 +900,12 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "mapViewWillStartRenderingMap"]
 - !private ["PSo18UIFocusEnvironment", "present"]
 - !private ["PSo18UIFocusEnvironment", "print"]
+- ["PSo18UIFocusEnvironment", "viewDidAppear"]
+- ["PSo18UIFocusEnvironment", "viewDidDisappear"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", ""]
 - ["CSo11UIResponder", "AnyObject"]
+- ["CSo11UIResponder", "Bool"]
 - ["CSo11UIResponder", "CLLocation"]
 - !private ["CSo11UIResponder", "CLLocationCoordinate2D"]
 - ["CSo11UIResponder", "CLLocationManager"]
@@ -904,6 +938,8 @@ depends-member:
 - ["CSo11UIResponder", "mapViewWillStartRenderingMap"]
 - !private ["CSo11UIResponder", "present"]
 - !private ["CSo11UIResponder", "print"]
+- ["CSo11UIResponder", "viewDidAppear"]
+- ["CSo11UIResponder", "viewDidDisappear"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - !private ["PSo30UIResponderStandardEditActions", "CLLocationCoordinate2D"]
 - ["PSo30UIResponderStandardEditActions", "CLLocationManager"]
@@ -933,6 +969,8 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "mapViewWillStartRenderingMap"]
 - !private ["PSo30UIResponderStandardEditActions", "present"]
 - !private ["PSo30UIResponderStandardEditActions", "print"]
+- ["PSo30UIResponderStandardEditActions", "viewDidAppear"]
+- ["PSo30UIResponderStandardEditActions", "viewDidDisappear"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", ""]
 - !private ["PSo16UIStateRestoring", "CLLocationCoordinate2D"]
@@ -963,6 +1001,8 @@ depends-member:
 - ["PSo16UIStateRestoring", "mapViewWillStartRenderingMap"]
 - !private ["PSo16UIStateRestoring", "present"]
 - !private ["PSo16UIStateRestoring", "print"]
+- ["PSo16UIStateRestoring", "viewDidAppear"]
+- ["PSo16UIStateRestoring", "viewDidDisappear"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
 - !private ["PSo18UITraitEnvironment", "CLLocationCoordinate2D"]
@@ -993,9 +1033,12 @@ depends-member:
 - ["PSo18UITraitEnvironment", "mapViewWillStartRenderingMap"]
 - !private ["PSo18UITraitEnvironment", "present"]
 - !private ["PSo18UITraitEnvironment", "print"]
+- ["PSo18UITraitEnvironment", "viewDidAppear"]
+- ["PSo18UITraitEnvironment", "viewDidDisappear"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", ""]
 - ["CSo16UIViewController", "AnyObject"]
+- ["CSo16UIViewController", "Bool"]
 - ["CSo16UIViewController", "CLLocation"]
 - !private ["CSo16UIViewController", "CLLocationCoordinate2D"]
 - ["CSo16UIViewController", "CLLocationManager"]
@@ -1029,6 +1072,8 @@ depends-member:
 - ["CSo16UIViewController", "mapViewWillStartRenderingMap"]
 - !private ["CSo16UIViewController", "present"]
 - !private ["CSo16UIViewController", "print"]
+- ["CSo16UIViewController", "viewDidAppear"]
+- ["CSo16UIViewController", "viewDidDisappear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
 - ["Su", "deinit"]
@@ -1099,6 +1144,8 @@ depends-member:
 - !private ["Ps9_Hashable", "subscript"]
 - !private ["Ps9_Hashable", "uid"]
 - !private ["Ps9_Hashable", "value"]
+- ["Ps9_Hashable", "viewDidAppear"]
+- ["Ps9_Hashable", "viewDidDisappear"]
 - ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", ""]
 - !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
@@ -1260,4 +1307,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "51293e7313dfbb05ec416c1239a30998"
+interface-hash: "dcd5475f63f7e70cd18143f918b17504"

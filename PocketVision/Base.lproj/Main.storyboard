@@ -205,6 +205,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Request Help!"/>
                                 <connections>
+                                    <action selector="requestHelp:" destination="qjr-zK-Db2" eventType="touchUpInside" id="Ivh-IT-OaZ"/>
                                     <segue destination="Hic-3l-oTV" kind="presentation" id="E75-Xe-Rk3"/>
                                 </connections>
                             </button>
@@ -680,7 +681,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yax-ds-CZf"/>
-        <segue reference="mXh-WP-Utz"/>
+        <segue reference="lln-nb-6HQ"/>
         <segue reference="ZwH-iF-M3m"/>
     </inferredMetricsTieBreakers>
 </document>

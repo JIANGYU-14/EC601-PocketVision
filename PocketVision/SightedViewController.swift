@@ -19,7 +19,7 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
         
-        ref.child("SightedUser").child(userID!).child("status").setValue("Available")
+        // ref.child("SightedUser").child(userID!).child("status").setValue("Available")
         
         ref.child("SightedUser").child(userID!).observe(.value, with: { (snapshot) in
             

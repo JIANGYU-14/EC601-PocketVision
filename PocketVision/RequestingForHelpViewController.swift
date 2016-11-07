@@ -8,7 +8,9 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -57,7 +59,7 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
                                         "longitude" : self.locationManager.location!.coordinate.longitude]
                         
                         ref.child("BlindUser").child(userID!).child("location").setValue(location)
-                        ref.child("BlindUser").child(userID!).child("request").setValue("Active")
+                        
                     }
                     else
                     {
@@ -80,10 +82,12 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
             
             // Prompt user to turn on location services
             let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-             self.present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
 
     }
     
@@ -111,12 +115,18 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
     }
     
     @IBAction func cancelRequest(_ sender: AnyObject) {
-
+        
         self.dismiss(animated: true, completion: nil)
         
-    }
+        // Retrieve from database
+        let ref = FIRDatabase.database().reference()
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("BlindUser").child(userID!).child("request").setValue("Inactive")
 
-    
+        
+        
+    }
 
 
 

@@ -19,8 +19,6 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
         
-        ref.child("BlindUser").child(userID!).child("request").setValue("Inactive")
-        
         ref.child("BlindUser").child(userID!).observe(.value, with: { (snapshot) in
             
             // Get user value
@@ -50,6 +48,16 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func requestHelp(_ sender: AnyObject) {
+        
+        let ref = FIRDatabase.database().reference()
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("BlindUser").child(userID!).child("request").setValue("Active")
+    }
+    
     
     @IBAction func logoutAction(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Logout", message: "You sure to logout current account?", preferredStyle: .alert)

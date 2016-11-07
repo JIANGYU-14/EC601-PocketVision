@@ -14,14 +14,16 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         var needHelp = person.requester
         var helpLatitude = person.latitude
         var helpLongitude = person.longitude
-
         
-
+        
+        
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -59,12 +61,12 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                     
                     // Get user value
                     let value = snapshot.value as? NSDictionary
-
+                    
                     // Store location for SightedUser in database
-                        
+                    
                     let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
                                     "longitude" : self.locationManager.location!.coordinate.longitude]
-                        
+                    
                     ref.child("SightedUser").child(userID!).child("location").setValue(location)
                     
                 }) { (error) in
@@ -72,32 +74,31 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                     print("Check Internet Connection!!!")
                 }
                 
-
-                 
-                 // Plot blind user locaiton on map
-                 
-                 let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
-                 
-                 let annotation = MKPointAnnotation()
-                 annotation.coordinate = location
-                 annotation.title = needHelp
-                 
-                 self.currentLocation.addAnnotation(annotation)
-                 
-                 
-                 }
-            
                 
+                
+                // Plot blind user locaiton on map
+                
+                let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = location
+                annotation.title = needHelp
+                
+                self.currentLocation.addAnnotation(annotation)
+                
+                
+            }
+            
+            
             
         } else {
             print("Location services are not enabled")
             
             // Prompt user to turn location service
             let alert = UIAlertController(title: "Location services disabled", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-             self.present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-
     }
 
     override func didReceiveMemoryWarning() {

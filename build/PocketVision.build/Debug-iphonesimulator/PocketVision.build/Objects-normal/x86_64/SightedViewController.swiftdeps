@@ -6,32 +6,30 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision21SightedViewController", ""]
 provides-dynamic-lookup:
-- "logoutAction"
-- "requestlocation"
 - "viewDidLoad"
-- "viewDidAppear"
-- "nameLabel"
 - "userTypeLabel"
+- "requestlocation"
+- "logoutAction"
+- "nameLabel"
 - "didReceiveMemoryWarning"
 depends-top-level:
-- !private "FIRAuth"
-- !private "UIAlertAction"
-- !private "FIRDatabase"
-- !private "BooleanLiteralType"
 - "UIViewController"
 - !private "StringLiteralType"
-- "CLLocationManagerDelegate"
-- !private "String"
-- !private "NSDictionary"
-- !private "AssignmentPrecedence"
-- "Bool"
-- !private "CastingPrecedence"
-- "CLLocationManager"
 - "UILabel"
 - !private "print"
-- !private "UIAlertController"
-- "AnyObject"
+- !private "FIRAuth"
 - "SightedViewController"
+- !private "BooleanLiteralType"
+- "CLLocationManagerDelegate"
+- !private "UIAlertController"
+- !private "UIAlertAction"
+- "CLLocationManager"
+- !private "NSDictionary"
+- !private "FIRDatabase"
+- !private "AssignmentPrecedence"
+- !private "CastingPrecedence"
+- "AnyObject"
+- !private "String"
 depends-member:
 - ["Ps9AnyObject", "CLLocationManager"]
 - !private ["Ps9AnyObject", "FIRAuth"]
@@ -58,14 +56,12 @@ depends-member:
 - !private ["Ps9AnyObject", "reference"]
 - !private ["Ps9AnyObject", "requestWhenInUseAuthorization"]
 - ["Ps9AnyObject", "requestlocation"]
-- !private ["Ps9AnyObject", "setValue"]
 - !private ["Ps9AnyObject", "signOut"]
 - !private ["Ps9AnyObject", "subscript"]
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "uid"]
 - ["Ps9AnyObject", "userTypeLabel"]
 - !private ["Ps9AnyObject", "value"]
-- ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", ""]
 - ["Sb", "deinit"]
@@ -114,14 +110,12 @@ depends-member:
 - !private ["Ps7CVarArg", "reference"]
 - !private ["Ps7CVarArg", "requestWhenInUseAuthorization"]
 - ["Ps7CVarArg", "requestlocation"]
-- !private ["Ps7CVarArg", "setValue"]
 - !private ["Ps7CVarArg", "signOut"]
 - !private ["Ps7CVarArg", "subscript"]
 - !private ["Ps7CVarArg", "text"]
 - !private ["Ps7CVarArg", "uid"]
 - ["Ps7CVarArg", "userTypeLabel"]
 - !private ["Ps7CVarArg", "value"]
-- ["Ps7CVarArg", "viewDidAppear"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
 - !private ["Ps10Comparable", "init"]
@@ -150,14 +144,12 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "reference"]
 - !private ["Ps28CustomDebugStringConvertible", "requestWhenInUseAuthorization"]
 - ["Ps28CustomDebugStringConvertible", "requestlocation"]
-- !private ["Ps28CustomDebugStringConvertible", "setValue"]
 - !private ["Ps28CustomDebugStringConvertible", "signOut"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "uid"]
 - ["Ps28CustomDebugStringConvertible", "userTypeLabel"]
 - !private ["Ps28CustomDebugStringConvertible", "value"]
-- ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps29CustomPlaygroundQuickLookable", "init"]
@@ -188,14 +180,12 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "reference"]
 - !private ["Ps23CustomStringConvertible", "requestWhenInUseAuthorization"]
 - ["Ps23CustomStringConvertible", "requestlocation"]
-- !private ["Ps23CustomStringConvertible", "setValue"]
 - !private ["Ps23CustomStringConvertible", "signOut"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "uid"]
 - ["Ps23CustomStringConvertible", "userTypeLabel"]
 - !private ["Ps23CustomStringConvertible", "value"]
-- ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", ""]
 - ["Ps9Equatable", "CLLocationManager"]
@@ -226,14 +216,12 @@ depends-member:
 - !private ["Ps9Equatable", "reference"]
 - !private ["Ps9Equatable", "requestWhenInUseAuthorization"]
 - ["Ps9Equatable", "requestlocation"]
-- !private ["Ps9Equatable", "setValue"]
 - !private ["Ps9Equatable", "signOut"]
 - !private ["Ps9Equatable", "subscript"]
 - !private ["Ps9Equatable", "text"]
 - !private ["Ps9Equatable", "uid"]
 - ["Ps9Equatable", "userTypeLabel"]
 - !private ["Ps9Equatable", "value"]
-- ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", ""]
 - !private ["Ps5Error", "deinit"]
@@ -256,11 +244,9 @@ depends-member:
 - !private ["CSo11FIRDatabase", "reference"]
 - !private ["CSo16FIRDatabaseQuery", "child"]
 - !private ["CSo16FIRDatabaseQuery", "observe"]
-- !private ["CSo16FIRDatabaseQuery", "setValue"]
 - !private ["CSo20FIRDatabaseReference", "child"]
 - ["CSo20FIRDatabaseReference", "deinit"]
 - !private ["CSo20FIRDatabaseReference", "observe"]
-- !private ["CSo20FIRDatabaseReference", "setValue"]
 - ["CSo7FIRUser", "deinit"]
 - !private ["CSo7FIRUser", "uid"]
 - !private ["PSo11FIRUserInfo", "uid"]
@@ -292,14 +278,12 @@ depends-member:
 - !private ["Ps8Hashable", "reference"]
 - !private ["Ps8Hashable", "requestWhenInUseAuthorization"]
 - ["Ps8Hashable", "requestlocation"]
-- !private ["Ps8Hashable", "setValue"]
 - !private ["Ps8Hashable", "signOut"]
 - !private ["Ps8Hashable", "subscript"]
 - !private ["Ps8Hashable", "text"]
 - !private ["Ps8Hashable", "uid"]
 - ["Ps8Hashable", "userTypeLabel"]
 - !private ["Ps8Hashable", "value"]
-- ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
 - ["SQ", "deinit"]
@@ -327,7 +311,6 @@ depends-member:
 - !private ["PSo8NSCoding", "subscript"]
 - !private ["PSo8NSCoding", "text"]
 - ["PSo8NSCoding", "userTypeLabel"]
-- ["PSo8NSCoding", "viewDidAppear"]
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "deinit"]
@@ -354,14 +337,12 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "print"]
 - ["PSo26NSExtensionRequestHandling", "requestlocation"]
 - ["PSo26NSExtensionRequestHandling", "userTypeLabel"]
-- ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "subscript"]
 - ["CSo8NSObject", "AnyObject"]
-- ["CSo8NSObject", "Bool"]
 - ["CSo8NSObject", "CLLocationManager"]
 - !private ["CSo8NSObject", "FIRAuth"]
 - !private ["CSo8NSObject", "FIRDatabase"]
@@ -390,14 +371,12 @@ depends-member:
 - !private ["CSo8NSObject", "reference"]
 - !private ["CSo8NSObject", "requestWhenInUseAuthorization"]
 - ["CSo8NSObject", "requestlocation"]
-- !private ["CSo8NSObject", "setValue"]
 - !private ["CSo8NSObject", "signOut"]
 - !private ["CSo8NSObject", "subscript"]
 - !private ["CSo8NSObject", "text"]
 - !private ["CSo8NSObject", "uid"]
 - ["CSo8NSObject", "userTypeLabel"]
 - !private ["CSo8NSObject", "value"]
-- ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", "CLLocationManager"]
 - !private ["PSo16NSObjectProtocol", "FIRAuth"]
@@ -424,14 +403,12 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "reference"]
 - !private ["PSo16NSObjectProtocol", "requestWhenInUseAuthorization"]
 - ["PSo16NSObjectProtocol", "requestlocation"]
-- !private ["PSo16NSObjectProtocol", "setValue"]
 - !private ["PSo16NSObjectProtocol", "signOut"]
 - !private ["PSo16NSObjectProtocol", "subscript"]
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "uid"]
 - ["PSo16NSObjectProtocol", "userTypeLabel"]
 - !private ["PSo16NSObjectProtocol", "value"]
-- ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "init"]
@@ -444,7 +421,6 @@ depends-member:
 - !private ["Ps16RawRepresentable", "value"]
 - !private ["Ps8Sequence", "subscript"]
 - ["C12PocketVision21SightedViewController", "AnyObject"]
-- ["C12PocketVision21SightedViewController", "Bool"]
 - ["C12PocketVision21SightedViewController", "CLLocationManager"]
 - !private ["C12PocketVision21SightedViewController", "FIRAuth"]
 - !private ["C12PocketVision21SightedViewController", "FIRDatabase"]
@@ -467,7 +443,6 @@ depends-member:
 - !private ["C12PocketVision21SightedViewController", "print"]
 - ["C12PocketVision21SightedViewController", "requestlocation"]
 - ["C12PocketVision21SightedViewController", "userTypeLabel"]
-- ["C12PocketVision21SightedViewController", "viewDidAppear"]
 - ["C12PocketVision21SightedViewController", "viewDidLoad"]
 - ["SS", "deinit"]
 - !private ["SS", "init"]
@@ -505,7 +480,6 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "requestlocation"]
 - !private ["PSo21UIAppearanceContainer", "text"]
 - ["PSo21UIAppearanceContainer", "userTypeLabel"]
-- ["PSo21UIAppearanceContainer", "viewDidAppear"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", ""]
 - ["PSo18UIContentContainer", "CLLocationManager"]
@@ -527,7 +501,6 @@ depends-member:
 - !private ["PSo18UIContentContainer", "print"]
 - ["PSo18UIContentContainer", "requestlocation"]
 - ["PSo18UIContentContainer", "userTypeLabel"]
-- ["PSo18UIContentContainer", "viewDidAppear"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", ""]
 - !private ["PSo30UIContentSizeCategoryAdjusting", "text"]
@@ -553,13 +526,11 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "requestlocation"]
 - !private ["PSo18UIFocusEnvironment", "text"]
 - ["PSo18UIFocusEnvironment", "userTypeLabel"]
-- ["PSo18UIFocusEnvironment", "viewDidAppear"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo11UIFocusItem", "text"]
 - !private ["CSo7UILabel", "text"]
 - ["CSo11UIResponder", "AnyObject"]
-- ["CSo11UIResponder", "Bool"]
 - ["CSo11UIResponder", "CLLocationManager"]
 - !private ["CSo11UIResponder", "FIRAuth"]
 - !private ["CSo11UIResponder", "FIRDatabase"]
@@ -583,7 +554,6 @@ depends-member:
 - ["CSo11UIResponder", "requestlocation"]
 - !private ["CSo11UIResponder", "text"]
 - ["CSo11UIResponder", "userTypeLabel"]
-- ["CSo11UIResponder", "viewDidAppear"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", "CLLocationManager"]
 - !private ["PSo30UIResponderStandardEditActions", "FIRAuth"]
@@ -605,7 +575,6 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "requestlocation"]
 - !private ["PSo30UIResponderStandardEditActions", "text"]
 - ["PSo30UIResponderStandardEditActions", "userTypeLabel"]
-- ["PSo30UIResponderStandardEditActions", "viewDidAppear"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", ""]
 - ["PSo16UIStateRestoring", "CLLocationManager"]
@@ -627,7 +596,6 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "print"]
 - ["PSo16UIStateRestoring", "requestlocation"]
 - ["PSo16UIStateRestoring", "userTypeLabel"]
-- ["PSo16UIStateRestoring", "viewDidAppear"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
 - ["PSo18UITraitEnvironment", "CLLocationManager"]
@@ -650,12 +618,10 @@ depends-member:
 - ["PSo18UITraitEnvironment", "requestlocation"]
 - !private ["PSo18UITraitEnvironment", "text"]
 - ["PSo18UITraitEnvironment", "userTypeLabel"]
-- ["PSo18UITraitEnvironment", "viewDidAppear"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", ""]
 - !private ["CSo6UIView", "text"]
 - ["CSo16UIViewController", "AnyObject"]
-- ["CSo16UIViewController", "Bool"]
 - ["CSo16UIViewController", "CLLocationManager"]
 - !private ["CSo16UIViewController", "FIRAuth"]
 - !private ["CSo16UIViewController", "FIRDatabase"]
@@ -679,7 +645,6 @@ depends-member:
 - !private ["CSo16UIViewController", "print"]
 - ["CSo16UIViewController", "requestlocation"]
 - ["CSo16UIViewController", "userTypeLabel"]
-- ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
 - ["Su", "deinit"]
@@ -717,14 +682,12 @@ depends-member:
 - !private ["Ps9_Hashable", "reference"]
 - !private ["Ps9_Hashable", "requestWhenInUseAuthorization"]
 - ["Ps9_Hashable", "requestlocation"]
-- !private ["Ps9_Hashable", "setValue"]
 - !private ["Ps9_Hashable", "signOut"]
 - !private ["Ps9_Hashable", "subscript"]
 - !private ["Ps9_Hashable", "text"]
 - !private ["Ps9_Hashable", "uid"]
 - ["Ps9_Hashable", "userTypeLabel"]
 - !private ["Ps9_Hashable", "value"]
-- ["Ps9_Hashable", "viewDidAppear"]
 - ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", ""]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
@@ -862,4 +825,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "52909e26740eb19faad14a7504ca33ee"
+interface-hash: "446287109298526ddc19f941d6969b32"
