@@ -541,7 +541,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwa-pf-Ddn" id="eBf-hD-lcf">
-                                    <frame key="frameInset" width="375" height="67"/>
+                                    <frame key="frameInset" width="375" height="67.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Keu-kP-fze">
@@ -602,11 +602,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-lE-VtP"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Accept this help request: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfh-eV-0Jx">
+                                <frame key="frameInset" minX="16" minY="587" width="237" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jje-rB-k7G">
+                                <frame key="frameInset" minX="261" minY="587" width="98" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="Yes"/>
+                                <connections>
+                                    <action selector="acceptReq:" destination="iF1-LW-J1F" eventType="touchUpInside" id="DBc-UN-5kd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rEA-lE-VtP" firstAttribute="top" secondItem="nod-ir-24l" secondAttribute="bottom" id="QZO-7N-iGW"/>
-                            <constraint firstItem="rEA-lE-VtP" firstAttribute="bottom" secondItem="8O9-QH-WXj" secondAttribute="top" id="THu-6U-JJl"/>
+                            <constraint firstItem="rEA-lE-VtP" firstAttribute="bottom" secondItem="8O9-QH-WXj" secondAttribute="top" constant="-99" id="THu-6U-JJl"/>
                             <constraint firstAttribute="trailing" secondItem="rEA-lE-VtP" secondAttribute="trailing" id="j0Z-uD-KIC"/>
                             <constraint firstItem="rEA-lE-VtP" firstAttribute="leading" secondItem="nyz-Db-xEI" secondAttribute="leading" id="xj0-0P-u2W"/>
                         </constraints>

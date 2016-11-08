@@ -6,45 +6,45 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision26HelpingTableViewController", ""]
 provides-dynamic-lookup:
-- "refresh"
-- "cancelAction"
-- "viewDidAppear"
 - "viewDidLoad"
-- "locationManager"
+- "cancelAction"
 - "numberOfSections"
+- "refresh"
+- "tableView"
+- "tableView"
+- "viewDidAppear"
+- "locationManager"
 - "prepare"
-- "tableView"
-- "tableView"
 depends-top-level:
-- !private "locateBlindViewController"
-- !private "String"
-- "Int"
-- "UITableView"
-- !private "StringLiteralType"
-- "HelpingTableViewController"
+- !private "/"
+- !private "+"
+- "Request"
 - !private "BooleanLiteralType"
-- !private "RequestTableViewCell"
-- "UITableViewController"
-- "CLLocationManagerDelegate"
 - !private "FIRDatabase"
+- !private "Double"
+- !private "print"
+- !private "String"
+- !private "RequestTableViewCell"
+- !private "locateBlindViewController"
+- !private "StringLiteralType"
 - "Bool"
+- !private "UINavigationController"
+- "HelpingTableViewController"
+- !private "CLLocation"
+- "CastingPrecedence"
+- "CLLocationManager"
+- "AssignmentPrecedence"
+- !private "=="
+- "UITableViewController"
 - "UITableViewCell"
 - "UIStoryboardSegue"
-- !private "/"
-- "AnyObject"
-- "CLLocationManager"
-- "Request"
-- !private "print"
-- !private "UINavigationController"
-- !private "+"
 - "IndexPath"
+- "Int"
 - !private "NSDictionary"
+- "UITableView"
+- "AnyObject"
 - !private "!="
-- !private "CLLocation"
-- !private "Double"
-- "CastingPrecedence"
-- !private "=="
-- "AssignmentPrecedence"
+- "CLLocationManagerDelegate"
 depends-member:
 - !private ["Ps9AnyObject", "CLLocation"]
 - ["Ps9AnyObject", "CLLocationManager"]
@@ -63,6 +63,7 @@ depends-member:
 - !private ["Ps9AnyObject", "identifier"]
 - !private ["Ps9AnyObject", "indexPath"]
 - ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "key"]
 - !private ["Ps9AnyObject", "latitude"]
 - !private ["Ps9AnyObject", "location"]
 - ["Ps9AnyObject", "locationManager"]
@@ -191,6 +192,7 @@ depends-member:
 - !private ["Ps7CVarArg", "indexPath"]
 - ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "insert"]
+- !private ["Ps7CVarArg", "key"]
 - !private ["Ps7CVarArg", "location"]
 - ["Ps7CVarArg", "locationManager"]
 - ["Ps7CVarArg", "locationManagerDidPauseLocationUpdates"]
@@ -255,6 +257,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "indexPath"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "insert"]
+- !private ["Ps28CustomDebugStringConvertible", "key"]
 - !private ["Ps28CustomDebugStringConvertible", "location"]
 - ["Ps28CustomDebugStringConvertible", "locationManager"]
 - ["Ps28CustomDebugStringConvertible", "locationManagerDidPauseLocationUpdates"]
@@ -329,6 +332,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "indexPath"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "insert"]
+- !private ["Ps23CustomStringConvertible", "key"]
 - !private ["Ps23CustomStringConvertible", "location"]
 - ["Ps23CustomStringConvertible", "locationManager"]
 - ["Ps23CustomStringConvertible", "locationManagerDidPauseLocationUpdates"]
@@ -387,6 +391,7 @@ depends-member:
 - !private ["Ps9Equatable", "identifier"]
 - !private ["Ps9Equatable", "indexPath"]
 - ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "key"]
 - !private ["Ps9Equatable", "location"]
 - ["Ps9Equatable", "locationManager"]
 - ["Ps9Equatable", "locationManagerDidPauseLocationUpdates"]
@@ -437,6 +442,7 @@ depends-member:
 - !private ["OSC16FIRDataEventType", "childAdded"]
 - ["OSC16FIRDataEventType", "deinit"]
 - !private ["CSo15FIRDataSnapshot", "deinit"]
+- !private ["CSo15FIRDataSnapshot", "key"]
 - !private ["CSo15FIRDataSnapshot", "value"]
 - !private ["CSo11FIRDatabase", "database"]
 - ["CSo11FIRDatabase", "deinit"]
@@ -470,6 +476,7 @@ depends-member:
 - !private ["Ps8Hashable", "identifier"]
 - !private ["Ps8Hashable", "indexPath"]
 - ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "key"]
 - !private ["Ps8Hashable", "location"]
 - ["Ps8Hashable", "locationManager"]
 - ["Ps8Hashable", "locationManagerDidPauseLocationUpdates"]
@@ -685,6 +692,7 @@ depends-member:
 - !private ["CSo8NSObject", "identifier"]
 - !private ["CSo8NSObject", "indexPath"]
 - ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "key"]
 - !private ["CSo8NSObject", "locateBlindViewController"]
 - !private ["CSo8NSObject", "location"]
 - ["CSo8NSObject", "locationManager"]
@@ -726,6 +734,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "identifier"]
 - !private ["PSo16NSObjectProtocol", "indexPath"]
 - ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "key"]
 - !private ["PSo16NSObjectProtocol", "location"]
 - ["PSo16NSObjectProtocol", "locationManager"]
 - ["PSo16NSObjectProtocol", "locationManagerDidPauseLocationUpdates"]
@@ -1288,6 +1297,7 @@ depends-member:
 - !private ["Ps9_Hashable", "identifier"]
 - !private ["Ps9_Hashable", "indexPath"]
 - ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "key"]
 - !private ["Ps9_Hashable", "location"]
 - ["Ps9_Hashable", "locationManager"]
 - ["Ps9_Hashable", "locationManagerDidPauseLocationUpdates"]

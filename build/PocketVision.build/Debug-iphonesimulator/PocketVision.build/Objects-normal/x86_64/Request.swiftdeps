@@ -7,11 +7,12 @@ provides-member:
 - ["C12PocketVision7Request", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "AssignmentPrecedence"
-- "Double"
-- "Request"
 - "String"
+- "Request"
+- "Double"
+- "AssignmentPrecedence"
 depends-member:
+- !private ["Ps9AnyObject", "blindID"]
 - !private ["Ps9AnyObject", "isEmpty"]
 - !private ["Ps9AnyObject", "latitude"]
 - !private ["Ps9AnyObject", "longitude"]
@@ -50,6 +51,7 @@ depends-member:
 - !private ["CSo8NSString", "isEmpty"]
 - ["C12PocketVision7Request", "Double"]
 - ["C12PocketVision7Request", "String"]
+- ["C12PocketVision7Request", "blindID"]
 - ["C12PocketVision7Request", "deinit"]
 - ["C12PocketVision7Request", "init"]
 - ["C12PocketVision7Request", "latitude"]
@@ -163,4 +165,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "db17d63f0d6a627ed805091319248137"
+interface-hash: "aecc3b97f68752f051e7163d85aaa8c3"
