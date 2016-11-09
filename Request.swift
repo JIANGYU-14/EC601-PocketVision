@@ -15,14 +15,16 @@ class Request {
     var requester: String
     var latitude: Double
     var longitude: Double
+    var distance: Double
     
     // MARK: Initialization
     
-    init?(requester: String, latitude: Double, longitude: Double) {
+    init?(requester: String, latitude: Double, longitude: Double, distance: Double) {
         // Initialize stored properties.
         self.requester = requester
         self.latitude = latitude
         self.longitude = longitude
+        self.distance = distance
         
         // Initialization should fail if there is no name
         if requester.isEmpty {

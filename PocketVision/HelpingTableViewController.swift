@@ -35,33 +35,22 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             // Do not load data into cell if location does not exist
             if location != nil {
-                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
-                self.tableView.reloadData()
                 
+                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
+                let distance = locationBlind.distance(from: locationSighted)
+                
+                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance/1000)!, at: 0)
+    
+                self.tableView.reloadData()
             }
-            
-            
             })
+
         {
             (error) in
             print(error.localizedDescription)
         }
     }
-    
-    /*
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    */
-    // MARK: - Table view data source
-    /*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-    */
-
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -80,13 +69,17 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RequestTableViewCell
         
         // Fetches the appropriate request for the data source layout.
-        let request = requests[indexPath.row]
+        
+        let sorted = requests.sorted(by: {$0.distance < $1.distance})
+        
+        let request = sorted[indexPath.row]
         
         cell.requesterName.text = request.requester
         
         let coordinateSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
         let coordinateBlind = CLLocation(latitude: request.latitude, longitude: request.longitude)
         
+        // Calculate distance between sighted user and blind user
         let distanceInMeters = coordinateBlind.distance(from: coordinateSighted)
         
         cell.distanceAway.text = String(format: "%.2f", (distanceInMeters/1000)) + " km"
@@ -94,47 +87,6 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
         return cell
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
- */
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -158,6 +110,8 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
 
     @IBAction func refresh(_ sender: AnyObject) {
         
+        print("Refresh the list")
+        
         requests = [Request]()
         
         // Retrieve from database
@@ -175,11 +129,11 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             let longitude = location?["longitude"] as? Double
             
             // Do not load data into cell if location does not exist
-            if location != nil {
+            /*if location != nil {
                 self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
                 self.tableView.reloadData()
                 
-            }
+            }*/
             
             
             })
