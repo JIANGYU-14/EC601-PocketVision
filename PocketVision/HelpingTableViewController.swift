@@ -94,13 +94,18 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
         if (segue.identifier == "locateBlind") {
             
             let nav = segue.destination as! UINavigationController
+            
             let locateBlindVC = nav.topViewController as! locateBlindViewController
             
             // Get the cell that generated this segue.
             if let selectedRequestCell = sender as? RequestTableViewCell {
+                
                 let indexPath = tableView.indexPath(for: selectedRequestCell)!
                 
-                let selectedPerson = requests[indexPath.row]
+                let sorted = requests.sorted(by: {$0.distance < $1.distance})
+                
+                let selectedPerson = sorted[indexPath.row]
+                
                 locateBlindVC.person = selectedPerson
 
             }
