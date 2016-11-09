@@ -64,7 +64,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 ref.child("SightedUser").child(userID!).child("location").setValue(sightedlocation)
                 
                 // Store selected blind's name in database
-                ref.child("SightedUser").child(userID!).child("requester").setValue(needHelp)
+                ref.child("SightedUser").child(userID!).child("requester").setValue("Not decided")
             
                 // Plot blind user locaiton on map
                 let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
@@ -123,7 +123,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             
             let userID = FIRAuth.auth()?.currentUser?.uid
             
-            ref.child("SightedUser").child(userID!).child("requester").setValue("accept")
+            ref.child("SightedUser").child(userID!).child("requester").setValue(blindname)
         }))
         
         alert.addAction(UIAlertAction(title: "Maybe Later", style: .default, handler:{
