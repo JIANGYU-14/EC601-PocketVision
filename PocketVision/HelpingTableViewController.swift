@@ -11,9 +11,6 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         
         // Pull to refresh the data
         self.refreshControl?.addTarget(self, action: #selector(HelpingTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
@@ -46,7 +43,46 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
         {
             (error) in
             print(error.localizedDescription)
-        }    }
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        /*
+        // Pull to refresh the data
+        self.refreshControl?.addTarget(self, action: #selector(HelpingTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        
+        // Retrieve from database
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
+            snapshot in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let firstname = value?["firstname"] as? String
+            let location = value?["location"] as? NSDictionary
+            let latitude = location?["latitude"] as? Double
+            let longitude = location?["longitude"] as? Double
+            
+            // Do not load data into cell if location does not exist
+            if location != nil {
+                
+                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
+                let distance = locationBlind.distance(from: locationSighted)
+                
+                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance/1000)!, at: 0)
+                
+                self.tableView.reloadData()
+            }
+        })
+        {
+            (error) in
+            print(error.localizedDescription)
+        }    
+        */
+ }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
