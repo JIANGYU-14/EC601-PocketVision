@@ -11,16 +11,14 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        requests = [Request]()
+        // Pull to refresh the data
+        self.refreshControl?.addTarget(self, action: #selector(HelpingTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         
         // Retrieve from database
-        
         let ref = FIRDatabase.database().reference()
         
         ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
@@ -41,16 +39,14 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
                 let distance = locationBlind.distance(from: locationSighted)
                 
                 self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance/1000)!, at: 0)
-    
+                
                 self.tableView.reloadData()
             }
-            })
-
+        })
         {
             (error) in
             print(error.localizedDescription)
-        }
-    }
+        }    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -112,11 +108,43 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
 
     }
     }
+    
+    func handleRefresh(_ refreshControl: UIRefreshControl){
+        
+        // Retrieve from database
+        
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
+            snapshot in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let firstname = value?["firstname"] as? String
+            let location = value?["location"] as? NSDictionary
+            let latitude = location?["latitude"] as? Double
+            let longitude = location?["longitude"] as? Double
+            
+            // Do not load data into cell if location does not exist
+            if location != nil {
+                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
+                let distance = locationBlind.distance(from: locationSighted)
+                
+                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance/1000)!, at: 0)
+            }
+        })
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
 
     @IBAction func refresh(_ sender: AnyObject) {
         
-        print("Refresh the list")
         
+        
+        print("Refresh the list")
+        /*
         requests = [Request]()
         
         // Retrieve from database
@@ -134,18 +162,21 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             let longitude = location?["longitude"] as? Double
             
             // Do not load data into cell if location does not exist
-            /*if location != nil {
-                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
+            if location != nil {
+                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
+                let distance = locationBlind.distance(from: locationSighted)
+                
+                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance/1000)!, at: 0)
                 self.tableView.reloadData()
                 
-            }*/
-            
-            
+            }
             })
         {
             (error) in
             print(error.localizedDescription)
         }
+        */
 
     }
     
