@@ -22,8 +22,6 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         var helpLatitude = person.latitude
         var helpLongitude = person.longitude
         
-        
-        
         if CLLocationManager.locationServicesEnabled() {
             
             switch(CLLocationManager.authorizationStatus()) {
@@ -145,5 +143,20 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func acceptReq(_ sender: AnyObject) {
+        var needHelpID = person.blindID
+        
+        // Create database reference
+        
+        let ref = FIRDatabase.database().reference()
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("BlindUser").child(needHelpID).child("helper").setValue(userID!)
+        
+        
+    }
+    
 
 }

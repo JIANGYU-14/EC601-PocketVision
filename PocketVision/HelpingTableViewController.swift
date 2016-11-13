@@ -23,6 +23,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             // Get user value
             let value = snapshot.value as? NSDictionary
+            let userID = snapshot.key as String
             let firstname = value?["firstname"] as? String
             let location = value?["location"] as? NSDictionary
             let latitude = location?["latitude"] as? Double
@@ -30,12 +31,12 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             // Do not load data into cell if location does not exist
             if location != nil {
-                
+
                 let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
                 let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
                 let distance = locationBlind.distance(from: locationSighted)
                 
-                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance/1000)!, at: 0)
+                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance/1000)!, at: 0)
                 
                 self.tableView.reloadData()
             }
@@ -167,7 +168,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
                 let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
                 let distance = locationBlind.distance(from: locationSighted)
                 
-                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance/1000)!, at: 0)
+                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance/1000)!, at: 0)
             }
         })
         
@@ -192,6 +193,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             // Get user value
             let value = snapshot.value as? NSDictionary
+            let userID = snapshot.key as String
             let firstname = value?["firstname"] as? String
             let location = value?["location"] as? NSDictionary
             let latitude = location?["latitude"] as? Double
@@ -199,11 +201,15 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             // Do not load data into cell if location does not exist
             if location != nil {
+<<<<<<< HEAD
                 let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
                 let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
                 let distance = locationBlind.distance(from: locationSighted)
                 
                 self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance/1000)!, at: 0)
+=======
+                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
+>>>>>>> sherman
                 self.tableView.reloadData()
                 
             }
