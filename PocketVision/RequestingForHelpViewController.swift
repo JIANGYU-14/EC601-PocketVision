@@ -60,21 +60,6 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
                     self.blindnameLabel.text = currentblindname
                     
                 })
-                
-                // Check if any SightedUser accept the request
-                ref.child("SightedUser").queryOrderedByKey().observe(.childAdded, with: {
-                    snapshot in
-                    
-                    // Get requester value
-                    let value = snapshot.value as? NSDictionary
-        
-                    let requester = value?["requester"] as? String
-                    
-                    if requester == self.blindnameLabel.text {
-                        print("Find People")
-                    }
-
-                })
 
                 
                 

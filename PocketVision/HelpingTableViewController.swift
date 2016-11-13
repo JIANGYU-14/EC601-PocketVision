@@ -11,9 +11,16 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
+        requests = [Request]()
+        
+        /*
         // Pull to refresh the data
         self.refreshControl?.addTarget(self, action: #selector(HelpingTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+ */
         
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
@@ -31,58 +38,22 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             // Do not load data into cell if location does not exist
             if location != nil {
-
+                
                 let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
                 let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
                 let distance = locationBlind.distance(from: locationSighted)
                 
-                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance/1000)!, at: 0)
+                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance)!, at: 0)
                 
                 self.tableView.reloadData()
             }
-        })
+            })
         {
             (error) in
             print(error.localizedDescription)
         }
+
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        /*
-        // Pull to refresh the data
-        self.refreshControl?.addTarget(self, action: #selector(HelpingTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        
-        // Retrieve from database
-        let ref = FIRDatabase.database().reference()
-        
-        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
-            snapshot in
-            
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            let firstname = value?["firstname"] as? String
-            let location = value?["location"] as? NSDictionary
-            let latitude = location?["latitude"] as? Double
-            let longitude = location?["longitude"] as? Double
-            
-            // Do not load data into cell if location does not exist
-            if location != nil {
-                
-                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
-                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
-                let distance = locationBlind.distance(from: locationSighted)
-                
-                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!, distance: distance/1000)!, at: 0)
-                
-                self.tableView.reloadData()
-            }
-        })
-        {
-            (error) in
-            print(error.localizedDescription)
-        }    
-        */
  }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,13 +80,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
         
         cell.requesterName.text = request.requester
         
-        let coordinateSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
-        let coordinateBlind = CLLocation(latitude: request.latitude, longitude: request.longitude)
-        
-        // Calculate distance between sighted user and blind user
-        let distanceInMeters = coordinateBlind.distance(from: coordinateSighted)
-        
-        cell.distanceAway.text = String(format: "%.2f", (distanceInMeters/1000)) + " km"
+        cell.distanceAway.text = String(format: "%.2f", (request.distance/1000)) + " km"
         
         return cell
     }
@@ -146,42 +111,9 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     }
     }
     
+    /*
     func handleRefresh(_ refreshControl: UIRefreshControl){
         
-        // Retrieve from database
-        
-        let ref = FIRDatabase.database().reference()
-        
-        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
-            snapshot in
-            
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            let firstname = value?["firstname"] as? String
-            let location = value?["location"] as? NSDictionary
-            let latitude = location?["latitude"] as? Double
-            let longitude = location?["longitude"] as? Double
-            
-            // Do not load data into cell if location does not exist
-            if location != nil {
-                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
-                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
-                let distance = locationBlind.distance(from: locationSighted)
-                
-                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance/1000)!, at: 0)
-            }
-        })
-        
-        self.tableView.reloadData()
-        refreshControl.endRefreshing()
-    }
-
-    @IBAction func refresh(_ sender: AnyObject) {
-        
-        
-        
-        print("Refresh the list")
-        /*
         requests = [Request]()
         
         // Retrieve from database
@@ -201,15 +133,47 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             // Do not load data into cell if location does not exist
             if location != nil {
-<<<<<<< HEAD
                 let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
                 let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
                 let distance = locationBlind.distance(from: locationSighted)
                 
-                self.requests.insert(Request(requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance/1000)!, at: 0)
-=======
-                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!)!, at: 0)
->>>>>>> sherman
+                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance)!, at: 0)
+            }
+        })
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+ */
+
+    @IBAction func refresh(_ sender: AnyObject) {
+        
+        requests = [Request]()
+        
+        // Retrieve from database
+        
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
+            snapshot in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let userID = snapshot.key as String
+            let firstname = value?["firstname"] as? String
+            let location = value?["location"] as? NSDictionary
+            let latitude = location?["latitude"] as? Double
+            let longitude = location?["longitude"] as? Double
+            
+            // Do not load data into cell if location does not exist
+            if location != nil {
+
+                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
+                let distance = locationBlind.distance(from: locationSighted)
+                
+                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance)!, at: 0)
+
                 self.tableView.reloadData()
                 
             }
@@ -218,7 +182,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             (error) in
             print(error.localizedDescription)
         }
-        */
+        
 
     }
     

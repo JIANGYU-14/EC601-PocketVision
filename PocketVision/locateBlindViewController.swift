@@ -60,10 +60,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 
                 // Store location for Sighteduser in database
                 ref.child("SightedUser").child(userID!).child("location").setValue(sightedlocation)
-                
-                // Store selected blind's name in database
-                ref.child("SightedUser").child(userID!).child("requester").setValue("Not decided")
-            
+                            
                 // Plot blind user locaiton on map
                 let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
                 
@@ -107,13 +104,30 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         print("Errors: " + error.localizedDescription)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "beginSession") {
+            
+            let nav = segue.destination as! UINavigationController
+            
+            let SessionVC = nav.topViewController as! SessionViewController
+
+            SessionVC.person = person
+                
+            }
+            
+        }
+    
+
+    
+    
     @IBAction func acceptAction(_ sender: Any) {
         
+        var needHelpID = person.blindID
         var blindname = person.requester
         
-        let alert = UIAlertController(title:nil, message:nil, preferredStyle: .alert)
-        alert.message = "Go to help " + blindname + "!"
-        alert.addAction(UIAlertAction(title: "Sure", style: .default, handler:{
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alert.message = "Are you sure you want to help " + blindname + "?"
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:{
             
             action in
             
@@ -121,12 +135,15 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             
             let userID = FIRAuth.auth()?.currentUser?.uid
             
-            ref.child("SightedUser").child(userID!).child("requester").setValue(blindname)
+            ref.child("BlindUser").child(needHelpID).child("helper").setValue(userID!)
+            ref.child("BlindUser").child(needHelpID).child("request").setValue("In session")
+            
+            self.performSegue(withIdentifier: "beginSession", sender: self)
         }))
         
-        alert.addAction(UIAlertAction(title: "Maybe Later", style: .default, handler:{
+        alert.addAction(UIAlertAction(title: "Not now", style: .default, handler:{
             action in
-            print("User didn't accept the request")
+            print("User did not accept the request")
         }))
         self.present(alert, animated: true, completion: nil)
         
@@ -135,27 +152,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
     
     @IBAction func cancelAction(_ sender: AnyObject) {
         
-        let ref = FIRDatabase.database().reference()
-        
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        
-        ref.child("SightedUser").child(userID!).child("requester").setValue("...")
-        
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func acceptReq(_ sender: AnyObject) {
-        var needHelpID = person.blindID
-        
-        // Create database reference
-        
-        let ref = FIRDatabase.database().reference()
-        
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        
-        ref.child("BlindUser").child(needHelpID).child("helper").setValue(userID!)
-        
-        
     }
     
 
