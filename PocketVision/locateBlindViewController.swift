@@ -45,6 +45,8 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 
                 self.locationManager.startUpdatingLocation()
                 
+                // Plot sighted user location on map
+                
                 self.currentLocation.showsUserLocation = true
                 
                 // Create database reference
@@ -53,29 +55,16 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
-                // The user must be Sighted
+                let sightedlocation = ["latitude" : self.locationManager.location!.coordinate.latitude,
+                                "longitude" : self.locationManager.location!.coordinate.longitude]
                 
-                ref.child("SightedUser").child(userID!).observe(.value, with: { (snapshot) in
-                    
-                    // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    
-                    // Store location for SightedUser in database
-                    
-                    let location = ["latitude" : self.locationManager.location!.coordinate.latitude,
-                                    "longitude" : self.locationManager.location!.coordinate.longitude]
-                    
-                    ref.child("SightedUser").child(userID!).child("location").setValue(location)
-                    
-                }) { (error) in
-                    print(error.localizedDescription)
-                    print("Check Internet Connection!!!")
-                }
+                // Store location for Sighteduser in database
+                ref.child("SightedUser").child(userID!).child("location").setValue(sightedlocation)
                 
-                
-                
+                // Store selected blind's name in database
+                ref.child("SightedUser").child(userID!).child("requester").setValue("Not decided")
+            
                 // Plot blind user locaiton on map
-                
                 let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
                 
                 let annotation = MKPointAnnotation()
@@ -83,12 +72,8 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 annotation.title = needHelp
                 
                 self.currentLocation.addAnnotation(annotation)
-                
-                
             }
-            
-            
-            
+    
         } else {
             print("Location services are not enabled")
             
@@ -122,8 +107,41 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         print("Errors: " + error.localizedDescription)
     }
     
+    @IBAction func acceptAction(_ sender: Any) {
+        
+        var blindname = person.requester
+        
+        let alert = UIAlertController(title:nil, message:nil, preferredStyle: .alert)
+        alert.message = "Go to help " + blindname + "!"
+        alert.addAction(UIAlertAction(title: "Sure", style: .default, handler:{
+            
+            action in
+            
+            let ref = FIRDatabase.database().reference()
+            
+            let userID = FIRAuth.auth()?.currentUser?.uid
+            
+            ref.child("SightedUser").child(userID!).child("requester").setValue(blindname)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Maybe Later", style: .default, handler:{
+            action in
+            print("User didn't accept the request")
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func cancelAction(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        
+        let ref = FIRDatabase.database().reference()
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("SightedUser").child(userID!).child("requester").setValue("...")
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func acceptReq(_ sender: AnyObject) {
