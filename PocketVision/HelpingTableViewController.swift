@@ -35,6 +35,11 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             let location = value?["location"] as? NSDictionary
             let latitude = location?["latitude"] as? Double
             let longitude = location?["longitude"] as? Double
+            let status = value?["request"] as? String
+            
+            // Load data into cell only if blind user request status is Active
+            // Uncomment the following line when Active request is ready for implementation
+            // if status == "Active"
             
             // Do not load data into cell if location does not exist
             if location != nil {
