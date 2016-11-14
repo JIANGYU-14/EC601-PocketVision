@@ -9,6 +9,12 @@ class SessionViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     
     @IBOutlet weak var sessionMap: MKMapView!
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    var timer = Timer()
+    var seconds = 0
+    var minutes = 0
+    
     var person: Request!
     
     let locationManager = CLLocationManager()
@@ -17,6 +23,7 @@ class SessionViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,6 +89,21 @@ class SessionViewController: UIViewController, MKMapViewDelegate, CLLocationMana
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func updateTime() {
+        
+        seconds += 1
+        
+        if seconds == 60 {
+            minutes += 1
+            seconds = 0
+        }
+        
+        let strMins = String(format: "%02d", minutes)
+        let strSecs = String(format: "%02d", seconds)
+
+        timerLabel.text = "\(strMins):\(strSecs)"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,6 +127,33 @@ class SessionViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Errors: " + error.localizedDescription)
     }
+    
+    @IBAction func endSession(_ sender: AnyObject) {
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alert.message = "Are you sure you want to help end the session?"
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:{
+            
+            action in
+            
+            let ref = FIRDatabase.database().reference()
+            
+            let userID = FIRAuth.auth()?.currentUser?.uid
+            
+            ref.child("BlindUser").child(self.person.blindID).child("helper").setValue("")
+            ref.child("BlindUser").child(self.person.blindID).child("request").setValue("Inactive")
+            
+            self.performSegue(withIdentifier: "endSession", sender: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Not yet", style: .default, handler:{
+            action in
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
 
 
 }

@@ -669,11 +669,21 @@
                                 <state key="normal" title="End Session">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="endSession:" destination="ylS-MP-ErW" eventType="touchUpInside" id="Swq-Hu-mBn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ln-IU-A5u">
-                                <frame key="frameInset" minX="16" minY="595" width="160" height="64"/>
+                                <frame key="frameInset" minX="16" minY="629" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time elapsed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qML-le-7BP">
+                                <frame key="frameInset" minX="16" minY="595" width="160" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -684,7 +694,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="sessionMap" destination="SlN-P4-vvY" id="RQ2-Jb-wop"/>
-                        <segue destination="fyv-ha-821" kind="show" identifier="endSession" id="vd3-V2-hdG"/>
+                        <outlet property="timerLabel" destination="2ln-IU-A5u" id="uFR-nQ-ItK"/>
+                        <segue destination="fyv-ha-821" kind="showDetail" identifier="endSession" id="vd3-V2-hdG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lr-XS-6Aq" userLabel="First Responder" sceneMemberID="firstResponder"/>

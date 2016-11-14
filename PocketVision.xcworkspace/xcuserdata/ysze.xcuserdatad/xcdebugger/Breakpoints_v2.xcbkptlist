@@ -58,7 +58,7 @@
                   moduleName = "PocketVision"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpingTableViewController.swift"
-                  timestampString = "500762346.933342"
+                  timestampString = "500776876.822646"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "7"
@@ -73,7 +73,7 @@
                   moduleName = "PocketVision"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpingTableViewController.swift"
-                  timestampString = "500762346.935206"
+                  timestampString = "500776876.824019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "7"
@@ -88,7 +88,7 @@
                   moduleName = "PocketVision"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpingTableViewController.swift"
-                  timestampString = "500762346.936709"
+                  timestampString = "500776876.82533"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "7"
@@ -103,7 +103,7 @@
                   moduleName = "PocketVision"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpingTableViewController.swift"
-                  timestampString = "500762346.938564"
+                  timestampString = "500776876.826648"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "7"
@@ -158,6 +158,22 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketVision/SessionViewController.swift"
+            timestampString = "500777420.191855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "updateTime()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

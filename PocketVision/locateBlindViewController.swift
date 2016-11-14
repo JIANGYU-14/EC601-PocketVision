@@ -117,8 +117,6 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             
         }
     
-
-    
     
     @IBAction func acceptAction(_ sender: Any) {
         
