@@ -206,7 +206,6 @@
                                 <state key="normal" title="Request Help!"/>
                                 <connections>
                                     <action selector="requestHelp:" destination="qjr-zK-Db2" eventType="touchUpInside" id="Ivh-IT-OaZ"/>
-                                    <segue destination="Hic-3l-oTV" kind="presentation" id="E75-Xe-Rk3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -227,6 +226,7 @@
                     <connections>
                         <outlet property="nameLabel" destination="zBb-7Q-JdA" id="XRh-JW-M7e"/>
                         <outlet property="userTypeLabel" destination="wkc-Gu-yNX" id="0Cn-KB-zGK"/>
+                        <segue destination="Hic-3l-oTV" kind="presentation" identifier="requestHelp" id="pWm-rT-MzB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfG-wz-vDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
