@@ -147,6 +147,8 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     
     func handleRefresh(_ refreshControl: UIRefreshControl){
         
+        requests = [Request]()
+        
         // Retrieve from database
         
         let ref = FIRDatabase.database().reference()
