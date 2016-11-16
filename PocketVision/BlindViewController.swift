@@ -51,11 +51,28 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func requestHelp(_ sender: AnyObject) {
         
-        let ref = FIRDatabase.database().reference()
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alert.message = "Are you sure you want to request help?"
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:{
+            
+            action in
+            
+            self.performSegue(withIdentifier: "requestHelp", sender: self)
+            
+            // Retrieve from database
+            let ref = FIRDatabase.database().reference()
+            let userID = FIRAuth.auth()?.currentUser?.uid
+            
+            ref.child("BlindUser").child(userID!).child("request").setValue("Active")
+            
+            
+        }))
         
-        let userID = FIRAuth.auth()?.currentUser?.uid
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler:{
+            action in
+        }))
+        self.present(alert, animated: true, completion: nil)
         
-        ref.child("BlindUser").child(userID!).child("request").setValue("Active")
     }
     
     

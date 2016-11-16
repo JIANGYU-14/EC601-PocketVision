@@ -12,6 +12,7 @@ class Request {
     
     // MARK: Properties
     
+    var blindID: String
     var requester: String
     var latitude: Double
     var longitude: Double
@@ -19,8 +20,11 @@ class Request {
     
     // MARK: Initialization
     
-    init?(requester: String, latitude: Double, longitude: Double, distance: Double) {
+
+    init?(blindID: String, requester: String, latitude: Double, longitude: Double, distance: Double) {
+
         // Initialize stored properties.
+        self.blindID = blindID
         self.requester = requester
         self.latitude = latitude
         self.longitude = longitude
