@@ -3,7 +3,7 @@ import MapKit
 import Firebase
 
 
-class SessionViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class SightedSessionViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // MARK: Properties
     
