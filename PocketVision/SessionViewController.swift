@@ -2,19 +2,28 @@ import UIKit
 import MapKit
 import Firebase
 
-class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+
+class SessionViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     // MARK: Properties
     
-    @IBOutlet weak var currentLocation: MKMapView!
+    @IBOutlet weak var sessionMap: MKMapView!
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    var timer = Timer()
+    var seconds = 0
+    var minutes = 0
     
     var person: Request!
-
+    
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +56,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 
                 // Plot sighted user location on map
                 
-                self.currentLocation.showsUserLocation = true
+                self.sessionMap.showsUserLocation = true
                 
                 // Create database reference
                 
@@ -56,11 +65,11 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 let userID = FIRAuth.auth()?.currentUser?.uid
                 
                 let sightedlocation = ["latitude" : self.locationManager.location!.coordinate.latitude,
-                                "longitude" : self.locationManager.location!.coordinate.longitude]
+                                       "longitude" : self.locationManager.location!.coordinate.longitude]
                 
                 // Store location for Sighteduser in database
                 ref.child("SightedUser").child(userID!).child("location").setValue(sightedlocation)
-                            
+                
                 // Plot blind user locaiton on map
                 let location = CLLocationCoordinate2DMake(helpLatitude, helpLongitude)
                 
@@ -68,9 +77,9 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
                 annotation.coordinate = location
                 annotation.title = needHelp
                 
-                self.currentLocation.addAnnotation(annotation)
+                self.sessionMap.addAnnotation(annotation)
             }
-    
+            
         } else {
             print("Location services are not enabled")
             
@@ -79,6 +88,21 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func updateTime() {
+        
+        seconds += 1
+        
+        if seconds == 60 {
+            minutes += 1
+            seconds = 0
+        }
+        
+        let strMins = String(format: "%02d", minutes)
+        let strSecs = String(format: "%02d", seconds)
+
+        timerLabel.text = "\(strMins):\(strSecs)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +118,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
-        self.currentLocation.setRegion(region, animated: true)
+        self.sessionMap.setRegion(region, animated: true)
         
         self.locationManager.stopUpdatingLocation()
         
@@ -104,27 +128,10 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         print("Errors: " + error.localizedDescription)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "beginSession") {
-            
-            let nav = segue.destination as! UINavigationController
-            
-            let SessionVC = nav.topViewController as! SessionViewController
-
-            SessionVC.person = person
-                
-            }
-            
-        }
-    
-    
-    @IBAction func acceptAction(_ sender: Any) {
-        
-        var needHelpID = person.blindID
-        var blindname = person.requester
+    @IBAction func endSession(_ sender: AnyObject) {
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        alert.message = "Are you sure you want to help " + blindname + "?"
+        alert.message = "Are you sure you want to help end the session?"
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:{
             
             action in
@@ -133,25 +140,20 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             
             let userID = FIRAuth.auth()?.currentUser?.uid
             
-            ref.child("BlindUser").child(needHelpID).child("helper").setValue(userID!)
-            ref.child("BlindUser").child(needHelpID).child("request").setValue("In session")
+            ref.child("BlindUser").child(self.person.blindID).child("helper").setValue("")
+            ref.child("BlindUser").child(self.person.blindID).child("request").setValue("Inactive")
             
-            self.performSegue(withIdentifier: "beginSession", sender: self)
+            self.performSegue(withIdentifier: "endSession", sender: self)
         }))
         
-        alert.addAction(UIAlertAction(title: "Not now", style: .default, handler:{
+        alert.addAction(UIAlertAction(title: "Not yet", style: .default, handler:{
             action in
-            print("User did not accept the request")
         }))
         self.present(alert, animated: true, completion: nil)
         
-    }
-    
-    
-    @IBAction func cancelAction(_ sender: AnyObject) {
         
-        self.dismiss(animated: true, completion: nil)
     }
     
+
 
 }
