@@ -110,11 +110,11 @@
 				93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */,
 				93FA0E611DBFE1C100ADD2FC /* locateBlindViewController.swift */,
 				3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */,
+				93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */,
 				93EE40131DB9C3490061A53E /* Main.storyboard */,
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
-				93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */,
 			);
 			path = PocketVision;
 			sourceTree = "<group>";

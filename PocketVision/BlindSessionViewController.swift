@@ -1,18 +1,9 @@
-//
-//  BlindSessionViewController.swift
-//  PocketVision
-//
-//  Created by JIANGYU  😈 on 2016/11/16.
-//
-//
-
 import UIKit
 import Firebase
 
 
 class BlindSessionViewController: UIViewController {
 
-    
     @IBOutlet weak var helperLabel: UILabel!
     
     var checker = Timer()
