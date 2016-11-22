@@ -109,7 +109,7 @@ class locateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             
             let nav = segue.destination as! UINavigationController
             
-            let SessionVC = nav.topViewController as! SessionViewController
+            let SessionVC = nav.topViewController as! SightedSessionViewController
 
             SessionVC.person = person
                 

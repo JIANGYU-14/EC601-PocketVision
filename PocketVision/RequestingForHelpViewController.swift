@@ -6,10 +6,13 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
     
     @IBOutlet weak var blindnameLabel: UILabel!
     
+    var checker = Timer()
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checker = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.checkfirebase), userInfo: nil, repeats: true)
         
         // Create database reference
         
@@ -28,6 +31,7 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
         })
         
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         if CLLocationManager.locationServicesEnabled() {
@@ -80,6 +84,22 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
     
     override func viewDidDisappear(_ animated: Bool) {
 
+    }
+    
+    func checkfirebase() {
+        let ref = FIRDatabase.database().reference()
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        // Get current Helper's Value
+        ref.child("BlindUser").child(userID!).observe(.value, with:{(snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let helper = value?["helper"] as? String
+            
+            if helper != "" {
+                self.performSegue(withIdentifier: "helpercoming", sender: self )
+            }
+        })
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

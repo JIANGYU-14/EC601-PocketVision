@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C19971E1DD914A600D4FB9D /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C19971D1DD914A600D4FB9D /* SessionViewController.swift */; };
+		3C19971E1DD914A600D4FB9D /* SightedSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */; };
 		3C9FEB1A1DC2A41E00C3358E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */; };
 		3C9FEB1C1DC2A79000C3358E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FEB1B1DC2A79000C3358E /* Request.swift */; };
 		93238F441DC92119006219D8 /* RequestingForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */; };
@@ -22,6 +22,7 @@
 		93EE40151DB9C3490061A53E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40131DB9C3490061A53E /* Main.storyboard */; };
 		93EE40171DB9C3490061A53E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40161DB9C3490061A53E /* Assets.xcassets */; };
 		93EE40221DB9C3DD0061A53E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */; };
+		93F048161DDD0D8F00EC4B6C /* BlindSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */; };
 		93FA0E5E1DBEE04600ADD2FC /* HelpingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */; };
 		93FA0E621DBFE1C100ADD2FC /* locateBlindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E611DBFE1C100ADD2FC /* locateBlindViewController.swift */; };
 		B9C86F016C604827842ED85C /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
@@ -29,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		063F56D5C508FEA659B38C62 /* Pods-PocketVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketVision/Pods-PocketVision.debug.xcconfig"; sourceTree = "<group>"; };
-		3C19971D1DD914A600D4FB9D /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SightedSessionViewController.swift; sourceTree = "<group>"; };
 		3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		3C9FEB1B1DC2A79000C3358E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7EE73C4C2B59897E8BAF6C52 /* Pods-PocketVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketVision/Pods-PocketVision.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		93EE40161DB9C3490061A53E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93EE401B1DB9C3490061A53E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindSessionViewController.swift; sourceTree = "<group>"; };
 		93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpingTableViewController.swift; sourceTree = "<group>"; };
 		93FA0E611DBFE1C100ADD2FC /* locateBlindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = locateBlindViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,11 +109,12 @@
 				3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */,
 				93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */,
 				93FA0E611DBFE1C100ADD2FC /* locateBlindViewController.swift */,
-				3C19971D1DD914A600D4FB9D /* SessionViewController.swift */,
+				3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */,
 				93EE40131DB9C3490061A53E /* Main.storyboard */,
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
+				93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */,
 			);
 			path = PocketVision;
 			sourceTree = "<group>";
@@ -251,8 +254,9 @@
 				3C9FEB1C1DC2A79000C3358E /* Request.swift in Sources */,
 				93FA0E621DBFE1C100ADD2FC /* locateBlindViewController.swift in Sources */,
 				93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */,
+				93F048161DDD0D8F00EC4B6C /* BlindSessionViewController.swift in Sources */,
 				93238F441DC92119006219D8 /* RequestingForHelpViewController.swift in Sources */,
-				3C19971E1DD914A600D4FB9D /* SessionViewController.swift in Sources */,
+				3C19971E1DD914A600D4FB9D /* SightedSessionViewController.swift in Sources */,
 				93EE40101DB9C3490061A53E /* AppDelegate.swift in Sources */,
 				937249401DBBA1A700A6DA71 /* ResetPasswordViewController.swift in Sources */,
 				3C9FEB1A1DC2A41E00C3358E /* RequestTableViewCell.swift in Sources */,
