@@ -1,6 +1,6 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
 options: "855b11f32bdba9fdb1995e09599dab77"
-build_time: [533186358, 885643000]
+build_time: [533187106, 506205000]
 inputs:
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/RegisterViewController.swift": [533159930, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/Request.swift": [532380265, 0]
@@ -15,5 +15,5 @@ inputs:
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/MapViewController.swift": [531804107, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpingTableViewController.swift": [533167994, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/SightedViewController.swift": [533184138, 0]
-  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/BlindViewController.swift": [533184105, 0]
+  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/BlindViewController.swift": [533186994, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/LoadPageController.swift": [531800527, 0]
