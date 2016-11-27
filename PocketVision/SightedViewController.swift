@@ -51,7 +51,7 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
     }
     */
     @IBAction func logoutAction(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Logout", message: "You sure to logout current account?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Logout", message: "Log out of Pocket Vision?", preferredStyle: .alert)
         
         // Logout current account
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler:

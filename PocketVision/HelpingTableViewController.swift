@@ -98,7 +98,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             
             let nav = segue.destination as! UINavigationController
             
-            let locateBlindVC = nav.topViewController as! locateBlindViewController
+            let locateBlindVC = nav.topViewController as! LocateBlindViewController
             
             // Get the cell that generated this segue.
             if let selectedRequestCell = sender as? RequestTableViewCell {
