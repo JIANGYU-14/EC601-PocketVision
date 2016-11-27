@@ -24,7 +24,7 @@
 		93EE40221DB9C3DD0061A53E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */; };
 		93F048161DDD0D8F00EC4B6C /* BlindSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */; };
 		93FA0E5E1DBEE04600ADD2FC /* HelpingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */; };
-		93FA0E621DBFE1C100ADD2FC /* locateBlindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E611DBFE1C100ADD2FC /* locateBlindViewController.swift */; };
+		93FA0E621DBFE1C100ADD2FC /* LocateBlindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E611DBFE1C100ADD2FC /* LocateBlindViewController.swift */; };
 		B9C86F016C604827842ED85C /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindSessionViewController.swift; sourceTree = "<group>"; };
 		93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpingTableViewController.swift; sourceTree = "<group>"; };
-		93FA0E611DBFE1C100ADD2FC /* locateBlindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = locateBlindViewController.swift; sourceTree = "<group>"; };
+		93FA0E611DBFE1C100ADD2FC /* LocateBlindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocateBlindViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,17 +104,17 @@
 				9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */,
 				9398DB171DBD6246005D3734 /* BlindViewController.swift */,
 				93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */,
+				93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */,
 				9398DB191DBD625A005D3734 /* SightedViewController.swift */,
 				9346F98A1DBA676F003D94BA /* MapViewController.swift */,
 				3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */,
 				93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */,
-				93FA0E611DBFE1C100ADD2FC /* locateBlindViewController.swift */,
+				93FA0E611DBFE1C100ADD2FC /* LocateBlindViewController.swift */,
 				3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */,
 				93EE40131DB9C3490061A53E /* Main.storyboard */,
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
-				93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */,
 			);
 			path = PocketVision;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 			files = (
 				9346F9871DB9CBC7003D94BA /* RegisterViewController.swift in Sources */,
 				3C9FEB1C1DC2A79000C3358E /* Request.swift in Sources */,
-				93FA0E621DBFE1C100ADD2FC /* locateBlindViewController.swift in Sources */,
+				93FA0E621DBFE1C100ADD2FC /* LocateBlindViewController.swift in Sources */,
 				93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */,
 				93F048161DDD0D8F00EC4B6C /* BlindSessionViewController.swift in Sources */,
 				93238F441DC92119006219D8 /* RequestingForHelpViewController.swift in Sources */,
@@ -387,7 +387,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JIANGYU.PocketVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "10978ccd-a415-41be-a530-cc0a13cac1ee";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -404,7 +405,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JIANGYU.PocketVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "10978ccd-a415-41be-a530-cc0a13cac1ee";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
