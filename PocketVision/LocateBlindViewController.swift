@@ -14,6 +14,32 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkcancel()
+    }
+    
+    func checkcancel(){
+        let ref = FIRDatabase.database().reference()
+        
+        // Check if the Requester cancel the help
+        ref.child("BlindUser").child(self.person.blindID).observe(.value, with: {(snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let request = value?["request"] as? String
+            
+            if request == "Inactive" {
+                let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                alert.message = "The Requester canceled this help, Thanks for your time"
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{
+                    
+                    action in
+                    
+                    self.performSegue(withIdentifier: "backtohome", sender: self)
+                    
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        })
 
     }
     

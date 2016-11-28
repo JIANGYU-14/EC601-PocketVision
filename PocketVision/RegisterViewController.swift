@@ -46,6 +46,7 @@ class RegisterViewController: UIViewController {
                     case 0:
                         ref.child("BlindUser").child(user!.uid).setValue(firstname)
                         ref.child("BlindUser").child(user!.uid).child("user_type").setValue("Blind")
+                        ref.child("BlindUser").child(user!.uid).child("helper").setValue("")
                         
                     case 1:
                         ref.child("SightedUser").child(user!.uid).setValue(firstname)
