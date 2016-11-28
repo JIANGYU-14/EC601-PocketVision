@@ -42,7 +42,7 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             // if status == "Active"
             
             // Do not load data into cell if location does not exist
-            if location != nil {
+            if location != nil && status == "Active"{
                 
                 let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
                 let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
@@ -169,9 +169,10 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
             let location = value?["location"] as? NSDictionary
             let latitude = location?["latitude"] as? Double
             let longitude = location?["longitude"] as? Double
+            let status = value?["request"] as? String
             
             // Do not load data into cell if location does not exist
-            if location != nil {
+            if location != nil && status == "Active"{
 
                 let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
                 let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)

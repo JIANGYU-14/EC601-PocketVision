@@ -24,6 +24,33 @@ class SightedSessionViewController: UIViewController, MKMapViewDelegate, CLLocat
 
         // Do any additional setup after loading the view.
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+        
+        checkcancel()
+    }
+    
+    func checkcancel(){
+        let ref = FIRDatabase.database().reference()
+        
+        // Check if the Requester cancel the help
+        ref.child("BlindUser").child(self.person.blindID).observe(.value, with: {(snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let request = value?["request"] as? String
+            
+            if request == "Inactive" {
+                let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                alert.message = "The Requester canceled this help, Thanks for your time"
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{
+                    
+                    action in
+                    
+                    self.performSegue(withIdentifier: "endSession", sender: self)
+                }))
+                self.present(alert, animated: true, completion: nil)
+
+            }
+        })
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
