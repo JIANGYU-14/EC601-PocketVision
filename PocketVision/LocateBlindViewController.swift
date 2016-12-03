@@ -28,7 +28,7 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             
             if request == "Inactive" {
                 let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-                alert.message = "The Requester canceled this help, Thanks for your time"
+                alert.message = "The requester had to cancel this session. We hope to see you again!"
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{
                     
                     action in

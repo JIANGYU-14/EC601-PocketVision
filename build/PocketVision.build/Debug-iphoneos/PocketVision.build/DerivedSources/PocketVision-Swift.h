@@ -133,21 +133,23 @@ SWIFT_CLASS("_TtC12PocketVision11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class CLLocationManager;
 @class UILabel;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12PocketVision26BlindSessionViewController")
-@interface BlindSessionViewController : UIViewController
+@interface BlindSessionViewController : UIViewController <CLLocationManagerDelegate>
+@property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified helperLabel;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)checkFirebase;
+- (IBAction)cancelAction:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class CLLocationManager;
 
 SWIFT_CLASS("_TtC12PocketVision19BlindViewController")
 @interface BlindViewController : UIViewController <CLLocationManagerDelegate>
@@ -200,6 +202,7 @@ SWIFT_CLASS("_TtC12PocketVision25LocateBlindViewController")
 @property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified currentLocation;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 - (void)viewDidLoad;
+- (void)checkcancel;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
@@ -307,6 +310,7 @@ SWIFT_CLASS("_TtC12PocketVision28SightedSessionViewController")
 @property (nonatomic) NSInteger minutes;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 - (void)viewDidLoad;
+- (void)checkcancel;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)updateTime;
 - (void)didReceiveMemoryWarning;

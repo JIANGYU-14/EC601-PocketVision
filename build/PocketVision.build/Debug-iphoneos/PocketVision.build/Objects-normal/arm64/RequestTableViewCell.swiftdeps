@@ -6,8 +6,8 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision20RequestTableViewCell", ""]
 provides-dynamic-lookup:
-- "setSelected"
 - "distanceAway"
+- "setSelected"
 - "awakeFromNib"
 - "requesterName"
 depends-top-level:

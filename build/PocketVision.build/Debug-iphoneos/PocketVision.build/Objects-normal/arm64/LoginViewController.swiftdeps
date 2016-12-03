@@ -6,30 +6,30 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision19LoginViewController", ""]
 provides-dynamic-lookup:
-- "emailTextField"
-- "didReceiveMemoryWarning"
-- "viewDidAppear"
+- "viewDidLoad"
 - "loginAction"
 - "passwordTextField"
-- "viewDidLoad"
+- "viewDidAppear"
+- "emailTextField"
+- "didReceiveMemoryWarning"
 depends-top-level:
-- !private "||"
-- !private "FIRAuth"
+- "LoginViewController"
 - "AnyObject"
+- !private "NSDictionary"
 - "Bool"
+- !private "UIAlertController"
 - !private "CastingPrecedence"
 - !private "=="
-- "LoginViewController"
 - "UITextField"
 - !private "UIAlertAction"
-- !private "NSDictionary"
-- !private "UIAlertController"
-- !private "StringLiteralType"
+- !private "FIRAuth"
 - !private "String"
-- "UIViewController"
+- !private "StringLiteralType"
 - !private "print"
+- !private "||"
 - !private "BooleanLiteralType"
 - !private "FIRDatabase"
+- "UIViewController"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]

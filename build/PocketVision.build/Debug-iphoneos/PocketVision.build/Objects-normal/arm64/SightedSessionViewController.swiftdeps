@@ -6,52 +6,55 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision28SightedSessionViewController", ""]
 provides-dynamic-lookup:
+- "endSession"
 - "locationManager"
 - "locationManager"
 - "locationManager"
 - "timer"
-- "updateTime"
+- "didReceiveMemoryWarning"
+- "minutes"
+- "timerLabel"
+- "checkcancel"
 - "viewDidLoad"
 - "viewDidAppear"
-- "sessionMap"
+- "updateTime"
 - "seconds"
-- "didReceiveMemoryWarning"
-- "endSession"
-- "timerLabel"
-- "minutes"
+- "sessionMap"
 depends-top-level:
-- "MKMapViewDelegate"
-- !private "Dictionary"
-- !private "UnicodeScalarType"
-- "Error"
-- !private "String"
-- "CLLocationManagerDelegate"
-- "CLLocationManager"
-- "UILabel"
-- "AssignmentPrecedence"
 - !private "FIRDatabase"
-- "UIViewController"
 - "Timer"
-- "Bool"
-- !private "+="
-- "CLLocation"
-- !private "CLLocationCoordinate2DMake"
-- !private "=="
-- !private "+"
-- !private "StringLiteralType"
-- "SightedSessionViewController"
-- !private "MKCoordinateRegion"
-- "MKMapView"
-- !private "FIRAuth"
-- "Request"
-- !private "print"
-- !private "MKCoordinateSpan"
-- "AnyObject"
-- !private "kCLLocationAccuracyBest"
+- "MKMapViewDelegate"
 - !private "CLLocationCoordinate2D"
-- !private "MKPointAnnotation"
+- !private "Dictionary"
+- "AnyObject"
+- !private "MKCoordinateSpan"
+- !private "CastingPrecedence"
+- "AssignmentPrecedence"
+- "CLLocationManager"
+- !private "=="
+- !private "String"
+- "CLLocation"
+- !private "kCLLocationAccuracyBest"
+- "CLLocationManagerDelegate"
+- !private "NSDictionary"
 - !private "UIAlertController"
 - !private "UIAlertAction"
+- !private "StringLiteralType"
+- !private "UnicodeScalarType"
+- "UILabel"
+- "Request"
+- "MKMapView"
+- "UIViewController"
+- "SightedSessionViewController"
+- !private "CLLocationCoordinate2DMake"
+- !private "+"
+- !private "+="
+- !private "MKCoordinateRegion"
+- !private "FIRAuth"
+- !private "MKPointAnnotation"
+- "Bool"
+- !private "print"
+- "Error"
 - !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "CLLocationCoordinate2D"]
@@ -71,6 +74,7 @@ depends-member:
 - !private ["Ps9AnyObject", "auth"]
 - !private ["Ps9AnyObject", "authorizationStatus"]
 - !private ["Ps9AnyObject", "blindID"]
+- ["Ps9AnyObject", "checkcancel"]
 - !private ["Ps9AnyObject", "child"]
 - !private ["Ps9AnyObject", "coordinate"]
 - !private ["Ps9AnyObject", "currentUser"]
@@ -99,6 +103,7 @@ depends-member:
 - ["Ps9AnyObject", "mapViewWillStartRenderingMap"]
 - !private ["Ps9AnyObject", "message"]
 - ["Ps9AnyObject", "minutes"]
+- !private ["Ps9AnyObject", "observe"]
 - !private ["Ps9AnyObject", "performSegue"]
 - ["Ps9AnyObject", "person"]
 - !private ["Ps9AnyObject", "present"]
@@ -114,12 +119,14 @@ depends-member:
 - !private ["Ps9AnyObject", "showsUserLocation"]
 - !private ["Ps9AnyObject", "startUpdatingLocation"]
 - !private ["Ps9AnyObject", "stopUpdatingLocation"]
+- !private ["Ps9AnyObject", "subscript"]
 - !private ["Ps9AnyObject", "text"]
 - ["Ps9AnyObject", "timer"]
 - ["Ps9AnyObject", "timerLabel"]
 - !private ["Ps9AnyObject", "title"]
 - !private ["Ps9AnyObject", "uid"]
 - ["Ps9AnyObject", "updateTime"]
+- !private ["Ps9AnyObject", "value"]
 - ["Ps9AnyObject", "viewDidAppear"]
 - ["Ps9AnyObject", "viewDidLoad"]
 - ["Ps9AnyObject", ""]
@@ -173,6 +180,7 @@ depends-member:
 - ["PSo25CLLocationManagerDelegate", "Timer"]
 - !private ["PSo25CLLocationManagerDelegate", "UIAlertAction"]
 - !private ["PSo25CLLocationManagerDelegate", "UIAlertController"]
+- !private ["PSo25CLLocationManagerDelegate", "checkcancel"]
 - !private ["PSo25CLLocationManagerDelegate", "kCLLocationAccuracyBest"]
 - ["PSo25CLLocationManagerDelegate", "locationManager"]
 - ["PSo25CLLocationManagerDelegate", "locationManagerDidPauseLocationUpdates"]
@@ -217,6 +225,7 @@ depends-member:
 - !private ["Ps7CVarArg", "addAnnotation"]
 - !private ["Ps7CVarArg", "auth"]
 - !private ["Ps7CVarArg", "authorizationStatus"]
+- ["Ps7CVarArg", "checkcancel"]
 - !private ["Ps7CVarArg", "child"]
 - !private ["Ps7CVarArg", "coordinate"]
 - !private ["Ps7CVarArg", "currentUser"]
@@ -244,6 +253,7 @@ depends-member:
 - ["Ps7CVarArg", "mapViewWillStartRenderingMap"]
 - !private ["Ps7CVarArg", "message"]
 - ["Ps7CVarArg", "minutes"]
+- !private ["Ps7CVarArg", "observe"]
 - !private ["Ps7CVarArg", "performSegue"]
 - ["Ps7CVarArg", "person"]
 - !private ["Ps7CVarArg", "present"]
@@ -258,12 +268,14 @@ depends-member:
 - !private ["Ps7CVarArg", "showsUserLocation"]
 - !private ["Ps7CVarArg", "startUpdatingLocation"]
 - !private ["Ps7CVarArg", "stopUpdatingLocation"]
+- !private ["Ps7CVarArg", "subscript"]
 - !private ["Ps7CVarArg", "text"]
 - ["Ps7CVarArg", "timer"]
 - ["Ps7CVarArg", "timerLabel"]
 - !private ["Ps7CVarArg", "title"]
 - !private ["Ps7CVarArg", "uid"]
 - ["Ps7CVarArg", "updateTime"]
+- !private ["Ps7CVarArg", "value"]
 - ["Ps7CVarArg", "viewDidAppear"]
 - ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
@@ -294,6 +306,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "addAnnotation"]
 - !private ["Ps28CustomDebugStringConvertible", "auth"]
 - !private ["Ps28CustomDebugStringConvertible", "authorizationStatus"]
+- ["Ps28CustomDebugStringConvertible", "checkcancel"]
 - !private ["Ps28CustomDebugStringConvertible", "child"]
 - !private ["Ps28CustomDebugStringConvertible", "coordinate"]
 - !private ["Ps28CustomDebugStringConvertible", "currentUser"]
@@ -321,6 +334,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "mapViewWillStartRenderingMap"]
 - !private ["Ps28CustomDebugStringConvertible", "message"]
 - ["Ps28CustomDebugStringConvertible", "minutes"]
+- !private ["Ps28CustomDebugStringConvertible", "observe"]
 - !private ["Ps28CustomDebugStringConvertible", "performSegue"]
 - ["Ps28CustomDebugStringConvertible", "person"]
 - !private ["Ps28CustomDebugStringConvertible", "present"]
@@ -335,12 +349,14 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "showsUserLocation"]
 - !private ["Ps28CustomDebugStringConvertible", "startUpdatingLocation"]
 - !private ["Ps28CustomDebugStringConvertible", "stopUpdatingLocation"]
+- !private ["Ps28CustomDebugStringConvertible", "subscript"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - ["Ps28CustomDebugStringConvertible", "timer"]
 - ["Ps28CustomDebugStringConvertible", "timerLabel"]
 - !private ["Ps28CustomDebugStringConvertible", "title"]
 - !private ["Ps28CustomDebugStringConvertible", "uid"]
 - ["Ps28CustomDebugStringConvertible", "updateTime"]
+- !private ["Ps28CustomDebugStringConvertible", "value"]
 - ["Ps28CustomDebugStringConvertible", "viewDidAppear"]
 - ["Ps28CustomDebugStringConvertible", "viewDidLoad"]
 - ["Ps28CustomDebugStringConvertible", ""]
@@ -353,6 +369,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
 - !private ["Ps17CustomReflectable", "init"]
 - !private ["Ps17CustomReflectable", "last"]
+- !private ["Ps17CustomReflectable", "subscript"]
 - !private ["Ps23CustomStringConvertible", "CLLocationCoordinate2D"]
 - !private ["Ps23CustomStringConvertible", "CLLocationCoordinate2DMake"]
 - ["Ps23CustomStringConvertible", "CLLocationManager"]
@@ -374,6 +391,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "addAnnotation"]
 - !private ["Ps23CustomStringConvertible", "auth"]
 - !private ["Ps23CustomStringConvertible", "authorizationStatus"]
+- ["Ps23CustomStringConvertible", "checkcancel"]
 - !private ["Ps23CustomStringConvertible", "child"]
 - !private ["Ps23CustomStringConvertible", "coordinate"]
 - !private ["Ps23CustomStringConvertible", "currentUser"]
@@ -401,6 +419,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "mapViewWillStartRenderingMap"]
 - !private ["Ps23CustomStringConvertible", "message"]
 - ["Ps23CustomStringConvertible", "minutes"]
+- !private ["Ps23CustomStringConvertible", "observe"]
 - !private ["Ps23CustomStringConvertible", "performSegue"]
 - ["Ps23CustomStringConvertible", "person"]
 - !private ["Ps23CustomStringConvertible", "present"]
@@ -415,12 +434,14 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "showsUserLocation"]
 - !private ["Ps23CustomStringConvertible", "startUpdatingLocation"]
 - !private ["Ps23CustomStringConvertible", "stopUpdatingLocation"]
+- !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "text"]
 - ["Ps23CustomStringConvertible", "timer"]
 - ["Ps23CustomStringConvertible", "timerLabel"]
 - !private ["Ps23CustomStringConvertible", "title"]
 - !private ["Ps23CustomStringConvertible", "uid"]
 - ["Ps23CustomStringConvertible", "updateTime"]
+- !private ["Ps23CustomStringConvertible", "value"]
 - ["Ps23CustomStringConvertible", "viewDidAppear"]
 - ["Ps23CustomStringConvertible", "viewDidLoad"]
 - ["Ps23CustomStringConvertible", ""]
@@ -448,6 +469,7 @@ depends-member:
 - !private ["Ps9Equatable", "authorizationStatus"]
 - ["Ps9Equatable", "authorizedAlways"]
 - ["Ps9Equatable", "authorizedWhenInUse"]
+- ["Ps9Equatable", "checkcancel"]
 - !private ["Ps9Equatable", "child"]
 - !private ["Ps9Equatable", "coordinate"]
 - !private ["Ps9Equatable", "currentUser"]
@@ -477,6 +499,7 @@ depends-member:
 - !private ["Ps9Equatable", "message"]
 - ["Ps9Equatable", "minutes"]
 - ["Ps9Equatable", "notDetermined"]
+- !private ["Ps9Equatable", "observe"]
 - !private ["Ps9Equatable", "performSegue"]
 - ["Ps9Equatable", "person"]
 - !private ["Ps9Equatable", "present"]
@@ -492,12 +515,14 @@ depends-member:
 - !private ["Ps9Equatable", "showsUserLocation"]
 - !private ["Ps9Equatable", "startUpdatingLocation"]
 - !private ["Ps9Equatable", "stopUpdatingLocation"]
+- !private ["Ps9Equatable", "subscript"]
 - !private ["Ps9Equatable", "text"]
 - ["Ps9Equatable", "timer"]
 - ["Ps9Equatable", "timerLabel"]
 - !private ["Ps9Equatable", "title"]
 - !private ["Ps9Equatable", "uid"]
 - ["Ps9Equatable", "updateTime"]
+- !private ["Ps9Equatable", "value"]
 - ["Ps9Equatable", "viewDidAppear"]
 - ["Ps9Equatable", "viewDidLoad"]
 - ["Ps9Equatable", ""]
@@ -509,6 +534,7 @@ depends-member:
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "Key"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "Value"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
 - !private ["Ps32ExpressibleByStringInterpolation", "init"]
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
@@ -516,13 +542,19 @@ depends-member:
 - !private ["CSo7FIRAuth", "auth"]
 - !private ["CSo7FIRAuth", "currentUser"]
 - ["CSo7FIRAuth", "deinit"]
+- ["OSC16FIRDataEventType", "deinit"]
+- !private ["OSC16FIRDataEventType", "value"]
+- !private ["CSo15FIRDataSnapshot", "deinit"]
+- !private ["CSo15FIRDataSnapshot", "value"]
 - !private ["CSo11FIRDatabase", "database"]
 - ["CSo11FIRDatabase", "deinit"]
 - !private ["CSo11FIRDatabase", "reference"]
 - !private ["CSo16FIRDatabaseQuery", "child"]
+- !private ["CSo16FIRDatabaseQuery", "observe"]
 - !private ["CSo16FIRDatabaseQuery", "setValue"]
 - !private ["CSo20FIRDatabaseReference", "child"]
 - ["CSo20FIRDatabaseReference", "deinit"]
+- !private ["CSo20FIRDatabaseReference", "observe"]
 - !private ["CSo20FIRDatabaseReference", "setValue"]
 - ["CSo7FIRUser", "deinit"]
 - !private ["CSo7FIRUser", "uid"]
@@ -548,6 +580,7 @@ depends-member:
 - !private ["Ps8Hashable", "authorizationStatus"]
 - ["Ps8Hashable", "authorizedAlways"]
 - ["Ps8Hashable", "authorizedWhenInUse"]
+- ["Ps8Hashable", "checkcancel"]
 - !private ["Ps8Hashable", "child"]
 - !private ["Ps8Hashable", "coordinate"]
 - !private ["Ps8Hashable", "currentUser"]
@@ -577,6 +610,7 @@ depends-member:
 - !private ["Ps8Hashable", "message"]
 - ["Ps8Hashable", "minutes"]
 - ["Ps8Hashable", "notDetermined"]
+- !private ["Ps8Hashable", "observe"]
 - !private ["Ps8Hashable", "performSegue"]
 - ["Ps8Hashable", "person"]
 - !private ["Ps8Hashable", "present"]
@@ -592,12 +626,14 @@ depends-member:
 - !private ["Ps8Hashable", "showsUserLocation"]
 - !private ["Ps8Hashable", "startUpdatingLocation"]
 - !private ["Ps8Hashable", "stopUpdatingLocation"]
+- !private ["Ps8Hashable", "subscript"]
 - !private ["Ps8Hashable", "text"]
 - ["Ps8Hashable", "timer"]
 - ["Ps8Hashable", "timerLabel"]
 - !private ["Ps8Hashable", "title"]
 - !private ["Ps8Hashable", "uid"]
 - ["Ps8Hashable", "updateTime"]
+- !private ["Ps8Hashable", "value"]
 - ["Ps8Hashable", "viewDidAppear"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
@@ -643,6 +679,7 @@ depends-member:
 - ["PSo17MKMapViewDelegate", "Timer"]
 - !private ["PSo17MKMapViewDelegate", "UIAlertAction"]
 - !private ["PSo17MKMapViewDelegate", "UIAlertController"]
+- !private ["PSo17MKMapViewDelegate", "checkcancel"]
 - !private ["PSo17MKMapViewDelegate", "kCLLocationAccuracyBest"]
 - ["PSo17MKMapViewDelegate", "locationManager"]
 - ["PSo17MKMapViewDelegate", "locationManagerDidPauseLocationUpdates"]
@@ -696,6 +733,7 @@ depends-member:
 - !private ["PSo8NSCoding", "UIAlertController"]
 - !private ["PSo8NSCoding", "addAction"]
 - !private ["PSo8NSCoding", "addAnnotation"]
+- ["PSo8NSCoding", "checkcancel"]
 - !private ["PSo8NSCoding", "coordinate"]
 - ["PSo8NSCoding", "didReceiveMemoryWarning"]
 - ["PSo8NSCoding", "endSession"]
@@ -723,6 +761,7 @@ depends-member:
 - ["PSo8NSCoding", "sessionMap"]
 - !private ["PSo8NSCoding", "setRegion"]
 - !private ["PSo8NSCoding", "showsUserLocation"]
+- !private ["PSo8NSCoding", "subscript"]
 - !private ["PSo8NSCoding", "text"]
 - ["PSo8NSCoding", "timer"]
 - ["PSo8NSCoding", "timerLabel"]
@@ -731,7 +770,11 @@ depends-member:
 - ["PSo8NSCoding", "viewDidLoad"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "coordinate"]
+- !private ["PSo9NSCopying", "deinit"]
 - !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "subscript"]
+- !private ["CSo12NSDictionary", "deinit"]
+- !private ["CSo12NSDictionary", "subscript"]
 - !private ["PSo26NSExtensionRequestHandling", "CLLocationCoordinate2D"]
 - !private ["PSo26NSExtensionRequestHandling", "CLLocationCoordinate2DMake"]
 - ["PSo26NSExtensionRequestHandling", "CLLocationManager"]
@@ -745,6 +788,7 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertAction"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertController"]
 - !private ["PSo26NSExtensionRequestHandling", "addAction"]
+- ["PSo26NSExtensionRequestHandling", "checkcancel"]
 - ["PSo26NSExtensionRequestHandling", "didReceiveMemoryWarning"]
 - ["PSo26NSExtensionRequestHandling", "endSession"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
@@ -775,7 +819,9 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "viewDidAppear"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
+- !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "subscript"]
 - ["CSo8NSObject", "AnyObject"]
 - ["CSo8NSObject", "Bool"]
 - ["CSo8NSObject", "CLLocation"]
@@ -789,6 +835,7 @@ depends-member:
 - !private ["CSo8NSObject", "MKCoordinateSpan"]
 - ["CSo8NSObject", "MKMapView"]
 - !private ["CSo8NSObject", "MKPointAnnotation"]
+- !private ["CSo8NSObject", "NSDictionary"]
 - ["CSo8NSObject", "Request"]
 - !private ["CSo8NSObject", "String"]
 - ["CSo8NSObject", "Timer"]
@@ -799,6 +846,7 @@ depends-member:
 - !private ["CSo8NSObject", "addAnnotation"]
 - !private ["CSo8NSObject", "auth"]
 - !private ["CSo8NSObject", "authorizationStatus"]
+- ["CSo8NSObject", "checkcancel"]
 - !private ["CSo8NSObject", "child"]
 - !private ["CSo8NSObject", "coordinate"]
 - !private ["CSo8NSObject", "currentUser"]
@@ -825,6 +873,7 @@ depends-member:
 - ["CSo8NSObject", "mapViewWillStartRenderingMap"]
 - !private ["CSo8NSObject", "message"]
 - ["CSo8NSObject", "minutes"]
+- !private ["CSo8NSObject", "observe"]
 - !private ["CSo8NSObject", "performSegue"]
 - ["CSo8NSObject", "person"]
 - !private ["CSo8NSObject", "present"]
@@ -839,12 +888,14 @@ depends-member:
 - !private ["CSo8NSObject", "showsUserLocation"]
 - !private ["CSo8NSObject", "startUpdatingLocation"]
 - !private ["CSo8NSObject", "stopUpdatingLocation"]
+- !private ["CSo8NSObject", "subscript"]
 - !private ["CSo8NSObject", "text"]
 - ["CSo8NSObject", "timer"]
 - ["CSo8NSObject", "timerLabel"]
 - !private ["CSo8NSObject", "title"]
 - !private ["CSo8NSObject", "uid"]
 - ["CSo8NSObject", "updateTime"]
+- !private ["CSo8NSObject", "value"]
 - ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "CLLocationCoordinate2D"]
@@ -863,6 +914,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "addAnnotation"]
 - !private ["PSo16NSObjectProtocol", "auth"]
 - !private ["PSo16NSObjectProtocol", "authorizationStatus"]
+- ["PSo16NSObjectProtocol", "checkcancel"]
 - !private ["PSo16NSObjectProtocol", "child"]
 - !private ["PSo16NSObjectProtocol", "coordinate"]
 - !private ["PSo16NSObjectProtocol", "currentUser"]
@@ -889,6 +941,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "mapViewWillStartRenderingMap"]
 - !private ["PSo16NSObjectProtocol", "message"]
 - ["PSo16NSObjectProtocol", "minutes"]
+- !private ["PSo16NSObjectProtocol", "observe"]
 - !private ["PSo16NSObjectProtocol", "performSegue"]
 - ["PSo16NSObjectProtocol", "person"]
 - !private ["PSo16NSObjectProtocol", "present"]
@@ -903,17 +956,20 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "showsUserLocation"]
 - !private ["PSo16NSObjectProtocol", "startUpdatingLocation"]
 - !private ["PSo16NSObjectProtocol", "stopUpdatingLocation"]
+- !private ["PSo16NSObjectProtocol", "subscript"]
 - !private ["PSo16NSObjectProtocol", "text"]
 - ["PSo16NSObjectProtocol", "timer"]
 - ["PSo16NSObjectProtocol", "timerLabel"]
 - !private ["PSo16NSObjectProtocol", "title"]
 - !private ["PSo16NSObjectProtocol", "uid"]
 - ["PSo16NSObjectProtocol", "updateTime"]
+- !private ["PSo16NSObjectProtocol", "value"]
 - ["PSo16NSObjectProtocol", "viewDidAppear"]
 - ["PSo16NSObjectProtocol", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "coordinate"]
 - !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "subscript"]
 - !private ["CSo8NSString", "init"]
 - ["Sq", "deinit"]
 - !private ["Ps22RandomAccessCollection", "Iterator"]
@@ -935,6 +991,7 @@ depends-member:
 - ["Ps16RawRepresentable", "denied"]
 - ["Ps16RawRepresentable", "notDetermined"]
 - ["Ps16RawRepresentable", "restricted"]
+- !private ["Ps16RawRepresentable", "value"]
 - !private ["C12PocketVision7Request", "blindID"]
 - !private ["C12PocketVision7Request", "latitude"]
 - !private ["C12PocketVision7Request", "longitude"]
@@ -946,6 +1003,7 @@ depends-member:
 - !private ["Ps8Sequence", "Value"]
 - !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "last"]
+- !private ["Ps8Sequence", "subscript"]
 - ["C12PocketVision28SightedSessionViewController", "AnyObject"]
 - ["C12PocketVision28SightedSessionViewController", "Bool"]
 - ["C12PocketVision28SightedSessionViewController", "CLLocation"]
@@ -959,12 +1017,14 @@ depends-member:
 - !private ["C12PocketVision28SightedSessionViewController", "MKCoordinateSpan"]
 - ["C12PocketVision28SightedSessionViewController", "MKMapView"]
 - !private ["C12PocketVision28SightedSessionViewController", "MKPointAnnotation"]
+- !private ["C12PocketVision28SightedSessionViewController", "NSDictionary"]
 - ["C12PocketVision28SightedSessionViewController", "Request"]
 - !private ["C12PocketVision28SightedSessionViewController", "String"]
 - ["C12PocketVision28SightedSessionViewController", "Timer"]
 - !private ["C12PocketVision28SightedSessionViewController", "UIAlertAction"]
 - !private ["C12PocketVision28SightedSessionViewController", "UIAlertController"]
 - ["C12PocketVision28SightedSessionViewController", "UILabel"]
+- ["C12PocketVision28SightedSessionViewController", "checkcancel"]
 - ["C12PocketVision28SightedSessionViewController", "deinit"]
 - ["C12PocketVision28SightedSessionViewController", "didReceiveMemoryWarning"]
 - ["C12PocketVision28SightedSessionViewController", "endSession"]
@@ -1033,6 +1093,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
 - !private ["PSo21UIAppearanceContainer", "addAction"]
 - !private ["PSo21UIAppearanceContainer", "addAnnotation"]
+- ["PSo21UIAppearanceContainer", "checkcancel"]
 - ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
 - ["PSo21UIAppearanceContainer", "endSession"]
 - !private ["PSo21UIAppearanceContainer", "init"]
@@ -1079,6 +1140,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "UIAlertAction"]
 - !private ["PSo18UIContentContainer", "UIAlertController"]
 - !private ["PSo18UIContentContainer", "addAction"]
+- ["PSo18UIContentContainer", "checkcancel"]
 - ["PSo18UIContentContainer", "didReceiveMemoryWarning"]
 - ["PSo18UIContentContainer", "endSession"]
 - !private ["PSo18UIContentContainer", "init"]
@@ -1132,6 +1194,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
 - !private ["PSo18UIFocusEnvironment", "addAction"]
 - !private ["PSo18UIFocusEnvironment", "addAnnotation"]
+- ["PSo18UIFocusEnvironment", "checkcancel"]
 - ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
 - ["PSo18UIFocusEnvironment", "endSession"]
 - !private ["PSo18UIFocusEnvironment", "init"]
@@ -1183,6 +1246,7 @@ depends-member:
 - !private ["CSo11UIResponder", "MKCoordinateSpan"]
 - ["CSo11UIResponder", "MKMapView"]
 - !private ["CSo11UIResponder", "MKPointAnnotation"]
+- !private ["CSo11UIResponder", "NSDictionary"]
 - ["CSo11UIResponder", "Request"]
 - !private ["CSo11UIResponder", "String"]
 - ["CSo11UIResponder", "Timer"]
@@ -1191,6 +1255,7 @@ depends-member:
 - ["CSo11UIResponder", "UILabel"]
 - !private ["CSo11UIResponder", "addAction"]
 - !private ["CSo11UIResponder", "addAnnotation"]
+- ["CSo11UIResponder", "checkcancel"]
 - ["CSo11UIResponder", "didReceiveMemoryWarning"]
 - ["CSo11UIResponder", "endSession"]
 - ["CSo11UIResponder", "init"]
@@ -1237,6 +1302,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertController"]
 - !private ["PSo30UIResponderStandardEditActions", "addAction"]
 - !private ["PSo30UIResponderStandardEditActions", "addAnnotation"]
+- ["PSo30UIResponderStandardEditActions", "checkcancel"]
 - ["PSo30UIResponderStandardEditActions", "didReceiveMemoryWarning"]
 - ["PSo30UIResponderStandardEditActions", "endSession"]
 - !private ["PSo30UIResponderStandardEditActions", "init"]
@@ -1283,6 +1349,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "UIAlertAction"]
 - !private ["PSo16UIStateRestoring", "UIAlertController"]
 - !private ["PSo16UIStateRestoring", "addAction"]
+- ["PSo16UIStateRestoring", "checkcancel"]
 - ["PSo16UIStateRestoring", "didReceiveMemoryWarning"]
 - ["PSo16UIStateRestoring", "endSession"]
 - !private ["PSo16UIStateRestoring", "init"]
@@ -1327,6 +1394,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "UIAlertController"]
 - !private ["PSo18UITraitEnvironment", "addAction"]
 - !private ["PSo18UITraitEnvironment", "addAnnotation"]
+- ["PSo18UITraitEnvironment", "checkcancel"]
 - ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
 - ["PSo18UITraitEnvironment", "endSession"]
 - !private ["PSo18UITraitEnvironment", "init"]
@@ -1377,6 +1445,7 @@ depends-member:
 - !private ["CSo16UIViewController", "MKCoordinateSpan"]
 - ["CSo16UIViewController", "MKMapView"]
 - !private ["CSo16UIViewController", "MKPointAnnotation"]
+- !private ["CSo16UIViewController", "NSDictionary"]
 - ["CSo16UIViewController", "Request"]
 - !private ["CSo16UIViewController", "String"]
 - ["CSo16UIViewController", "Timer"]
@@ -1384,6 +1453,7 @@ depends-member:
 - !private ["CSo16UIViewController", "UIAlertController"]
 - ["CSo16UIViewController", "UILabel"]
 - !private ["CSo16UIViewController", "addAction"]
+- ["CSo16UIViewController", "checkcancel"]
 - ["CSo16UIViewController", "deinit"]
 - ["CSo16UIViewController", "didReceiveMemoryWarning"]
 - ["CSo16UIViewController", "endSession"]
@@ -1415,7 +1485,7 @@ depends-member:
 - ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
-- !private ["Su", "deinit"]
+- ["Su", "deinit"]
 - !private ["Vs6UInt16", "deinit"]
 - !private ["Vs6UInt32", "deinit"]
 - !private ["Vs6UInt64", "deinit"]
@@ -1457,6 +1527,7 @@ depends-member:
 - !private ["Ps9_Hashable", "authorizationStatus"]
 - ["Ps9_Hashable", "authorizedAlways"]
 - ["Ps9_Hashable", "authorizedWhenInUse"]
+- ["Ps9_Hashable", "checkcancel"]
 - !private ["Ps9_Hashable", "child"]
 - !private ["Ps9_Hashable", "coordinate"]
 - !private ["Ps9_Hashable", "currentUser"]
@@ -1486,6 +1557,7 @@ depends-member:
 - !private ["Ps9_Hashable", "message"]
 - ["Ps9_Hashable", "minutes"]
 - ["Ps9_Hashable", "notDetermined"]
+- !private ["Ps9_Hashable", "observe"]
 - !private ["Ps9_Hashable", "performSegue"]
 - ["Ps9_Hashable", "person"]
 - !private ["Ps9_Hashable", "present"]
@@ -1501,12 +1573,14 @@ depends-member:
 - !private ["Ps9_Hashable", "showsUserLocation"]
 - !private ["Ps9_Hashable", "startUpdatingLocation"]
 - !private ["Ps9_Hashable", "stopUpdatingLocation"]
+- !private ["Ps9_Hashable", "subscript"]
 - !private ["Ps9_Hashable", "text"]
 - ["Ps9_Hashable", "timer"]
 - ["Ps9_Hashable", "timerLabel"]
 - !private ["Ps9_Hashable", "title"]
 - !private ["Ps9_Hashable", "uid"]
 - ["Ps9_Hashable", "updateTime"]
+- !private ["Ps9_Hashable", "value"]
 - ["Ps9_Hashable", "viewDidAppear"]
 - ["Ps9_Hashable", "viewDidLoad"]
 - ["Ps9_Hashable", ""]
@@ -1517,6 +1591,7 @@ depends-member:
 - !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
 - !private ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "last"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
 depends-nominal:
 - "Ps9AnyObject"
 - "Sa"
@@ -1549,6 +1624,8 @@ depends-nominal:
 - !private "Ps26ExpressibleByStringLiteral"
 - !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - "CSo7FIRAuth"
+- "OSC16FIRDataEventType"
+- !private "CSo15FIRDataSnapshot"
 - "CSo11FIRDatabase"
 - !private "CSo16FIRDatabaseQuery"
 - "CSo20FIRDatabaseReference"
@@ -1580,7 +1657,9 @@ depends-nominal:
 - "CSo7NSCoder"
 - "PSo8NSCoding"
 - !private "PSo9NSCopying"
+- !private "CSo12NSDictionary"
 - "PSo26NSExtensionRequestHandling"
+- !private "PSo17NSFastEnumeration"
 - !private "PSo16NSMutableCopying"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
@@ -1620,7 +1699,7 @@ depends-nominal:
 - "PSo18UITraitEnvironment"
 - !private "CSo6UIView"
 - "CSo16UIViewController"
-- !private "Su"
+- "Su"
 - !private "Vs6UInt16"
 - !private "Vs6UInt32"
 - !private "Vs6UInt64"
@@ -1637,6 +1716,7 @@ depends-nominal:
 - !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - !private "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
@@ -1693,4 +1773,4 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
-interface-hash: "b959f4b30011aea0e5eedd86203403a3"
+interface-hash: "ec95c37b92788856c97341dca65e6fd0"
