@@ -5,7 +5,6 @@ import MapKit
 class SightedViewController: UIViewController, CLLocationManagerDelegate{
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var userTypeLabel: UILabel!
     
     let requestlocation = CLLocationManager()
     
@@ -26,11 +25,9 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
             // Get user value
             let value = snapshot.value as? NSDictionary
             let firstname = value?["firstname"] as? String
-            let userType = value?["user_type"] as? String
             
             // Replace default labels
             self.nameLabel.text = firstname
-            self.userTypeLabel.text = userType
         }) { (error) in
             print(error.localizedDescription)
         }
