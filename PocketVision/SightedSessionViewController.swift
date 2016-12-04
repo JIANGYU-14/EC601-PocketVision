@@ -170,6 +170,7 @@ class SightedSessionViewController: UIViewController, MKMapViewDelegate, CLLocat
             ref.child("BlindUser").child(self.person.blindID).child("helper").setValue("")
             ref.child("BlindUser").child(self.person.blindID).child("request").setValue("Inactive")
             
+            
             self.performSegue(withIdentifier: "endSession", sender: self)
         }))
         

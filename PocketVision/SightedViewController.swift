@@ -18,15 +18,12 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
         recognizer.addTarget(self, action: #selector(SightedViewController.profileImageHasBeenTapped))
         profilePicture.addGestureRecognizer(recognizer)
         
-        
         // Ask user for location service on this page
         self.requestlocation.requestWhenInUseAuthorization()
         
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
-        
-        // ref.child("SightedUser").child(userID!).child("status").setValue("Available")
         
         ref.child("SightedUser").child(userID!).observe(.value, with: { (snapshot) in
             
@@ -39,12 +36,26 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
         }) { (error) in
             print(error.localizedDescription)
         }
+        
+        // Retrieve from storage
+        let storage = FIRStorage.storage()
+        let storageRef = FIRStorage.storage().reference(forURL: "gs://pocketvision-b0f1e.appspot.com")
+        
+        storageRef.child(userID!).data(withMaxSize: 1*1000*1000) { (data, error) in
+            if error == nil {
+                self.profilePicture.image = UIImage(data: data!)
+            } else {
+                print(error?.localizedDescription)
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 
     /*
     // MARK: - Navigation
@@ -71,7 +82,7 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:
             {
                 action in
-                print("User didnt logout")
+                print("User didn't logout")
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -94,14 +105,36 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
  */
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
+
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        // Set photoImageView to display the selected image.
         profilePicture.image = selectedImage
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
+        
+        // Firebase user
+        let ref = FIRDatabase.database().reference()
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        // Firebase storage
+        let storage = FIRStorage.storage()
+        let storageRef = FIRStorage.storage().reference(forURL: "gs://pocketvision-b0f1e.appspot.com")
+        
+        let imagesRef = storageRef.child(userID!)
+        
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        // Upload the file to the path
+        let uploadTask = imagesRef.put(UIImageJPEGRepresentation(selectedImage, 0.8)!, metadata: metadata) { metadata, error in
+            if (error != nil) {
+                print(error?.localizedDescription)
+            } else {
+                print("Upload successful")
+            }
+        }
+        
     }
 
 }
