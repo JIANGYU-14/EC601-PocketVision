@@ -2,14 +2,22 @@ import UIKit
 import Firebase
 import MapKit
 
-class SightedViewController: UIViewController, CLLocationManagerDelegate{
+class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
+    
+    let recognizer = UITapGestureRecognizer()
     
     let requestlocation = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Enable touch on image
+        recognizer.addTarget(self, action: #selector(SightedViewController.profileImageHasBeenTapped))
+        profilePicture.addGestureRecognizer(recognizer)
+        
         
         // Ask user for location service on this page
         self.requestlocation.requestWhenInUseAuthorization()
@@ -67,6 +75,33 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate{
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func profileImageHasBeenTapped(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+   /*
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        profilePicture.image = image
+        self.dismiss(animated: true, completion: nil);
+    }
+ */
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Set photoImageView to display the selected image.
+        profilePicture.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
     }
 
 }

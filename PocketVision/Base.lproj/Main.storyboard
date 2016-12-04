@@ -370,15 +370,20 @@
                                     <segue destination="d42-dm-XmF" kind="presentation" id="2W6-UO-hNh"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlankProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="a5k-Qc-crP"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7NX-4F-K5P" firstAttribute="centerX" secondItem="Agr-pm-hep" secondAttribute="centerX" id="BUT-mb-0s2"/>
-                            <constraint firstItem="cte-Fv-KTR" firstAttribute="top" secondItem="Agr-pm-hep" secondAttribute="bottom" constant="155" id="FWD-4x-gth"/>
+                            <constraint firstItem="cte-Fv-KTR" firstAttribute="top" secondItem="Agr-pm-hep" secondAttribute="bottom" constant="48" id="FWD-4x-gth"/>
                             <constraint firstItem="cQo-7d-gdz" firstAttribute="trailing" secondItem="01V-Ty-7qn" secondAttribute="trailingMargin" id="KBs-Rr-SP3"/>
-                            <constraint firstItem="cQo-7d-gdz" firstAttribute="top" secondItem="fmm-Zn-Gbs" secondAttribute="bottom" constant="39" id="YUX-9W-shb"/>
+                            <constraint firstItem="a5k-Qc-crP" firstAttribute="centerX" secondItem="cQo-7d-gdz" secondAttribute="centerX" id="PSV-6c-fQc"/>
+                            <constraint firstItem="a5k-Qc-crP" firstAttribute="leading" secondItem="01V-Ty-7qn" secondAttribute="leadingMargin" constant="90" id="Rtw-bw-JeS"/>
+                            <constraint firstItem="cQo-7d-gdz" firstAttribute="top" secondItem="a5k-Qc-crP" secondAttribute="bottom" constant="32" id="Spx-Kq-toY"/>
+                            <constraint firstItem="cQo-7d-gdz" firstAttribute="top" secondItem="fmm-Zn-Gbs" secondAttribute="bottom" constant="228" id="YUX-9W-shb"/>
+                            <constraint firstItem="a5k-Qc-crP" firstAttribute="top" secondItem="fmm-Zn-Gbs" secondAttribute="bottom" constant="31" id="jLm-nO-EdP"/>
                             <constraint firstItem="7NX-4F-K5P" firstAttribute="centerX" secondItem="cQo-7d-gdz" secondAttribute="centerX" id="krL-xo-pdP"/>
-                            <constraint firstItem="Agr-pm-hep" firstAttribute="top" secondItem="7NX-4F-K5P" secondAttribute="bottom" constant="41" id="nPN-bJ-mYU"/>
+                            <constraint firstItem="Agr-pm-hep" firstAttribute="top" secondItem="7NX-4F-K5P" secondAttribute="bottom" constant="148" id="nPN-bJ-mYU"/>
                             <constraint firstItem="cQo-7d-gdz" firstAttribute="leading" secondItem="01V-Ty-7qn" secondAttribute="leadingMargin" id="zDM-oq-hsJ"/>
                         </constraints>
                     </view>
@@ -402,6 +407,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="nameLabel" destination="cQo-7d-gdz" id="zd2-Nl-xmO"/>
+                        <outlet property="profilePicture" destination="a5k-Qc-crP" id="t6Q-Ke-nwk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJ2-SH-MMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -819,6 +825,7 @@
     </scenes>
     <resources>
         <image name="BarImage" width="209" height="85"/>
+        <image name="BlankProfilePic" width="320" height="320"/>
         <image name="LaunchImage" width="621" height="1104"/>
     </resources>
     <inferredMetricsTieBreakers>
