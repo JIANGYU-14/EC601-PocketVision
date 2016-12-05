@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    IBOutlet UIView *framefoecapture;
+    IBOutlet UIImageView *imageView;
+    IBOutlet UILabel *resultLable;
+    
+}
+
+- (IBAction)takephoto:(id)sender;
 
 
 @end
