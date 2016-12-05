@@ -9,8 +9,39 @@ class ResetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Tap anywhere to dismiss the keyboard
+        let taptodismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismisskeyboard))
+        
+        view.addGestureRecognizer(taptodismiss)
+        
+        // Set the background image
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
 
-        // Do any additional setup after loading the view.
+        // Set layer for emailtextfield
+        let emailaddressborder = CALayer()
+        let emailaddresswidth = CGFloat(2.0)
+        emailaddressborder.borderColor = UIColor.darkGray.cgColor
+        emailaddressborder.frame = CGRect(x: 0, y: emailAddress.frame.size.height - emailaddresswidth, width:  emailAddress.frame.size.width, height: emailAddress.frame.size.height)
+        emailaddressborder.borderWidth = emailaddresswidth
+        
+        // Apply layer to textfield
+        emailAddress.layer.addSublayer(emailaddressborder)
+        
+        /*
+        // Set icon for emailaddress
+        let emailaddressimageView = UIImageView()
+        let emailaddressimage = UIImage(named: "email.png")
+        emailaddressimageView.image = emailaddressimage
+        emailaddressimageView.frame = CGRect(x: 0, y: 0, width: emailAddress.frame.height, height: emailAddress.frame.height)
+        emailAddress.leftView = emailaddressimageView
+        emailAddress.leftViewMode = UITextFieldViewMode.always
+        */
+
+    }
+    
+    func dismisskeyboard(){
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
