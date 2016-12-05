@@ -39,7 +39,7 @@ class SightedSessionViewController: UIViewController, MKMapViewDelegate, CLLocat
             
             if request == "Inactive" {
                 let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-                alert.message = "The Requester canceled this help, Thanks for your time"
+                alert.message = "The requester had to cancel this session. We hope to see you again!"
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler:{
                     
                     action in
@@ -169,6 +169,7 @@ class SightedSessionViewController: UIViewController, MKMapViewDelegate, CLLocat
             
             ref.child("BlindUser").child(self.person.blindID).child("helper").setValue("")
             ref.child("BlindUser").child(self.person.blindID).child("request").setValue("Inactive")
+            
             
             self.performSegue(withIdentifier: "endSession", sender: self)
         }))
