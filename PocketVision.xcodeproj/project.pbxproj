@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3C19971E1DD914A600D4FB9D /* SightedSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */; };
-		3C71C6181DF35F4C008BE6A8 /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
-		3C71C6191DF35F4C008BE6A8 /* Pods_PocketVision.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C9FEB1A1DC2A41E00C3358E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */; };
 		3C9FEB1C1DC2A79000C3358E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FEB1B1DC2A79000C3358E /* Request.swift */; };
+		930455071DF6211A001458B6 /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
+		930455081DF6211A001458B6 /* Pods_PocketVision.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93238F441DC92119006219D8 /* RequestingForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */; };
 		9346F9871DB9CBC7003D94BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346F9861DB9CBC7003D94BA /* RegisterViewController.swift */; };
 		9346F9891DBA638D003D94BA /* LoadPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346F9881DBA638D003D94BA /* LoadPageController.swift */; };
+		9369E7EB1DF8B46900411628 /* helptypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369E7EA1DF8B46900411628 /* helptypeViewController.swift */; };
 		937249401DBBA1A700A6DA71 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */; };
 		9398DB181DBD6246005D3734 /* BlindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DB171DBD6246005D3734 /* BlindViewController.swift */; };
 		9398DB1A1DBD625A005D3734 /* SightedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DB191DBD625A005D3734 /* SightedViewController.swift */; };
@@ -29,13 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3C71C6171DF35F49008BE6A8 /* Embed Frameworks */ = {
+		930455091DF6211A001458B6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3C71C6191DF35F4C008BE6A8 /* Pods_PocketVision.framework in Embed Frameworks */,
+				930455081DF6211A001458B6 /* Pods_PocketVision.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,9 +50,11 @@
 		3C9FEB1B1DC2A79000C3358E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7EE73C4C2B59897E8BAF6C52 /* Pods-PocketVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketVision/Pods-PocketVision.release.xcconfig"; sourceTree = "<group>"; };
 		87FC12454BBC884443612243 /* Pods_PocketVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		930455041DF620F9001458B6 /* Pods_PocketVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PocketVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestingForHelpViewController.swift; sourceTree = "<group>"; };
 		9346F9861DB9CBC7003D94BA /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9346F9881DBA638D003D94BA /* LoadPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPageController.swift; sourceTree = "<group>"; };
+		9369E7EA1DF8B46900411628 /* helptypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helptypeViewController.swift; sourceTree = "<group>"; };
 		9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		9398DB171DBD6246005D3734 /* BlindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindViewController.swift; sourceTree = "<group>"; };
 		9398DB191DBD625A005D3734 /* SightedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SightedViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C71C6181DF35F4C008BE6A8 /* Pods_PocketVision.framework in Frameworks */,
+				930455071DF6211A001458B6 /* Pods_PocketVision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +94,7 @@
 		93EE40031DB9C3480061A53E = {
 			isa = PBXGroup;
 			children = (
+				930455041DF620F9001458B6 /* Pods_PocketVision.framework */,
 				3C9FEB1B1DC2A79000C3358E /* Request.swift */,
 				93EE400E1DB9C3490061A53E /* PocketVision */,
 				93EE400D1DB9C3490061A53E /* Products */,
@@ -127,6 +131,7 @@
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
+				9369E7EA1DF8B46900411628 /* helptypeViewController.swift */,
 			);
 			path = PocketVision;
 			sourceTree = "<group>";
@@ -152,7 +157,7 @@
 				93EE400A1DB9C3480061A53E /* Resources */,
 				DCF6D6534662E10E896AE2E7 /* [CP] Embed Pods Frameworks */,
 				79D2F8194BDE12986BCF041C /* [CP] Copy Pods Resources */,
-				3C71C6171DF35F49008BE6A8 /* Embed Frameworks */,
+				930455091DF6211A001458B6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +274,7 @@
 				93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */,
 				93F048161DDD0D8F00EC4B6C /* BlindSessionViewController.swift in Sources */,
 				93238F441DC92119006219D8 /* RequestingForHelpViewController.swift in Sources */,
+				9369E7EB1DF8B46900411628 /* helptypeViewController.swift in Sources */,
 				3C19971E1DD914A600D4FB9D /* SightedSessionViewController.swift in Sources */,
 				93EE40101DB9C3490061A53E /* AppDelegate.swift in Sources */,
 				937249401DBBA1A700A6DA71 /* ResetPasswordViewController.swift in Sources */,

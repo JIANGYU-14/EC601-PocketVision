@@ -21,8 +21,19 @@ class SightedSessionViewController: UIViewController, MKMapViewDelegate, CLLocat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set Navigationbar Title
+        self.navigationItem.title = "Helping in Session"
+        
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        // Set the background image
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
 
-        // Do any additional setup after loading the view.
+        // Updateing time every seconds
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
         
         checkcancel()

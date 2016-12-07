@@ -5,7 +5,7 @@ import MapKit
 class BlindViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var userTypeLabel: UILabel!
+
     
     let requestlocation = CLLocationManager()
     
@@ -14,6 +14,14 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
         
         // Ask user for location service on this page
         self.requestlocation.requestWhenInUseAuthorization()
+        
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        // Set the background image
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
@@ -24,11 +32,12 @@ class BlindViewController: UIViewController, CLLocationManagerDelegate {
             // Get user value
             let value = snapshot.value as? NSDictionary
             let firstname = value?["firstname"] as? String
-            let userType = value?["user_type"] as? String
-            
-            // Replace default labels
-            self.nameLabel.text = firstname
-            self.userTypeLabel.text = userType
+
+            // Customize Font & Colors in Label (Do not set anything in Storyboard)
+            let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: firstname! as String, attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 48)!])
+            self.nameLabel.attributedText = MutableString
+            self.nameLabel.textColor = UIColor(red: 100,green: 251, blue: 178)
+          
         }) { (error) in
             print(error.localizedDescription)
         }

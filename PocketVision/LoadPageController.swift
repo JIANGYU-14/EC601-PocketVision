@@ -7,7 +7,7 @@ class LoadPageController: UIViewController {
         super.viewDidLoad()
         
         // Display load screen for 1.0 seconds
-        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.navigateToBelongedPage), userInfo: nil, repeats: false)
+        let timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.navigateToBelongedPage), userInfo: nil, repeats: false)
 
     }
     

@@ -11,16 +11,32 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        
+        
+        // Set Navigationbar Title
+        self.navigationItem.title = "People Who Need Help!"
+        
+        // Set Table View Background Image
+        let ImageView = UIImageView(image: UIImage(named: "background.png"))
+        self.tableView.backgroundView = ImageView
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         requests = [Request]()
         
-        /*
+        
         // Pull to refresh the data
-        self.refreshControl?.addTarget(self, action: #selector(HelpingTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
- */
+        self.refreshControl?.addTarget(self, action: #selector(HelpingTableViewController.handleRefresh), for: UIControlEvents.valueChanged)
+        refreshControl?.tintColor = UIColor.white
+        
+ 
         
         // Retrieve from database
         let ref = FIRDatabase.database().reference()
@@ -72,11 +88,13 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "RequestTableViewCell"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RequestTableViewCell
         
+        cell.backgroundColor = UIColor.clear
         // Fetches the appropriate request for the data source layout.
         
         let sorted = requests.sorted(by: {$0.distance < $1.distance})
@@ -116,6 +134,45 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
     }
     }
     
+    func handleRefresh(){
+        requests = [Request]()
+        
+        // Retrieve from database
+        
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("BlindUser").queryOrderedByKey().observe(.childAdded, with: {
+            snapshot in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let userID = snapshot.key as String
+            let firstname = value?["firstname"] as? String
+            let location = value?["location"] as? NSDictionary
+            let latitude = location?["latitude"] as? Double
+            let longitude = location?["longitude"] as? Double
+            let status = value?["request"] as? String
+            
+            // Do not load data into cell if location does not exist
+            if location != nil && status == "Active"{
+                
+                let locationSighted = CLLocation(latitude: self.locationManager.location!.coordinate.latitude, longitude: self.locationManager.location!.coordinate.longitude)
+                let locationBlind = CLLocation(latitude: latitude!, longitude: longitude!)
+                let distance = locationBlind.distance(from: locationSighted)
+                
+                self.requests.insert(Request(blindID: userID, requester: firstname!, latitude: latitude!, longitude: longitude!,distance: distance)!, at: 0)
+                
+                self.tableView.reloadData()
+            }
+        })
+        {
+            (error) in
+            print(error.localizedDescription)
+        }
+     
+        refreshControl?.endRefreshing()
+    }
+    
     /*
     func handleRefresh(_ refreshControl: UIRefreshControl){
         
@@ -150,6 +207,8 @@ class HelpingTableViewController: UITableViewController, CLLocationManagerDelega
         refreshControl.endRefreshing()
     }
  */
+    
+    
 
     @IBAction func refresh(_ sender: AnyObject) {
         

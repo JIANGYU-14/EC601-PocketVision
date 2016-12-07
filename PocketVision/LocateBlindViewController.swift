@@ -14,6 +14,15 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        // Set the background image
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
         checkcancel()
     }
     
