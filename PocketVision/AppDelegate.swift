@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.tintColor = UIColor(red: 149,green: 165, blue: 166)
         navigationBarAppearace.barTintColor = UIColor.white
         
+        // Change status bar color
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         FIRApp.configure()
         return true
     }

@@ -7,6 +7,7 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
     // MARK: Properties
     
     @IBOutlet weak var currentLocation: MKMapView!
+    @IBOutlet weak var Helptype: UILabel!
     
     var person: Request!
 
@@ -15,6 +16,8 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let blindid = person.blindID
+        
         // Hide navigation bar but keep navigation bar button
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -22,6 +25,45 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         // Set the background image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
+        
+        let ref = FIRDatabase.database().reference()
+        ref.child("BlindUser").child(blindid).observe(.value, with: { (snapshot) in
+            
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let helptype = value?["requesttype"] as? String
+            let name = value?["firstname"] as? String
+            
+            if helptype == "WALKING" {
+                
+                // Customize Font & Colors in Label (Do not set anything in Storyboard)
+                let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " need your help walking", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
+                self.Helptype.attributedText = MutableString
+                self.Helptype.textColor = UIColor(red: 100,green: 251, blue: 178)
+                
+            }else {
+                
+                if helptype == "MOVING" {
+                    
+                // Customize Font & Colors in Label (Do not set anything in Storyboard)
+                let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " need your help moving stuff", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
+                self.Helptype.attributedText = MutableString
+                self.Helptype.textColor = UIColor(red: 100,green: 251, blue: 178)
+                    
+                }
+                else{
+                    
+                    // Customize Font & Colors in Label (Do not set anything in Storyboard)
+                    let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " need your help with something", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
+                    self.Helptype.attributedText = MutableString
+                    self.Helptype.textColor = UIColor(red: 100,green: 251, blue: 178)
+                    
+                }
+
+            }
+            
+        })
         
         checkcancel()
     }
@@ -53,9 +95,10 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        var needHelp = person.requester
-        var helpLatitude = person.latitude
-        var helpLongitude = person.longitude
+        let needHelp = person.requester
+        let helpLatitude = person.latitude
+        let helpLongitude = person.longitude
+
         
         if CLLocationManager.locationServicesEnabled() {
             

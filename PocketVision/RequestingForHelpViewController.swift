@@ -148,8 +148,9 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
             let userID = FIRAuth.auth()?.currentUser?.uid
             
             ref.child("BlindUser").child(userID!).child("request").setValue("Inactive")
+            ref.child("BlindUser").child(userID!).child("requesttype").setValue("")
             
-            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "cancelrequest", sender: self)
             
         }))
         

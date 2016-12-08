@@ -79,10 +79,10 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
             let helper = value?["helper"] as? String
             
             if helper == "" {
-                //self.performSegue(withIdentifier: "endBlindSession", sender: self )
+                self.performSegue(withIdentifier: "endBlindSession", sender: self )
                 //self.dismiss(animated: true, completion: nil)
-                self.presentingViewController?.dismiss(animated: false, completion: nil)
-                self.presentingViewController?.dismiss(animated: true, completion: nil)
+                //self.presentingViewController?.dismiss(animated: false, completion: nil)
+                //self.presentingViewController?.dismiss(animated: true, completion: nil)
             }
         })
     }
@@ -120,8 +120,9 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
                         
                         action in
                         
-                        self.presentingViewController?.dismiss(animated: false, completion: nil)
-                        self.presentingViewController?.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "endBlindSession", sender: self)
+                        //self.presentingViewController?.dismiss(animated: false, completion: nil)
+                        //self.presentingViewController?.dismiss(animated: true, completion: nil)
                         
                         // Set request value to "Cancel"
                         let ref = FIRDatabase.database().reference()
