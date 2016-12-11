@@ -23,7 +23,7 @@ class SightedSessionViewController: UIViewController, MKMapViewDelegate, CLLocat
         super.viewDidLoad()
         
         // Set Navigationbar Title
-        self.navigationItem.title = "Helping in Session"
+        self.navigationItem.title = "Current Help Session"
         
         // Hide navigation bar but keep navigation bar button
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)

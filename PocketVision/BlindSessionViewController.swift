@@ -21,7 +21,7 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.navigationBar.isTranslucent = true
 
         // Set Navigationbar Title
-        self.navigationItem.title = "Requesting Help"
+        self.navigationItem.title = "Help Accepted"
         
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
@@ -49,7 +49,7 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
                     // let distance = locationHelper.distance(from: locationRequester)
                     
                     // Customize Font & Colors in Label (Do not set anything in Storyboard)
-                    let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: helpername! + " on the way!" as String, attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 35)!])
+                    let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: helpername! + " is on the way!" as String, attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 35)!])
                     self.helperLabel.attributedText = MutableString
                     self.helperLabel.textColor = UIColor(red: 100,green: 251, blue: 178)
                     
