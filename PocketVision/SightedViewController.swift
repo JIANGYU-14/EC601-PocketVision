@@ -14,6 +14,14 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        // Set the background image
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
         // Enable touch on image
         recognizer.addTarget(self, action: #selector(SightedViewController.profileImageHasBeenTapped))
         profilePicture.addGestureRecognizer(recognizer)
@@ -31,17 +39,22 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
             let value = snapshot.value as? NSDictionary
             let firstname = value?["firstname"] as? String
             
-            // Replace default labels
-            self.nameLabel.text = firstname
+            // Customize Font & Colors in Label (Do not set anything in Storyboard)
+            let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: firstname! as String, attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 48)!])
+            self.nameLabel.attributedText = MutableString
+            self.nameLabel.textColor = UIColor(red: 100,green: 251, blue: 178)
+            
         }) { (error) in
             print(error.localizedDescription)
         }
+        
+
         
         // Retrieve from storage
         let storage = FIRStorage.storage()
         let storageRef = FIRStorage.storage().reference(forURL: "gs://pocketvision-b0f1e.appspot.com")
         
-        storageRef.child(userID!).data(withMaxSize: 1*1000*1000) { (data, error) in
+        storageRef.child(userID!).data(withMaxSize: 1*100000*100000) { (data, error) in
             if error == nil {
                 self.profilePicture.image = UIImage(data: data!)
             } else {
@@ -50,6 +63,7 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
             
         }
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -90,7 +104,7 @@ class SightedViewController: UIViewController, CLLocationManagerDelegate,UIImage
     
     func profileImageHasBeenTapped(){
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
             imagePicker.allowsEditing = true

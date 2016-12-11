@@ -7,7 +7,7 @@ class LoadPageController: UIViewController {
         super.viewDidLoad()
         
         // Display load screen for 1.0 seconds
-        var timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.navigateToBelongedPage), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.navigateToBelongedPage), userInfo: nil, repeats: false)
 
     }
     
@@ -16,11 +16,9 @@ class LoadPageController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    func navToLogin(){
-        self.performSegue(withIdentifier: "loginView", sender: self)
+    override var prefersStatusBarHidden: Bool{
+        return true
     }
- */
     
     func navigateToBelongedPage(){
         

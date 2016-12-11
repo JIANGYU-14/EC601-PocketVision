@@ -11,10 +11,19 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        // Set Navigationbar Title
+        self.navigationItem.title = "Requesting Help"
+        
+        // Set the background image
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
         // Create database reference
-        
         let ref = FIRDatabase.database().reference()
-        
         let userID = FIRAuth.auth()?.currentUser?.uid
 
         // Get current BlindUser's name
@@ -23,7 +32,11 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
             // Get BlindUser value
             let value = snapshot.value as? NSDictionary
             let currentblindname = value?["firstname"] as? String
-            self.blindnameLabel.text = currentblindname
+            
+            // Customize Font & Colors in Label (Do not set anything in Storyboard)
+            let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: currentblindname! as String, attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 48)!])
+            self.blindnameLabel.attributedText = MutableString
+            self.blindnameLabel.textColor = UIColor(red: 100,green: 251, blue: 178)
             
         })
         
@@ -135,8 +148,9 @@ class RequestingForHelpViewController: UIViewController, MKMapViewDelegate, CLLo
             let userID = FIRAuth.auth()?.currentUser?.uid
             
             ref.child("BlindUser").child(userID!).child("request").setValue("Inactive")
+            ref.child("BlindUser").child(userID!).child("requesttype").setValue("")
             
-            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "cancelrequest", sender: self)
             
         }))
         

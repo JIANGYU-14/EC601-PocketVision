@@ -9,7 +9,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Override point for customization after application launch.
+        // Change navigation title color
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        
+        // Change navigation button color
+        navigationBarAppearace.tintColor = UIColor(red: 149,green: 165, blue: 166)
+        navigationBarAppearace.barTintColor = UIColor.white
+        
+        // Change status bar color
+        UIApplication.shared.statusBarStyle = .lightContent
         
         FIRApp.configure()
         return true

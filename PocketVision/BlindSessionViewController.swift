@@ -12,6 +12,17 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
         
         super.viewDidLoad()
         
+        // Set the background image
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+
+        // Set Navigationbar Title
+        self.navigationItem.title = "Requesting Help"
+        
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
         
@@ -37,8 +48,10 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
                     
                     // let distance = locationHelper.distance(from: locationRequester)
                     
-                    
-                    self.helperLabel.text = helpername! + " is on the way here!"
+                    // Customize Font & Colors in Label (Do not set anything in Storyboard)
+                    let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: helpername! + " on the way!" as String, attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 35)!])
+                    self.helperLabel.attributedText = MutableString
+                    self.helperLabel.textColor = UIColor(red: 100,green: 251, blue: 178)
                     
                     
                 })
@@ -66,10 +79,10 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
             let helper = value?["helper"] as? String
             
             if helper == "" {
-                //self.performSegue(withIdentifier: "endBlindSession", sender: self )
+                self.performSegue(withIdentifier: "endBlindSession", sender: self )
                 //self.dismiss(animated: true, completion: nil)
-                self.presentingViewController?.dismiss(animated: false, completion: nil)
-                self.presentingViewController?.dismiss(animated: true, completion: nil)
+                //self.presentingViewController?.dismiss(animated: false, completion: nil)
+                //self.presentingViewController?.dismiss(animated: true, completion: nil)
             }
         })
     }
@@ -107,8 +120,9 @@ class BlindSessionViewController: UIViewController, CLLocationManagerDelegate {
                         
                         action in
                         
-                        self.presentingViewController?.dismiss(animated: false, completion: nil)
-                        self.presentingViewController?.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "endBlindSession", sender: self)
+                        //self.presentingViewController?.dismiss(animated: false, completion: nil)
+                        //self.presentingViewController?.dismiss(animated: true, completion: nil)
                         
                         // Set request value to "Cancel"
                         let ref = FIRDatabase.database().reference()

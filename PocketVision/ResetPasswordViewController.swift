@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class ResetPasswordViewController: UIViewController {
+class ResetPasswordViewController: UIViewController,UITextFieldDelegate {
 
     // MARK: Properties
     
@@ -10,38 +10,70 @@ class ResetPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Remove keyboard on press RETURN
+        emailAddress.delegate = self
+        emailAddress.tag = 0
+        
+        
+        // Customize backbutton image and size
+        let backButton = UIButton(frame: CGRect(x: 0, y: 20, width: 30, height: 30))
+        backButton.setBackgroundImage(UIImage(named: "Back.png"), for: .normal)
+        backButton.addTarget(self, action: #selector(RegisterViewController.backhomepage), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+        
+        // Hide navigation bar but keep navigation bar button
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
         //Tap anywhere to dismiss the keyboard
         let taptodismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismisskeyboard))
         
         view.addGestureRecognizer(taptodismiss)
         
         // Set the background image
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
 
-        // Set layer for emailtextfield
+        // Set layer for emailaddress
         let emailaddressborder = CALayer()
         let emailaddresswidth = CGFloat(2.0)
-        emailaddressborder.borderColor = UIColor.darkGray.cgColor
+        emailaddressborder.borderColor = UIColor(red: 149,green: 165, blue: 166).cgColor
         emailaddressborder.frame = CGRect(x: 0, y: emailAddress.frame.size.height - emailaddresswidth, width:  emailAddress.frame.size.width, height: emailAddress.frame.size.height)
         emailaddressborder.borderWidth = emailaddresswidth
+        
+        // Customize placeholder in emailaddress
+        emailAddress.attributedPlaceholder = NSAttributedString(string:"Email Address",attributes:[NSForegroundColorAttributeName: UIColor(red: 241,green: 241, blue:241)])
+        emailAddress.textAlignment = NSTextAlignment.left
+        emailAddress.font = emailAddress.font?.withSize(20)
         
         // Apply layer to textfield
         emailAddress.layer.addSublayer(emailaddressborder)
         
-        /*
         // Set icon for emailaddress
         let emailaddressimageView = UIImageView()
-        let emailaddressimage = UIImage(named: "email.png")
+        let emailaddressimage = UIImage(named: "ResetPassword.png")
         emailaddressimageView.image = emailaddressimage
-        emailaddressimageView.frame = CGRect(x: 0, y: 0, width: emailAddress.frame.height, height: emailAddress.frame.height)
+        emailaddressimageView.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         emailAddress.leftView = emailaddressimageView
         emailAddress.leftViewMode = UITextFieldViewMode.always
-        */
+        
 
     }
     
     func dismisskeyboard(){
         view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, Remove keyboard.
+            textField.resignFirstResponder()
+        }
+        return false
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,7 +114,7 @@ class ResetPasswordViewController: UIViewController {
         }
     }
     
-    @IBAction func canelReset(_ sender: AnyObject) {
+    func backhomepage(){
         self.dismiss(animated: true, completion: nil)
     }
     
