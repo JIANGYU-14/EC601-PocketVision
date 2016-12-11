@@ -7,27 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C19971E1DD914A600D4FB9D /* SightedSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */; };
+		3C9FEB1A1DC2A41E00C3358E /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */; };
+		3C9FEB1C1DC2A79000C3358E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9FEB1B1DC2A79000C3358E /* Request.swift */; };
+		930455071DF6211A001458B6 /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
+		930455081DF6211A001458B6 /* Pods_PocketVision.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		93238F441DC92119006219D8 /* RequestingForHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */; };
+		9346F9871DB9CBC7003D94BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346F9861DB9CBC7003D94BA /* RegisterViewController.swift */; };
+		9346F9891DBA638D003D94BA /* LoadPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9346F9881DBA638D003D94BA /* LoadPageController.swift */; };
+		9369E7EB1DF8B46900411628 /* HelpTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369E7EA1DF8B46900411628 /* HelpTypeViewController.swift */; };
+		937249401DBBA1A700A6DA71 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */; };
+		9398DB181DBD6246005D3734 /* BlindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DB171DBD6246005D3734 /* BlindViewController.swift */; };
+		9398DB1A1DBD625A005D3734 /* SightedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9398DB191DBD625A005D3734 /* SightedViewController.swift */; };
 		93EE40101DB9C3490061A53E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE400F1DB9C3490061A53E /* AppDelegate.swift */; };
-		93EE40121DB9C3490061A53E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE40111DB9C3490061A53E /* ViewController.swift */; };
+		93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE40111DB9C3490061A53E /* LoginViewController.swift */; };
 		93EE40151DB9C3490061A53E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40131DB9C3490061A53E /* Main.storyboard */; };
 		93EE40171DB9C3490061A53E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40161DB9C3490061A53E /* Assets.xcassets */; };
-		93EE401A1DB9C3490061A53E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40181DB9C3490061A53E /* LaunchScreen.storyboard */; };
 		93EE40221DB9C3DD0061A53E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */; };
-		B9C86F016C604827842ED85C /* Pods_PocketVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FC12454BBC884443612243 /* Pods_PocketVision.framework */; };
+		93F048161DDD0D8F00EC4B6C /* BlindSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */; };
+		93FA0E5E1DBEE04600ADD2FC /* HelpingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */; };
+		93FA0E621DBFE1C100ADD2FC /* LocateBlindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA0E611DBFE1C100ADD2FC /* LocateBlindViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		930455091DF6211A001458B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				930455081DF6211A001458B6 /* Pods_PocketVision.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		063F56D5C508FEA659B38C62 /* Pods-PocketVision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketVision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketVision/Pods-PocketVision.debug.xcconfig"; sourceTree = "<group>"; };
+		3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SightedSessionViewController.swift; sourceTree = "<group>"; };
+		3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		3C9FEB1B1DC2A79000C3358E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7EE73C4C2B59897E8BAF6C52 /* Pods-PocketVision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketVision.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketVision/Pods-PocketVision.release.xcconfig"; sourceTree = "<group>"; };
 		87FC12454BBC884443612243 /* Pods_PocketVision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketVision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestingForHelpViewController.swift; sourceTree = "<group>"; };
+		9346F9861DB9CBC7003D94BA /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		9346F9881DBA638D003D94BA /* LoadPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPageController.swift; sourceTree = "<group>"; };
+		9369E7EA1DF8B46900411628 /* HelpTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTypeViewController.swift; sourceTree = "<group>"; };
+		9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		9398DB171DBD6246005D3734 /* BlindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindViewController.swift; sourceTree = "<group>"; };
+		9398DB191DBD625A005D3734 /* SightedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SightedViewController.swift; sourceTree = "<group>"; };
 		93EE400C1DB9C3490061A53E /* PocketVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EE400F1DB9C3490061A53E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93EE40111DB9C3490061A53E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93EE40111DB9C3490061A53E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93EE40141DB9C3490061A53E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93EE40161DB9C3490061A53E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		93EE40191DB9C3490061A53E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93EE401B1DB9C3490061A53E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindSessionViewController.swift; sourceTree = "<group>"; };
+		93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpingTableViewController.swift; sourceTree = "<group>"; };
+		93FA0E611DBFE1C100ADD2FC /* LocateBlindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocateBlindViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9C86F016C604827842ED85C /* Pods_PocketVision.framework in Frameworks */,
+				930455071DF6211A001458B6 /* Pods_PocketVision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +93,7 @@
 		93EE40031DB9C3480061A53E = {
 			isa = PBXGroup;
 			children = (
+				3C9FEB1B1DC2A79000C3358E /* Request.swift */,
 				93EE400E1DB9C3490061A53E /* PocketVision */,
 				93EE400D1DB9C3490061A53E /* Products */,
 				6C9C3A3FDA84CCD9CFAC2C85 /* Pods */,
@@ -73,10 +113,21 @@
 			isa = PBXGroup;
 			children = (
 				93EE400F1DB9C3490061A53E /* AppDelegate.swift */,
-				93EE40111DB9C3490061A53E /* ViewController.swift */,
+				9346F9881DBA638D003D94BA /* LoadPageController.swift */,
+				93EE40111DB9C3490061A53E /* LoginViewController.swift */,
+				9346F9861DB9CBC7003D94BA /* RegisterViewController.swift */,
+				9372493F1DBBA1A700A6DA71 /* ResetPasswordViewController.swift */,
+				9398DB171DBD6246005D3734 /* BlindViewController.swift */,
+				93238F431DC92119006219D8 /* RequestingForHelpViewController.swift */,
+				93F048151DDD0D8F00EC4B6C /* BlindSessionViewController.swift */,
+				9398DB191DBD625A005D3734 /* SightedViewController.swift */,
+				3C9FEB191DC2A41E00C3358E /* RequestTableViewCell.swift */,
+				93FA0E5D1DBEE04600ADD2FC /* HelpingTableViewController.swift */,
+				9369E7EA1DF8B46900411628 /* HelpTypeViewController.swift */,
+				93FA0E611DBFE1C100ADD2FC /* LocateBlindViewController.swift */,
+				3C19971D1DD914A600D4FB9D /* SightedSessionViewController.swift */,
 				93EE40131DB9C3490061A53E /* Main.storyboard */,
 				93EE40161DB9C3490061A53E /* Assets.xcassets */,
-				93EE40181DB9C3490061A53E /* LaunchScreen.storyboard */,
 				93EE401B1DB9C3490061A53E /* Info.plist */,
 				93EE40211DB9C3DD0061A53E /* GoogleService-Info.plist */,
 			);
@@ -104,6 +155,7 @@
 				93EE400A1DB9C3480061A53E /* Resources */,
 				DCF6D6534662E10E896AE2E7 /* [CP] Embed Pods Frameworks */,
 				79D2F8194BDE12986BCF041C /* [CP] Copy Pods Resources */,
+				930455091DF6211A001458B6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +177,7 @@
 				TargetAttributes = {
 					93EE400B1DB9C3480061A53E = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3VJ6WT94PS;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,7 +205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93EE401A1DB9C3490061A53E /* LaunchScreen.storyboard in Resources */,
 				93EE40221DB9C3DD0061A53E /* GoogleService-Info.plist in Resources */,
 				93EE40171DB9C3490061A53E /* Assets.xcassets in Resources */,
 				93EE40151DB9C3490061A53E /* Main.storyboard in Resources */,
@@ -214,8 +266,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93EE40121DB9C3490061A53E /* ViewController.swift in Sources */,
+				9346F9871DB9CBC7003D94BA /* RegisterViewController.swift in Sources */,
+				3C9FEB1C1DC2A79000C3358E /* Request.swift in Sources */,
+				93FA0E621DBFE1C100ADD2FC /* LocateBlindViewController.swift in Sources */,
+				93EE40121DB9C3490061A53E /* LoginViewController.swift in Sources */,
+				93F048161DDD0D8F00EC4B6C /* BlindSessionViewController.swift in Sources */,
+				93238F441DC92119006219D8 /* RequestingForHelpViewController.swift in Sources */,
+				9369E7EB1DF8B46900411628 /* HelpTypeViewController.swift in Sources */,
+				3C19971E1DD914A600D4FB9D /* SightedSessionViewController.swift in Sources */,
 				93EE40101DB9C3490061A53E /* AppDelegate.swift in Sources */,
+				937249401DBBA1A700A6DA71 /* ResetPasswordViewController.swift in Sources */,
+				3C9FEB1A1DC2A41E00C3358E /* RequestTableViewCell.swift in Sources */,
+				93FA0E5E1DBEE04600ADD2FC /* HelpingTableViewController.swift in Sources */,
+				9398DB1A1DBD625A005D3734 /* SightedViewController.swift in Sources */,
+				9398DB181DBD6246005D3734 /* BlindViewController.swift in Sources */,
+				9346F9891DBA638D003D94BA /* LoadPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,14 +293,6 @@
 				93EE40141DB9C3490061A53E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		93EE40181DB9C3490061A53E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93EE40191DB9C3490061A53E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -339,10 +396,15 @@
 			baseConfigurationReference = 063F56D5C508FEA659B38C62 /* Pods-PocketVision.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3VJ6WT94PS;
 				INFOPLIST_FILE = PocketVision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JIANGYU.PocketVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -352,10 +414,15 @@
 			baseConfigurationReference = 7EE73C4C2B59897E8BAF6C52 /* Pods-PocketVision.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3VJ6WT94PS;
 				INFOPLIST_FILE = PocketVision/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JIANGYU.PocketVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

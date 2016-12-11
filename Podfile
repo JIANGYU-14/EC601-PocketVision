@@ -6,8 +6,8 @@ target 'PocketVision' do
   use_frameworks!
 
   # Pods for PocketVision
-
-pod 'Firebase'
-pod 'FirebaseAuth'
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 end
