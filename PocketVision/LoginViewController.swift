@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
     
@@ -11,6 +11,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Navigating to next textfield on press RETURN
+        emailTextField.delegate = self
+        emailTextField.tag = 0
+        passwordTextField.delegate = self
+        passwordTextField.tag = 1
         
         // Customize Cursor Color (This will apply throughout PocketVision)
         UITextField.appearance().tintColor = UIColor(red: 100,green: 251, blue: 178)
@@ -78,6 +84,18 @@ class LoginViewController: UIViewController {
     
     func dismisskeyboard(){
         view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        return false
     }
     
     

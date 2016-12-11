@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
     
@@ -13,6 +13,14 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Navigating to next textfield on press RETURN
+        firstnameTextField.delegate = self
+        firstnameTextField.tag = 0
+        emailTextField.delegate = self
+        emailTextField.tag = 1
+        passwordTextField.delegate = self
+        passwordTextField.tag = 2
         
         // Customize backbutton image and size
         let backButton = UIButton(frame: CGRect(x: 0, y: 20, width: 30, height: 30))
@@ -116,8 +124,19 @@ class RegisterViewController: UIViewController {
     func dismisskeyboard(){
         view.endEditing(true)
     }
-
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, Remove keyboard.
+            textField.resignFirstResponder()
+        }
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
