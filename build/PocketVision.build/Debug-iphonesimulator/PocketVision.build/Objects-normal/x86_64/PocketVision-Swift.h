@@ -154,12 +154,22 @@ SWIFT_CLASS("_TtC12PocketVision26BlindSessionViewController")
 SWIFT_CLASS("_TtC12PocketVision19BlindViewController")
 @interface BlindViewController : UIViewController <CLLocationManagerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userTypeLabel;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull requestlocation;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-- (IBAction)requestHelp:(id _Nonnull)sender;
 - (IBAction)logoutAction:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12PocketVision22HelpTypeViewController")
+@interface HelpTypeViewController : UIViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (IBAction)type1:(id _Nonnull)sender;
+- (IBAction)type2:(id _Nonnull)sender;
+- (IBAction)type3:(id _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -177,6 +187,7 @@ SWIFT_CLASS("_TtC12PocketVision26HelpingTableViewController")
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (void)handleRefresh;
 - (IBAction)refresh:(id _Nonnull)sender;
 - (IBAction)cancelAction:(id _Nonnull)sender;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
@@ -189,6 +200,7 @@ SWIFT_CLASS("_TtC12PocketVision18LoadPageController")
 @interface LoadPageController : UIViewController
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (void)navigateToBelongedPage;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -200,6 +212,7 @@ SWIFT_CLASS("_TtC12PocketVision18LoadPageController")
 SWIFT_CLASS("_TtC12PocketVision25LocateBlindViewController")
 @interface LocateBlindViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (nonatomic, weak) IBOutlet MKMapView * _Null_unspecified currentLocation;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified Helptype;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull locationManager;
 - (void)viewDidLoad;
 - (void)checkcancel;
@@ -217,10 +230,13 @@ SWIFT_CLASS("_TtC12PocketVision25LocateBlindViewController")
 @class UITextField;
 
 SWIFT_CLASS("_TtC12PocketVision19LoginViewController")
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailTextField;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordTextField;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified logoLabel;
 - (void)viewDidLoad;
+- (void)dismisskeyboard;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
 - (IBAction)loginAction:(id _Nonnull)sender;
@@ -231,15 +247,18 @@ SWIFT_CLASS("_TtC12PocketVision19LoginViewController")
 @class UISegmentedControl;
 
 SWIFT_CLASS("_TtC12PocketVision22RegisterViewController")
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified firstnameTextField;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailTextField;
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified passwordTextField;
 @property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified segmentControl;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified typelabel;
 - (void)viewDidLoad;
+- (void)dismisskeyboard;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField;
 - (void)didReceiveMemoryWarning;
 - (IBAction)createAccountAction:(id _Nonnull)sender;
-- (IBAction)cancelRegistration:(id _Nonnull)sender;
+- (void)backhomepage;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -273,12 +292,14 @@ SWIFT_CLASS("_TtC12PocketVision31RequestingForHelpViewController")
 
 
 SWIFT_CLASS("_TtC12PocketVision27ResetPasswordViewController")
-@interface ResetPasswordViewController : UIViewController
+@interface ResetPasswordViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified emailAddress;
 - (void)viewDidLoad;
+- (void)dismisskeyboard;
+- (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField;
 - (void)didReceiveMemoryWarning;
 - (IBAction)resetPasswordAction:(id _Nonnull)sender;
-- (IBAction)canelReset:(id _Nonnull)sender;
+- (void)backhomepage;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -305,17 +326,28 @@ SWIFT_CLASS("_TtC12PocketVision28SightedSessionViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITapGestureRecognizer;
+@class UIImagePickerController;
+@class UIImageView;
 
 SWIFT_CLASS("_TtC12PocketVision21SightedViewController")
-@interface SightedViewController : UIViewController <CLLocationManagerDelegate>
+@interface SightedViewController : UIViewController <CLLocationManagerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userTypeLabel;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified profilePicture;
+@property (nonatomic, readonly, strong) UITapGestureRecognizer * _Nonnull recognizer;
 @property (nonatomic, readonly, strong) CLLocationManager * _Nonnull requestlocation;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)logoutAction:(id _Nonnull)sender;
+- (void)profileImageHasBeenTapped;
+- (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> * _Nonnull)info;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface UIColor (SWIFT_EXTENSION(PocketVision))
+- (nonnull instancetype)initWithRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue;
 @end
 
 #pragma clang diagnostic pop

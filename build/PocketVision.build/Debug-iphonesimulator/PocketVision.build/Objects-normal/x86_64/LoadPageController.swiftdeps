@@ -7,21 +7,24 @@ provides-member:
 - ["C12PocketVision18LoadPageController", ""]
 provides-dynamic-lookup:
 - "viewDidLoad"
-- "didReceiveMemoryWarning"
 - "navigateToBelongedPage"
+- "didReceiveMemoryWarning"
+- "prefersStatusBarHidden"
 depends-top-level:
-- "StringLiteralType"
 - "UIViewController"
-- !private "NSDictionary"
-- !private "String"
-- !private "print"
-- !private "FIRDatabase"
-- !private "BooleanLiteralType"
 - "LoadPageController"
-- !private "FIRAuth"
+- "Bool"
+- !private "String"
+- !private "NSDictionary"
+- !private "=="
+- "AssignmentPrecedence"
 - !private "Timer"
 - !private "CastingPrecedence"
-- !private "=="
+- "StringLiteralType"
+- !private "print"
+- !private "FIRDatabase"
+- !private "FIRAuth"
+- !private "BooleanLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]
@@ -36,6 +39,7 @@ depends-member:
 - ["Ps9AnyObject", "navigateToBelongedPage"]
 - !private ["Ps9AnyObject", "observe"]
 - !private ["Ps9AnyObject", "performSegue"]
+- ["Ps9AnyObject", "prefersStatusBarHidden"]
 - !private ["Ps9AnyObject", "print"]
 - !private ["Ps9AnyObject", "reference"]
 - !private ["Ps9AnyObject", "scheduledTimer"]
@@ -59,6 +63,7 @@ depends-member:
 - ["Ps7CVarArg", "navigateToBelongedPage"]
 - !private ["Ps7CVarArg", "observe"]
 - !private ["Ps7CVarArg", "performSegue"]
+- ["Ps7CVarArg", "prefersStatusBarHidden"]
 - !private ["Ps7CVarArg", "print"]
 - !private ["Ps7CVarArg", "reference"]
 - !private ["Ps7CVarArg", "scheduledTimer"]
@@ -81,6 +86,7 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "navigateToBelongedPage"]
 - !private ["Ps28CustomDebugStringConvertible", "observe"]
 - !private ["Ps28CustomDebugStringConvertible", "performSegue"]
+- ["Ps28CustomDebugStringConvertible", "prefersStatusBarHidden"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
 - !private ["Ps28CustomDebugStringConvertible", "reference"]
 - !private ["Ps28CustomDebugStringConvertible", "scheduledTimer"]
@@ -110,6 +116,7 @@ depends-member:
 - ["Ps23CustomStringConvertible", "navigateToBelongedPage"]
 - !private ["Ps23CustomStringConvertible", "observe"]
 - !private ["Ps23CustomStringConvertible", "performSegue"]
+- ["Ps23CustomStringConvertible", "prefersStatusBarHidden"]
 - !private ["Ps23CustomStringConvertible", "print"]
 - !private ["Ps23CustomStringConvertible", "reference"]
 - !private ["Ps23CustomStringConvertible", "scheduledTimer"]
@@ -133,6 +140,7 @@ depends-member:
 - ["Ps9Equatable", "navigateToBelongedPage"]
 - !private ["Ps9Equatable", "observe"]
 - !private ["Ps9Equatable", "performSegue"]
+- ["Ps9Equatable", "prefersStatusBarHidden"]
 - !private ["Ps9Equatable", "print"]
 - !private ["Ps9Equatable", "reference"]
 - !private ["Ps9Equatable", "scheduledTimer"]
@@ -183,6 +191,7 @@ depends-member:
 - ["Ps8Hashable", "navigateToBelongedPage"]
 - !private ["Ps8Hashable", "observe"]
 - !private ["Ps8Hashable", "performSegue"]
+- ["Ps8Hashable", "prefersStatusBarHidden"]
 - !private ["Ps8Hashable", "print"]
 - !private ["Ps8Hashable", "reference"]
 - !private ["Ps8Hashable", "scheduledTimer"]
@@ -191,6 +200,7 @@ depends-member:
 - !private ["Ps8Hashable", "value"]
 - ["Ps8Hashable", "viewDidLoad"]
 - ["Ps8Hashable", ""]
+- ["C12PocketVision18LoadPageController", "Bool"]
 - !private ["C12PocketVision18LoadPageController", "FIRAuth"]
 - !private ["C12PocketVision18LoadPageController", "FIRDatabase"]
 - !private ["C12PocketVision18LoadPageController", "NSDictionary"]
@@ -201,6 +211,7 @@ depends-member:
 - ["C12PocketVision18LoadPageController", "init"]
 - ["C12PocketVision18LoadPageController", "navigateToBelongedPage"]
 - !private ["C12PocketVision18LoadPageController", "performSegue"]
+- ["C12PocketVision18LoadPageController", "prefersStatusBarHidden"]
 - !private ["C12PocketVision18LoadPageController", "print"]
 - ["C12PocketVision18LoadPageController", "viewDidLoad"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
@@ -214,6 +225,7 @@ depends-member:
 - !private ["PSo8NSCoding", "init"]
 - ["PSo8NSCoding", "navigateToBelongedPage"]
 - !private ["PSo8NSCoding", "performSegue"]
+- ["PSo8NSCoding", "prefersStatusBarHidden"]
 - !private ["PSo8NSCoding", "print"]
 - !private ["PSo8NSCoding", "subscript"]
 - ["PSo8NSCoding", "viewDidLoad"]
@@ -230,12 +242,14 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "init"]
 - ["PSo26NSExtensionRequestHandling", "navigateToBelongedPage"]
 - !private ["PSo26NSExtensionRequestHandling", "performSegue"]
+- ["PSo26NSExtensionRequestHandling", "prefersStatusBarHidden"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
 - ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "subscript"]
 - !private ["PSo16NSMutableCopying", "init"]
 - !private ["PSo16NSMutableCopying", "subscript"]
+- ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "FIRAuth"]
 - !private ["CSo8NSObject", "FIRDatabase"]
 - !private ["CSo8NSObject", "NSDictionary"]
@@ -251,6 +265,7 @@ depends-member:
 - ["CSo8NSObject", "navigateToBelongedPage"]
 - !private ["CSo8NSObject", "observe"]
 - !private ["CSo8NSObject", "performSegue"]
+- ["CSo8NSObject", "prefersStatusBarHidden"]
 - !private ["CSo8NSObject", "print"]
 - !private ["CSo8NSObject", "reference"]
 - !private ["CSo8NSObject", "scheduledTimer"]
@@ -272,6 +287,7 @@ depends-member:
 - ["PSo16NSObjectProtocol", "navigateToBelongedPage"]
 - !private ["PSo16NSObjectProtocol", "observe"]
 - !private ["PSo16NSObjectProtocol", "performSegue"]
+- ["PSo16NSObjectProtocol", "prefersStatusBarHidden"]
 - !private ["PSo16NSObjectProtocol", "print"]
 - !private ["PSo16NSObjectProtocol", "reference"]
 - !private ["PSo16NSObjectProtocol", "scheduledTimer"]
@@ -301,6 +317,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "init"]
 - ["PSo21UIAppearanceContainer", "navigateToBelongedPage"]
 - !private ["PSo21UIAppearanceContainer", "performSegue"]
+- ["PSo21UIAppearanceContainer", "prefersStatusBarHidden"]
 - !private ["PSo21UIAppearanceContainer", "print"]
 - ["PSo21UIAppearanceContainer", "viewDidLoad"]
 - ["PSo21UIAppearanceContainer", ""]
@@ -311,6 +328,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "init"]
 - ["PSo18UIContentContainer", "navigateToBelongedPage"]
 - !private ["PSo18UIContentContainer", "performSegue"]
+- ["PSo18UIContentContainer", "prefersStatusBarHidden"]
 - !private ["PSo18UIContentContainer", "print"]
 - ["PSo18UIContentContainer", "viewDidLoad"]
 - ["PSo18UIContentContainer", ""]
@@ -321,9 +339,11 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "init"]
 - ["PSo18UIFocusEnvironment", "navigateToBelongedPage"]
 - !private ["PSo18UIFocusEnvironment", "performSegue"]
+- ["PSo18UIFocusEnvironment", "prefersStatusBarHidden"]
 - !private ["PSo18UIFocusEnvironment", "print"]
 - ["PSo18UIFocusEnvironment", "viewDidLoad"]
 - ["PSo18UIFocusEnvironment", ""]
+- ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "FIRAuth"]
 - !private ["CSo11UIResponder", "FIRDatabase"]
 - !private ["CSo11UIResponder", "NSDictionary"]
@@ -333,6 +353,7 @@ depends-member:
 - ["CSo11UIResponder", "init"]
 - ["CSo11UIResponder", "navigateToBelongedPage"]
 - !private ["CSo11UIResponder", "performSegue"]
+- ["CSo11UIResponder", "prefersStatusBarHidden"]
 - !private ["CSo11UIResponder", "print"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - !private ["PSo30UIResponderStandardEditActions", "FIRAuth"]
@@ -342,6 +363,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "init"]
 - ["PSo30UIResponderStandardEditActions", "navigateToBelongedPage"]
 - !private ["PSo30UIResponderStandardEditActions", "performSegue"]
+- ["PSo30UIResponderStandardEditActions", "prefersStatusBarHidden"]
 - !private ["PSo30UIResponderStandardEditActions", "print"]
 - ["PSo30UIResponderStandardEditActions", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", ""]
@@ -352,6 +374,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "init"]
 - ["PSo16UIStateRestoring", "navigateToBelongedPage"]
 - !private ["PSo16UIStateRestoring", "performSegue"]
+- ["PSo16UIStateRestoring", "prefersStatusBarHidden"]
 - !private ["PSo16UIStateRestoring", "print"]
 - ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
@@ -362,9 +385,11 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "init"]
 - ["PSo18UITraitEnvironment", "navigateToBelongedPage"]
 - !private ["PSo18UITraitEnvironment", "performSegue"]
+- ["PSo18UITraitEnvironment", "prefersStatusBarHidden"]
 - !private ["PSo18UITraitEnvironment", "print"]
 - ["PSo18UITraitEnvironment", "viewDidLoad"]
 - ["PSo18UITraitEnvironment", ""]
+- ["CSo16UIViewController", "Bool"]
 - !private ["CSo16UIViewController", "FIRAuth"]
 - !private ["CSo16UIViewController", "FIRDatabase"]
 - !private ["CSo16UIViewController", "NSDictionary"]
@@ -375,6 +400,7 @@ depends-member:
 - ["CSo16UIViewController", "init"]
 - ["CSo16UIViewController", "navigateToBelongedPage"]
 - !private ["CSo16UIViewController", "performSegue"]
+- ["CSo16UIViewController", "prefersStatusBarHidden"]
 - !private ["CSo16UIViewController", "print"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
@@ -399,6 +425,7 @@ depends-member:
 - ["Ps9_Hashable", "navigateToBelongedPage"]
 - !private ["Ps9_Hashable", "observe"]
 - !private ["Ps9_Hashable", "performSegue"]
+- ["Ps9_Hashable", "prefersStatusBarHidden"]
 - !private ["Ps9_Hashable", "print"]
 - !private ["Ps9_Hashable", "reference"]
 - !private ["Ps9_Hashable", "scheduledTimer"]
@@ -532,6 +559,17 @@ depends-external:
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseInstanceID/Frameworks/frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FIRStorage.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h"
+- "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/FirebaseStorage/Frameworks/frameworks/FirebaseStorage.framework/Modules/module.modulemap"
 - "/Users/ysze/Documents/EC601/Project/PocketVision/Pods/Firebase/Core/Sources/Firebase.h"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
-interface-hash: "d804dfbc20b1e4dd628f092f5d83b475"
+interface-hash: "8270e2a29c12e2f6ba182eb6891b9e21"
