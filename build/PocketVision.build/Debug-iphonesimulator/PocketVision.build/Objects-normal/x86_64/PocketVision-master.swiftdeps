@@ -1,14 +1,14 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
-options: "3a5b1de5e59a95de341dd145efbd67e4"
-build_time: [534804772, 454738000]
+options: "089c794aa1b0053739ccf606360bce40"
+build_time: [534806931, 397735000]
 inputs:
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/RegisterViewController.swift": [534803481, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/Request.swift": [533688215, 0]
-  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/LocateBlindViewController.swift": [534803481, 0]
+  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/LocateBlindViewController.swift": [534806503, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/LoginViewController.swift": [534803481, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/BlindSessionViewController.swift": [534804749, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/RequestingForHelpViewController.swift": [534803481, 0]
-  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpTypeViewController.swift": [534804507, 0]
+  "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/HelpTypeViewController.swift": [534805653, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/SightedSessionViewController.swift": [534804765, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/AppDelegate.swift": [534803481, 0]
   "/Users/ysze/Documents/EC601/Project/PocketVision/PocketVision/ResetPasswordViewController.swift": [534803481, 0]

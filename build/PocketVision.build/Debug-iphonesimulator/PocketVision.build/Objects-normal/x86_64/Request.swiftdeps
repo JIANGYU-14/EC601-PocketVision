@@ -7,10 +7,10 @@ provides-member:
 - ["C12PocketVision7Request", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "String"
 - "Double"
-- "Request"
+- "String"
 - "AssignmentPrecedence"
+- "Request"
 depends-member:
 - !private ["Ps9AnyObject", "blindID"]
 - !private ["Ps9AnyObject", "distance"]

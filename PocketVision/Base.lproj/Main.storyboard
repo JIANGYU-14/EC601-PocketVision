@@ -820,7 +820,7 @@
                                 <frame key="frameInset" minX="53" minY="191" width="268" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Help me walking">
+                                <state key="normal" title="Around 10 minutes">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -837,7 +837,7 @@
                                 <frame key="frameInset" minX="53" minY="308" width="268" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Help me moving">
+                                <state key="normal" title="Around 20 minutes">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -854,7 +854,7 @@
                                 <frame key="frameInset" minX="53" minY="424" width="268" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Others...">
+                                <state key="normal" title="More than 30 minutes">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -867,6 +867,13 @@
                                     <action selector="type3:" destination="WJn-SL-DMn" eventType="touchUpInside" id="5nC-XN-LnB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How long do you think you will need help with?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ac-hr-L6H">
+                                <frame key="frameInset" minX="53" minY="84" width="268" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -887,6 +894,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="yax-ds-CZf"/>
         <segue reference="lln-nb-6HQ"/>
-        <segue reference="W60-cW-Mn8"/>
+        <segue reference="guE-oh-2Mj"/>
     </inferredMetricsTieBreakers>
 </document>

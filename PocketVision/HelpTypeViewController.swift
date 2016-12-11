@@ -20,7 +20,7 @@ class HelpTypeViewController: UIViewController {
         // Set help type in database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
-        ref.child("BlindUser").child(userID!).child("requesttype").setValue("WALKING")
+        ref.child("BlindUser").child(userID!).child("requesttype").setValue("10")
         ref.child("BlindUser").child(userID!).child("request").setValue("Active")
         
         performSegue(withIdentifier: "sendRequest", sender: self)
@@ -29,7 +29,7 @@ class HelpTypeViewController: UIViewController {
         // Set help type in database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
-        ref.child("BlindUser").child(userID!).child("requesttype").setValue("MOVING")
+        ref.child("BlindUser").child(userID!).child("requesttype").setValue("20")
         ref.child("BlindUser").child(userID!).child("request").setValue("Active")
         
         performSegue(withIdentifier: "sendRequest", sender: self)
@@ -38,7 +38,7 @@ class HelpTypeViewController: UIViewController {
         // Set help type in database
         let ref = FIRDatabase.database().reference()
         let userID = FIRAuth.auth()?.currentUser?.uid
-        ref.child("BlindUser").child(userID!).child("requesttype").setValue("OTHER")
+        ref.child("BlindUser").child(userID!).child("requesttype").setValue("30")
         ref.child("BlindUser").child(userID!).child("request").setValue("Active")
         
         performSegue(withIdentifier: "sendRequest", sender: self)

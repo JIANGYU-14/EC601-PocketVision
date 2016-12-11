@@ -35,27 +35,27 @@ class LocateBlindViewController: UIViewController, MKMapViewDelegate, CLLocation
             let helptype = value?["requesttype"] as? String
             let name = value?["firstname"] as? String
             
-            if helptype == "WALKING" {
+            if helptype == "10" {
                 
                 // Customize Font & Colors in Label (Do not set anything in Storyboard)
-                let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " need your help walking", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
+                let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " needs help for around 10 minutes", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
                 self.Helptype.attributedText = MutableString
                 self.Helptype.textColor = UIColor(red: 100,green: 251, blue: 178)
                 
-            }else {
+            } else {
                 
-                if helptype == "MOVING" {
+                if helptype == "20" {
                     
                 // Customize Font & Colors in Label (Do not set anything in Storyboard)
-                let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " need your help moving stuff", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
+                let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " needs help for around 20 minutes", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
                 self.Helptype.attributedText = MutableString
                 self.Helptype.textColor = UIColor(red: 100,green: 251, blue: 178)
                     
                 }
-                else{
+                else {
                     
                     // Customize Font & Colors in Label (Do not set anything in Storyboard)
-                    let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " need your help with something", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
+                    let MutableString: NSMutableAttributedString = NSMutableAttributedString(string: name! + " needs help for more than 30 minutes", attributes: [NSFontAttributeName:UIFont(name:"Noteworthy-Light", size: 23)!])
                     self.Helptype.attributedText = MutableString
                     self.Helptype.textColor = UIColor(red: 100,green: 251, blue: 178)
                     

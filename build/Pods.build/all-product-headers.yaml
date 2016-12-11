@@ -4,12 +4,12 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/GTMSessionFetcher/GTMSessionFetcher.framework/Headers",
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "GTMSessionFetcher-Swift.h",
-          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcher-Swift.h"
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Headers/GTMSessionFetcher-Swift.h"
         },
         {
           'type': 'file',
@@ -40,18 +40,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/GTMSessionFetcher/GTMSessionFetcher.framework/Modules",
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/GTMSessionFetcher/GTMSessionFetcher.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Pods.build/Debug-iphoneos/GTMSessionFetcher.build/module.modulemap"
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Pods.build/Debug-iphonesimulator/GTMSessionFetcher.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers",
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -91,7 +91,7 @@
         {
           'type': 'file',
           'name': "GoogleToolboxForMac-Swift.h",
-          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers/GoogleToolboxForMac-Swift.h"
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers/GoogleToolboxForMac-Swift.h"
         },
         {
           'type': 'file',
@@ -102,18 +102,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/Modules",
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Pods.build/Debug-iphoneos/GoogleToolboxForMac.build/module.modulemap"
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Pods.build/Debug-iphonesimulator/GoogleToolboxForMac.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/Pods_PocketVision.framework/Headers",
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/Pods_PocketVision.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -123,18 +123,18 @@
         {
           'type': 'file',
           'name': "Pods_PocketVision-Swift.h",
-          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/Pods_PocketVision.framework/Headers/Pods_PocketVision-Swift.h"
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/Pods_PocketVision.framework/Headers/Pods_PocketVision-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphoneos/Pods_PocketVision.framework/Modules",
+      'name': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Debug-iphonesimulator/Pods_PocketVision.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Pods.build/Debug-iphoneos/Pods-PocketVision.build/module.modulemap"
+          'external-contents': "/Users/ysze/Documents/EC601/Project/PocketVision/build/Pods.build/Debug-iphonesimulator/Pods-PocketVision.build/module.modulemap"
         }
       ]
     }

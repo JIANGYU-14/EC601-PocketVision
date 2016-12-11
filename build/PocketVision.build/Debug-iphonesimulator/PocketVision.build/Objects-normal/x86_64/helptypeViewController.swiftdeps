@@ -6,20 +6,20 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision22HelpTypeViewController", ""]
 provides-dynamic-lookup:
-- "viewDidLoad"
-- "didReceiveMemoryWarning"
 - "type2"
+- "viewDidLoad"
 - "type3"
+- "didReceiveMemoryWarning"
 - "type1"
 depends-top-level:
-- !private "StringLiteralType"
 - !private "UIColor"
-- !private "FIRDatabase"
+- !private "UIImage"
 - !private "FIRAuth"
 - "UIViewController"
-- !private "UIImage"
-- "AssignmentPrecedence"
+- !private "FIRDatabase"
 - "HelpTypeViewController"
+- "AssignmentPrecedence"
+- !private "StringLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "FIRAuth"]
 - !private ["Ps9AnyObject", "FIRDatabase"]

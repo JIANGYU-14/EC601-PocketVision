@@ -6,28 +6,28 @@ provides-nominal:
 provides-member:
 - ["C12PocketVision11AppDelegate", ""]
 provides-dynamic-lookup:
+- "applicationDidEnterBackground"
+- "applicationWillTerminate"
+- "applicationWillResignActive"
+- "application"
 - "applicationWillEnterForeground"
 - "window"
-- "applicationWillTerminate"
-- "application"
-- "applicationWillResignActive"
 - "applicationDidBecomeActive"
-- "applicationDidEnterBackground"
 depends-top-level:
-- "Bool"
-- "UIApplicationDelegate"
+- "UIWindow"
 - !private "UIColor"
-- "AppDelegate"
-- !private "NSForegroundColorAttributeName"
+- !private "FIRApp"
+- "UIResponder"
 - !private "Dictionary"
 - !private "BooleanLiteralType"
 - "UIApplicationLaunchOptionsKey"
-- "UIApplication"
-- "UIResponder"
-- "AssignmentPrecedence"
+- "Bool"
+- !private "NSForegroundColorAttributeName"
+- "AppDelegate"
+- "UIApplicationDelegate"
 - !private "UINavigationBar"
-- "UIWindow"
-- !private "FIRApp"
+- "AssignmentPrecedence"
+- "UIApplication"
 depends-member:
 - !private ["Ps9AnyObject", "FIRApp"]
 - !private ["Ps9AnyObject", "NSForegroundColorAttributeName"]
