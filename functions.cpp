@@ -294,6 +294,7 @@ void findBikes (int top_left_x, int top_left_y, int roi_width, int roi_height) {
 	 bool currentDetectionState = false;
 		
 	int detection_count = 0;
+
     // Test all the images for cars
     while (cap.read(input_img)) {
         
@@ -312,6 +313,7 @@ void findBikes (int top_left_x, int top_left_y, int roi_width, int roi_height) {
         hog.detectMultiScale(input_img, found_locs, 0.0, Size(4, 4), Size(0, 0), 1.05, 2);
 
         // Draw detections
+	int sequence=0;
         vector<Rect> found_filtered;
         size_t i, j;
         for (i=0; i<found_locs.size(); i++)
@@ -322,7 +324,23 @@ void findBikes (int top_left_x, int top_left_y, int roi_width, int roi_height) {
                     break;
             if (j==found_locs.size())
                 found_filtered.push_back(r);
-        }
+            if ((static_cast<int>(r.y) > 0.45*height) && (static_cast<int>(r.y) <= 0.55*height) && (static_cast<int>(r.x) > 0.45*width) && (static_cast<int>(r.x) <= 0.55*width)) {
+	     printf("Detected bikes index: %d, Detected bikes coordinate: x: %d, y: %d, position: around middle\n", sequence, static_cast<int>(r.x), static_cast<int>(r.y));
+	    }
+	    else if ((static_cast<int>(r.y) < height*0.5) && (static_cast<int>(r.x) < width*0.5)) { 
+	    printf("Detected bikes index: %d, Detected bikes coordinate: x: %d, y: %d, position: around upper left\n", sequence, static_cast<int>(r.x), static_cast<int>(r.y));
+	    }
+	    else if ((static_cast<int>(r.y) < height*0.5) && (static_cast<int>(r.x) >= width*0.5)) {
+   	     printf("Detected bikes index: %d, Detected bikes coordinate: x: %d, y: %d, position: around upper right\n", sequence, static_cast<int>(r.x), static_cast<int>(r.y));
+	    }
+	    else if ((static_cast<int>(r.y) > height*0.5) && (static_cast<int>(r.x) < width*0.5)) {
+             printf("Detected bikes index: %d, Detected bikes coordinate: x: %d, y: %d, position: around lower left\n", sequence, static_cast<int>(r.x), static_cast<int>(r.y));
+	    }
+	    else if ((static_cast<int>(r.y) > height*0.5) && (static_cast<int>(r.x) >= width*0.5)) {
+	     printf("Detected bikes index: %d, Detected bikes coordinate: x: %d, y: %d, position: around lower right\n", sequence, static_cast<int>(r.x), static_cast<int>(r.y));
+	    }
+	    sequence=sequence+1;
+        } //Yaqin Huang add for reporting the position of detected bike
         
         int bikes_detected = found_filtered.size();
 
@@ -338,7 +356,6 @@ void findBikes (int top_left_x, int top_left_y, int roi_width, int roi_height) {
             ss_count << detection_count;
             Mat cpy = input_img.clone();
             if (stateFlags.debug) imwrite("detection\ record/detection_" + ss_count.str() + ".png", cpy(Rect(r.tl(), r.br())));
-	    //Yaqin Huang changed for warning
 
             detection_count++;
             rectangle(input_img, r.tl(), r.br(), cv::Scalar(0,255,0), 2);
@@ -355,7 +372,6 @@ void findBikes (int top_left_x, int top_left_y, int roi_width, int roi_height) {
             break;
         
         // Handle Alert Sign Controls
-        //gpioSetValue(57, on); // bandhan added this cause the program would crash with "device resource busy error"
         prevDetectionState = currentDetectionState;
         if(!found_filtered.empty()) {
             currentDetectionState = true;
@@ -388,18 +404,4 @@ void CallBackFunc (int event, int x, int y, int flags, void* userdata) {
         mouse_y = y;
         cout << "( " << x << ", " << y << ")\n";
     }
-}
-
-void cameraTest () {
-	namedWindow("Video Feed", WINDOW_AUTOSIZE);
-	setMouseCallback("Video Feed", CallBackFunc, NULL);
-	VideoCapture cap(stateFlags.cameraId);
-    Mat img;
-    while (waitKey(20) != 27) {
-            cap.read(img);
-            imshow("Video Feed", img);
-    }
-    imwrite("snapshot.png", img);
-    destroyAllWindows();
-    cap.release();
 }
