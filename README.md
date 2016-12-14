@@ -14,7 +14,7 @@ Lastly, you will find the build instructions for the Social Networking part belo
 
 ---
 
-:highlight Build Instructions for PocketVision (Social network): gui=bold
+Build Instructions for PocketVision (Social network):
 
 1. Under master branch, "Clone or download" the entire repository onto your local machine.
 
