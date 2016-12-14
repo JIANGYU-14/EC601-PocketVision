@@ -14,9 +14,6 @@ Under Jianqing branch, you will find the build instructions for the Object Recog
 
 Lastly, you will find the build instructions for the Social Networking part below (master): 
 
-
----
-
 ## Build Instructions for PocketVision (Social network):
 
 1. Under master branch, "Clone or download" the entire repository onto your local machine.
@@ -28,8 +25,6 @@ Lastly, you will find the build instructions for the Social Networking part belo
 4. Click the "Play" button to build and run the application.
 
 5. Since PocketVision is designed to be a social network, you need two phones to fully experience the application. To do so, you can install another copy of PocketVision onto an iOS device (iOS 10 or above).  
-
----
 
 ## Contact
 
