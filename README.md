@@ -1,6 +1,7 @@
 # PocketVision
 **An iOS application that helps the blind and visually impaired with daily tasks**
 
+## Introduction
 
 Welcome to the GitHub repository for our iOS application, PocketVision.
     
@@ -29,6 +30,8 @@ Lastly, you will find the build instructions for the Social Networking part belo
 5. Since PocketVision is designed to be a social network, you need two phones to fully experience the application. To do so, you can install another copy of PocketVision onto an iOS device (iOS 10 or above).  
 
 ---
+
+## Contact
 
 There will be new updates and fuctions coming to the social networking part of PocketVision soon, but it is fully functional at this moment!
 
