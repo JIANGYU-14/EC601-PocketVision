@@ -2,9 +2,13 @@
 
 Welcome to the GitHub repository for our iOS application, PocketVision.
     
-1. The social network and Object recognition part is in the master branch
+PocketVision is meant to be an application that combines both social networking,object tracking and object recognition for blind and sighted users to use. Since the beginning of the project, each of these functions has been developed by different teams across different branches. We feel that more work needs to be done on all three functions before a complete integration of them into one application. As a result, you will have to build the three functions seperately to use them at this point.
 
-2. The object tracking part is in the yaqin branch (becuase it is not 100 percent finish, so we decide to not push to the master branch)
+Under <> branch, you will find the build instructions for the Object Tracking part.
+
+Under <> branch, you will find the build instructions for the Object Recognition part.
+
+Lastly, you will find the build instructions for the Social Networking part below (master): 
 
 ---
 
@@ -21,6 +25,13 @@ Build Instructions for PocketVision (Social network):
 5. Since PocketVision is designed to be a social network, you need two phones to fully experience the application. To do so, you can install another copy of PocketVision onto an iOS device (iOS 10 or above).  
 
 ---
-3. Feel Free to contact us if you have any questiones:
 
-jiangyu@bu.edu, gaojq@bu.edu, ysze@bu.edu, yaqinh@bu.edu
+There will be new updates and fuctions coming to the social networking part of PocketVision soon, but it is fully functional at this moment!
+
+If you have any questions about the social networking part, feel free to contact
+
+jiangyu@bu.edu or  ysze@bu.edu.
+
+For the object recognition and tracking, please contact:
+
+gaojq@bu.edu or yaqinh@bu.edu
