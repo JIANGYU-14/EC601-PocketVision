@@ -1,4 +1,5 @@
 # PocketVision
+**An iOS application that helps the blind and visually impaired with daily tasks**
 
 Welcome to the GitHub repository for our iOS application, PocketVision.
     
