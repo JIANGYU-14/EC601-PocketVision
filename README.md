@@ -4,7 +4,7 @@ Welcome to the GitHub repository for our iOS application, PocketVision.
     
 1. The social network and Object recognition part is in the master branch
 
-2. The object tracking part is in the yaqin branch (becuase it is not 100 percent finish, so we decide to not push to the master branch)
+2. The object tracking part is in the yaqin branch (becuase it is not 100 percent finished, so we decide to not push to the master branch)
 
 ---
 
