@@ -9,7 +9,7 @@ PocketVision is meant to be an application that combines both social networking,
 
 Under **yaqin** branch, you will find the build instructions for the Object Tracking part.
 
-Lastly, you will find the build instructions for the Social Networking part in the **master** branch (below): 
+You will find the build instructions for the Social Networking part in the **master** branch (below): 
 
 ## Build Instructions for PocketVision (Social network):
 
