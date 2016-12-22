@@ -1,20 +1,17 @@
 # PocketVision
+**An iOS application that helps the blind and visually impaired with daily tasks**
+
+## Introduction
 
 Welcome to the GitHub repository for our iOS application, PocketVision.
     
-PocketVision is meant to be an application that combines both social networking, object tracking and object recognition for blind and sighted users to use. Since the beginning of the project, each of these functions has been developed by different teams across different branches. We feel that more work needs to be done on all three functions before a complete integration of them into one application. As a result, you will have to build the three functions seperately to use them at this point.
+PocketVision is meant to be an application that combines both social networking, object tracking and object recognition for blind and sighted users to use. Since the beginning of the project, each of these functions has been developed by different teams across different branches. We feel that more work needs to be done on all three functions before a complete integration of them into one application. As a result, you will have to build these functions seperately to use them at this point.
 
+Under **yaqin** branch, you will find the build instructions for the Object Tracking part.
 
-Under <> branch, you will find the build instructions for the Object Tracking part.
+You will find the build instructions for the Social Networking part in the **master** branch (below): 
 
-Under <> branch, you will find the build instructions for the Object Recognition part.
-
-Lastly, you will find the build instructions for the Social Networking part below (master): 
-
-
----
-
-Build Instructions for PocketVision (Social network):
+## Build Instructions for PocketVision (Social network):
 
 1. Under master branch, "Clone or download" the entire repository onto your local machine.
 
@@ -26,9 +23,9 @@ Build Instructions for PocketVision (Social network):
 
 5. Since PocketVision is designed to be a social network, you need two phones to fully experience the application. To do so, you can install another copy of PocketVision onto an iOS device (iOS 10 or above).  
 
----
+## Contact
 
-There will be new updates and fuctions coming to the social networking part of PocketVision soon, but it is fully functional at this moment!
+There will be new updates and functions coming to the social networking part of PocketVision soon, but it is fully functional at this moment!
 
 If you have any questions about the social networking part, feel free to contact
 
