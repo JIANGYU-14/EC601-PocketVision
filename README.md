@@ -1,6 +1,8 @@
 # PocketVision
 **An iOS application that helps the blind and visually impaired with daily tasks**
 
+<img src="https://i2.imgflip.com/29btv6.gif" width="280"/> <img src="https://i2.imgflip.com/29bull.gif" width="280"/> <img src="https://i.imgflip.com/29bvla.gif" width="280"/>
+
 ## Introduction
 
 Welcome to the GitHub repository for our iOS application, PocketVision.
