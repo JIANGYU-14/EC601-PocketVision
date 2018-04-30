@@ -1,7 +1,8 @@
 # PocketVision
 **An iOS application that helps the blind and visually impaired with daily tasks**
 
-<img src="![register](https://user-images.githubusercontent.com/22137277/39412602-156ac3a8-4bed-11e8-916a-422949bd31b5.gif)" width="280"/> <img src="https://user-images.githubusercontent.com/22137277/39412576-b8804ef6-4bec-11e8-9745-106113b33345.gif" width="280"/> <img src="https://user-images.githubusercontent.com/22137277/39412655-e62a2f2e-4bed-11e8-9fcb-14a4e8faff96.gif" width="280"/>
+<img src="https://user-images.githubusercontent.com/22137277/39412602-156ac3a8-4bed-11e8-916a-422949bd31b5.gif" width="280"/> <img src="https://user-images.githubusercontent.com/22137277/39412576-b8804ef6-4bec-11e8-9745-106113b33345.gif" width="280"/> <img src="https://user-images.githubusercontent.com/22137277/39412655-e62a2f2e-4bed-11e8-9fcb-14a4e8faff96.gif" width="280"/>
+
 
 ## Introduction
 
